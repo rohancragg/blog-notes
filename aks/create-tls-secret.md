@@ -94,6 +94,10 @@ As you can see if contains just a single certificate
 
 ![Image](domain.rsa.png?raw=true)
 
+## How to get the client certificate (without the full CA chain)
+
+> openssl pkcs12 -in domain.pfx -clcerts -nokeys -out domain.cer
+
 ---
 Some of the steps in this article are based on [How to convert a PFX to a seperate .key/.crt file](https://www.markbrilman.nl/2011/08/howto-convert-a-pfx-to-a-seperate-key-crt-file/) - by Mark Brilman
 
