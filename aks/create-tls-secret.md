@@ -1,14 +1,14 @@
 ﻿# How to Create a TLS Secret
 
-I followed the command-line method (the first method) explained in this article [Creating Kubernetes Secrets Using TLS/SSL as an Example](https://shocksolution.com/2018/12/14/creating-kubernetes-secrets-using-tls-ssl-as-an-example/) - i.e. rather than using the secon (YAML file) method.
+I followed the command-line method (the first method) explained in this article [Creating Kubernetes Secrets Using TLS/SSL as an Example](https://shocksolution.com/2018/12/14/creating-kubernetes-secrets-using-tls-ssl-as-an-example/) - i.e. rather than using the second (YAML file) method.
 
 In order to do this I needed two files in the correct format.
 
 There are multiple formats that certificate and asscoated key files can be in (they can even be combined into a single file). In order to create a Kubernetes TLS secret I needed to ascertain the right ones to use.
 
-I was provided with a `.pks` file and needed to work out how to generate the correct artifacts from it. All I know was that I needed a `.crt` and a `.key` file and at first I wasn't sure what these were.
+I was provided with a `.pks` file and needed to work out how to generate the correct artifacts from it. All I knew from the above article was that I needed a `.crt` and a `.key` file and at first I wasn't sure what these were.
 
-## What are we trying to acheive?
+## What are we trying to achieve?
 
 I needed obtain a TLS certificate and create a TLS Secret object in Kubernetes so that an Ingress resource could refer to the Secret in order that the certificate presented by the NGINX Ingress would look like this when visiting the associated Service in a web browser:
 
@@ -26,8 +26,22 @@ To get an unencrypted private key file
 
 _**Note:** be sure to delete this file once uploaded to the cluster so that you don't have an unencrypted secret on your local machine_
 
-To get the client certificate file
+To get the certificate file
 > openssl pkcs12 -in domain.pfx -nodes -nokeys -nomac -out domain.crt
+
+The **domain.crt** file looks like this
+
+![Image](domain.crt.png?raw=true)
+
+In my case it contains the full CA chain and so there are (in my case) there are three certificates each enclosed in `BEGIN CERTIFICATE` and `END CERTIFICATE` delimeters:
+
+```
+-----BEGIN CERTIFICATE-----
+################################################################
+################################################################
+-----END CERTIFICATE-----
+```
+
 
 ## Creating the TLS Secret in Kubernetes
 
