@@ -4,4 +4,4 @@ This repository contains hopelessly hopeful drafts of blog articles and other bo
 
 If I've sent you a link to a markdown file in here then - you're very welcome!
 
-One day I'll maybe even host these at https://rohancragg.co.uk - stranger things have happened ;-)
+One day I'll maybe even host these at <https://www.rohancragg.co.uk> - stranger things have happened ;-)

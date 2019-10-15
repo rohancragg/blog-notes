@@ -12,7 +12,7 @@ I was provided with a `.pks` file and needed to work out how to generate the cor
 
 I needed obtain a TLS certificate and create a TLS Secret object in Kubernetes so that an Ingress resource could refer to the Secret in order that the certificate presented by the NGINX Ingress would look like this when visiting the associated Service in a web browser:
 
-![Image](images/cert-path.png?raw=true)
+![Image](media/cert-path.png?raw=true)
 
 _(i.e. the TLS/HTTPS certificate should include the CA chain.)_
 
@@ -32,7 +32,7 @@ To get the certificate file
 
 The **domain.crt** file looks like this
 
-![Image](images/domain.crt.png?raw=true)
+![Image](media/domain.crt.png?raw=true)
 
 In my case it contains the full CA chain and so, in my case, there are three certificates each enclosed in `BEGIN CERTIFICATE` and `END CERTIFICATE` delimeters:
 
@@ -90,13 +90,13 @@ Where:
 
 **domain.cer** looks like this
 
-![Image](images/domain.cer.png?raw=true)
+![Image](media/domain.cer.png?raw=true)
 
 As you can see if contains just a single certificate
 
 **domain.rsa** looks like this
 
-![Image](images/domain.rsa.png?raw=true)
+![Image](media/domain.rsa.png?raw=true)
 
 ## How to get the client certificate (without the full CA chain)
 
