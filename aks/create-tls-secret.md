@@ -12,7 +12,7 @@ I was provided with a `.pks` file and needed to work out how to generate the cor
 
 I needed obtain a TLS certificate and create a TLS Secret object in Kubernetes so that an Ingress resource could refer to the Secret in order that the certificate presented by the NGINX Ingress would look like this when visiting the associated Service in a web browser:
 
-![Image](cert-path.png?raw=true)
+![Image](images/cert-path.png?raw=true)
 
 _(i.e. the TLS/HTTPS certificate should include the CA chain.)_
 
@@ -27,13 +27,14 @@ To get an unencrypted private key file
 _**Note:** be sure to delete this file once uploaded to the cluster so that you don't have an unencrypted secret on your local machine_
 
 To get the certificate file
+
 > openssl pkcs12 -in domain.pfx -nodes -nokeys -nomac -out domain.crt
 
 The **domain.crt** file looks like this
 
-![Image](domain.crt.png?raw=true)
+![Image](images/domain.crt.png?raw=true)
 
-In my case it contains the full CA chain and so there are (in my case) there are three certificates each enclosed in `BEGIN CERTIFICATE` and `END CERTIFICATE` delimeters:
+In my case it contains the full CA chain and so, in my case, there are three certificates each enclosed in `BEGIN CERTIFICATE` and `END CERTIFICATE` delimeters:
 
 ```
 -----BEGIN CERTIFICATE-----
@@ -46,7 +47,8 @@ In my case it contains the full CA chain and so there are (in my case) there are
 ## Creating the TLS Secret in Kubernetes
 
 Create Kubernetes TLS Secret:
-$ kubectl create secret tls tlscert --key="tls.key" --cert="tls.crt"
+
+> kubectl create secret tls tlscert --key="tls.key" --cert="tls.crt"
 
 ---
 
@@ -54,13 +56,15 @@ $ kubectl create secret tls tlscert --key="tls.key" --cert="tls.crt"
 
 ## How to validate a key
 
-_Works for both encrypted or unencrpyted keys_:
+_This works for both encrypted or unencrpyted keys_:
 
 > openssl rsa -check -in domain.enc.key
 
 or
 
 > openssl rsa -check -in domain.key
+
+You should see the message 'RSA key ok':
 
 ```
 $ openssl rsa -check -in domain.enc.key
@@ -86,13 +90,13 @@ Where:
 
 **domain.cer** looks like this
 
-![Image](domain.cer.png?raw=true)
+![Image](images/domain.cer.png?raw=true)
 
 As you can see if contains just a single certificate
 
 **domain.rsa** looks like this
 
-![Image](domain.rsa.png?raw=true)
+![Image](images/domain.rsa.png?raw=true)
 
 ## How to get the client certificate (without the full CA chain)
 
