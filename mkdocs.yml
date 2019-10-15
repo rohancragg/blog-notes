@@ -1,0 +1,14 @@
+site_name: What I learned today (@rohancragg)
+nav:
+  - Home: README.md
+  - About Me: about
+  - AKS:
+    - Create a TLS Secret: /aks/create-tls-secret
+theme:
+  name: material
+  palette:
+    primary: 'deep purple'
+    accent: 'green'
+  font:
+    text: 'Noto Sans'
+    code: 'Ubuntu Mono'
