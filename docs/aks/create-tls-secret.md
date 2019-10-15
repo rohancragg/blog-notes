@@ -97,7 +97,7 @@ As you can see if contains just a single certificate
 
 ![Image](media/domain.rsa.png?raw=true)
 
-## How to get the client certificate (without the full CA chain)
+### How to get the client certificate (without the full CA chain)
 
 > openssl pkcs12 -in domain.pfx -clcerts -nokeys -out domain.cer
 

@@ -1,9 +1,9 @@
 site_name: What I learned today (@rohancragg)
 nav:
   - Home: README.md
-  - About Me: about
+  - About Me: about.md
   - AKS:
-    - Create a TLS Secret: /aks/create-tls-secret
+    - Create a TLS Secret: aks\create-tls-secret.md
 theme:
   name: material
   palette:
