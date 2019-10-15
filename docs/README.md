@@ -1,6 +1,6 @@
 # Home
 
-## rohancragg's personal docs
+## rohancragg's Personal Tech Docs
 
 This repository contains hopelessly hopeful drafts of blog articles and other bobbins and gubbins I want to make sure I don't forget.
 

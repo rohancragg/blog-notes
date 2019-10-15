@@ -4,7 +4,7 @@ I followed the command-line method (the first method) explained in this article 
 
 In order to do this I needed two files in the correct format.
 
-There are multiple formats that certificate and asscoated key files can be in (they can even be combined into a single file). In order to create a Kubernetes TLS secret I needed to ascertain the right ones to use.
+There are multiple formats that certificate and associated key files can be in (they can even be combined into a single file). In order to create a Kubernetes TLS secret I needed to ascertain the right ones to use.
 
 I was provided with a `.pks` file and needed to work out how to generate the correct artifacts from it. All I knew from the above article was that I needed a `.crt` and a `.key` file and at first I wasn't sure what these were.
 
@@ -16,15 +16,15 @@ I needed obtain a TLS certificate and create a TLS Secret object in Kubernetes s
 
 _(i.e. the TLS/HTTPS certificate should include the CA chain.)_
 
-## Geting the right files
+## Getting the right files
 
 To get an encrypted private key:
 > openssl pkcs12 -in domain.pfx -nocerts -out domain.enc.key
 
-To get an unencrypted private key file
+To get an un-encrypted private key file
 > openssl rsa -in domain.enc.key -outform PEM -out domain.key
 
-_**Note:** be sure to delete this file once uploaded to the cluster so that you don't have an unencrypted secret on your local machine_
+_**Note:** be sure to delete this file once uploaded to the cluster so that you don't have an un-encrypted secret on your local machine_
 
 To get the certificate file
 
@@ -34,15 +34,14 @@ The **domain.crt** file looks like this
 
 ![Image](media/domain.crt.png?raw=true)
 
-In my case it contains the full CA chain and so, in my case, there are three certificates each enclosed in `BEGIN CERTIFICATE` and `END CERTIFICATE` delimeters:
+In my case it contains the full CA chain and so, in my case, there are three certificates each enclosed in `BEGIN CERTIFICATE` and `END CERTIFICATE` delimiters:
 
-```
+```console
 -----BEGIN CERTIFICATE-----
 ################################################################
 ################################################################
 -----END CERTIFICATE-----
 ```
-
 
 ## Creating the TLS Secret in Kubernetes
 
@@ -52,11 +51,11 @@ Create Kubernetes TLS Secret:
 
 ---
 
-# Additional Notes
+## Additional Notes
 
-## How to validate a key
+### How to validate a key
 
-_This works for both encrypted or unencrpyted keys_:
+_This works for both encrypted or un-encrypted keys_:
 
 > openssl rsa -check -in domain.enc.key
 
@@ -66,7 +65,7 @@ or
 
 You should see the message 'RSA key ok':
 
-```
+```console
 $ openssl rsa -check -in domain.enc.key
 Enter pass phrase for domain.enc.pem:
 RSA key ok
@@ -76,7 +75,7 @@ writing RSA key
 ################################################################
 ```
 
-## Where did my PKS file come from?
+### Where did my PKS file come from?
 
 I was provided with a `.pks` ( `PKCS#12` ) file which had been created with the following command
 
@@ -84,9 +83,9 @@ I was provided with a `.pks` ( `PKCS#12` ) file which had been created with the 
 
 Where:
 
- - domain.cer is the client certificate (i.e. without the Certification Authority (CA) chain )
- - domain.rsa is an unencrypted version of the private key
- - CAbundle.txt contains the CA certificates to append to create the CA chain
+- domain.cer is the client certificate (i.e. without the Certification Authority (CA) chain )
+- domain.rsa is an un-encrypted version of the private key
+- CAbundle.txt contains the CA certificates to append to create the CA chain
 
 **domain.cer** looks like this
 
