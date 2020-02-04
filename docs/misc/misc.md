@@ -21,5 +21,5 @@ As always, Scott Hanselman has the low-down to end all low-downs:
 
 
 !!! info
-    See my page on [Scoop & Co.](../misc/sccop.md) for how to quickly and easily install `Delugia Nerd Font` mentioned in Scott's pretty prompt post above
+    See my page on [Scoop & Co.](../misc/scoop.md) for how to quickly and easily install `Delugia Nerd Font` mentioned in Scott's pretty prompt post above
 
