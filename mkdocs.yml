@@ -4,6 +4,16 @@ site_description: 'A Material Design theme for MkDocs'
 site_author: 'Rohan Cragg'
 site_url: 'https://rohancragg.github.io'
 
+# Table of Contents
+nav:
+  - Home: README.md
+  - About Me: about.md
+  - Tools & Techniques:
+    - Scoop & Co: misc\scoop.md
+  - Kubernetes:
+    - Clusters and Domains: aks\domains.md
+    - Create a TLS Secret: aks\create-tls-secret.md
+
 # Repository
 repo_name: 'rohancragg/blog-notes'
 repo_url: 'https://github.com/rohancragg/blog-notes'
@@ -26,13 +36,6 @@ extra:
     - type: 'instagram'
       link: 'https://www.instagram.com/rohancragg/'
 
-nav:
-  - Home: README.md
-  - About Me: about.md
-  - Tools & Techniques:
-    - Scoop & Co: misc\scoop.md
-  - Kubernetes:
-    - Create a TLS Secret: aks\create-tls-secret.md
 # Extensions
 markdown_extensions:
   - admonition
