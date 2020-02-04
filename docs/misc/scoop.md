@@ -34,16 +34,12 @@ scoop install nodejs
     you can to use the Unix tool `ls` after installing `coreutils` but you first need to remove the `PowerShell` alias already in place\
     *i.e. add this to your Powershell `$profile`:*
 ```powershell
-# remove aliases for coreutils
 Remove-Alias -Name ls
 Remove-Alias -Name cat
 Remove-Alias -Name mv
 Remove-Alias -Name ps
 Remove-Alias -Name pwd
 Remove-Alias -Name rm
-#Remove-Alias -Name sort
-#Remove-Alias -Name tee
-#Remove-Alias -Name touch
 ```
 
 ### Buckets
@@ -57,7 +53,7 @@ scoop bucket add versions
 
 Then yet more handy tools I use:
 ```powershell
-scoop install azure-cli dotnet-sdk go hugo 
+scoop install azure-cli dotnet-sdk go hugo helm pwsh
 # from extras bucket:
 scoop install vcredist2019 linqpad notepadplusplus paint.net windows-terminal
 ```

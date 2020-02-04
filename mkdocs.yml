@@ -10,6 +10,7 @@ nav:
   - About Me: about.md
   - Tools & Techniques:
     - Scoop & Co: misc\scoop.md
+    - Miscellanous Notes: misc\misc.md
   - Kubernetes:
     - Clusters and Domains: aks\domains.md
     - Create a TLS Secret: aks\create-tls-secret.md
