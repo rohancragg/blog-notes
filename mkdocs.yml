@@ -2,9 +2,14 @@ site_name: What I learned today (@rohancragg)
 nav:
   - Home: README.md
   - About Me: about.md
-  - AKS:
+  - Tools & Techniques:
+    - Scoop & Co: misc\scoop.md
+  - Kubernetes:
     - Create a TLS Secret: aks\create-tls-secret.md
+markdown_extensions:
+  - codehilite
 theme:
+  language: 'en'
   name: material
   palette:
     primary: 'deep purple'
