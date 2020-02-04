@@ -1,4 +1,31 @@
+# Project information
 site_name: What I learned today (@rohancragg)
+site_description: 'A Material Design theme for MkDocs'
+site_author: 'Rohan Cragg'
+site_url: 'https://rohancragg.github.io'
+
+# Repository
+repo_name: 'rohancragg/blog-notes'
+repo_url: 'https://github.com/rohancragg/blog-notes'
+
+# Copyright
+copyright: 'Copyright &copy; 2019 - 2020 Rohan Cragg'
+
+# Customization
+extra:
+  manifest: 'manifest.webmanifest'
+  social:
+    - type: 'github'
+      link: 'https://github.com/rohancragg'
+    - type: 'twitter'
+      link: 'https://twitter.com/rohancragg'
+    - type: 'linkedin'
+      link: 'https://www.linkedin.com/in/rohancragg'
+    - type: 'facebook'
+      link: 'https://fb.com/rohancragg'
+    - type: 'instagram'
+      link: 'https://www.instagram.com/rohancragg/'
+
 nav:
   - Home: README.md
   - About Me: about.md
@@ -6,11 +33,16 @@ nav:
     - Scoop & Co: misc\scoop.md
   - Kubernetes:
     - Create a TLS Secret: aks\create-tls-secret.md
+# Extensions
 markdown_extensions:
-  - codehilite
+  - admonition
+  - codehilite:
+      guess_lang: false
+  - toc:
+      permalink: true
 theme:
-  language: 'en'
   name: material
+  language: 'en'
   palette:
     primary: 'deep purple'
     accent: 'green'

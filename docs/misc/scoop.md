@@ -29,19 +29,32 @@ scoop install coreutils
 scoop install nodejs 
 ```
 
-> Tip: you can to use the Unix tool `ls` after installing `coreutils` but you first need to remove the `PowerShell` alias already in place:
+[coreutils](https://github.com/ScoopInstaller/Main/blob/master/bucket/coreutils.json) is a multi-tool package - *"a collection of GNU utilities such as bash, make, gawk and grep based on [MSYS](http://www.mingw.org/wiki/msys)"*
+!!! Tip
+    you can to use the Unix tool `ls` after installing `coreutils` but you first need to remove the `PowerShell` alias already in place\
+    *i.e. add this to your Powershell `$profile`:*
 ```powershell
+# remove aliases for coreutils
 Remove-Alias -Name ls
+Remove-Alias -Name cat
+Remove-Alias -Name mv
+Remove-Alias -Name ps
+Remove-Alias -Name pwd
+Remove-Alias -Name rm
+#Remove-Alias -Name sort
+#Remove-Alias -Name tee
+#Remove-Alias -Name touch
 ```
 
 ### Buckets
-Then, I add additional [*Buckets*](https://github.com/lukesampson/scoop/wiki/Buckets). Buckets are collections of apps which are additional / optional to the *main* bucket
+Then, I add additional [*Buckets*](https://github.com/lukesampson/scoop/wiki/Buckets). Buckets are collections of apps which are additional / optional to the [*main*](https://github.com/ScoopInstaller/Main/blob/master/bucket) bucket
 
 ```powershell
 scoop bucket add extras
 scoop bucket add main
 scoop bucket add versions
 ```
+
 Then yet more handy tools I use:
 ```powershell
 scoop install azure-cli dotnet-sdk go hugo 
@@ -49,25 +62,30 @@ scoop install azure-cli dotnet-sdk go hugo
 scoop install vcredist2019 linqpad notepadplusplus paint.net windows-terminal
 ```
 
-Other useful (possibly useful?) buckets that I've not yet had a use for:
+!!! info
+    Other useful (possibly useful?) buckets that I've not yet had a use for:
 
-- [nonportable](https://github.com/TheRandomLabs/scoop-nonportable/tree/master/bucket) - non-portable Applications that need to retain state between versions
-- full list of [known buckets](https://github.com/lukesampson/scoop#known-application-buckets)
+    - [nonportable](https://github.com/TheRandomLabs/scoop-nonportable/tree/master/bucket) - non-portable Applications that need to retain state between versions
+    - full list of [known buckets](https://github.com/lukesampson/scoop#known-application-buckets)
 
 ### Paths
 Referencing the path to an application installed by Scoop
 ```
 %UserProfile%/scoop/apps
 ```
-**Note:** Those installed with the `--global` (and with the `sudo` command) will reside in the path
-```
-%ProgramData%/scoop/apps
-```
-For each version of an application the files will be in a directory with the version number, but Scoop creates a *Shim* for the current version in the path `%UserProfile%\scoop\apps\{AppName}\current`. For example: the path to *Python* (`python.exe`) will be either
+!!! note
+    Those installed with the `--global` (and with the `sudo` command) will reside in the path
+
+    ```
+    %ProgramData%/scoop/apps
+    ```
+For each version of an application the files will be in a directory with the version number, but Scoop creates a *Shim* for the current version in the path `%UserProfile%\scoop\apps\{AppName}\current`.
+
+For example: the path to *Python* (`python.exe`) will be either:
 ```
 %UserProfile%\scoop\apps\python\3.8.1\python.exe
 ```
-or
+or:
 ```
 %UserProfile%\scoop\apps\python\current\python.exe
 ```
@@ -80,16 +98,11 @@ The `versions` bucket contains a way to obtain versions other than the latest ve
 
 For example: [Switching-Ruby-And-Python-Versions](https://github.com/lukesampson/scoop/wiki/Switching-Ruby-And-Python-Versions)
 
-### Fonts
-```powershell
-scoop bucket add nerd-fonts
-sudo scoop install Delugia-Nerd-Font-Complete
-```
 
-# Common Pre-Requisites
+## Common Pre-Requisites
 The following is a set of common pre-requisites for installing tools and utilitied (e.g. the `pip` package manager for python tools):
 
-## `Python` and `PIP`
+### `Python` and `PIP`
 ```powershell
 scoop install python
 scoop install curl
@@ -98,19 +111,30 @@ python get-pip.py
 python -m pip install -U pip
 ```
 
-# Productivity Tools
+## System Fonts
+Here's another place where Scoop comes to the rescue to avoid clunky download and installs for system fonts!
 
-## MkDocs
-[MkDocs](https://www.mkdocs.org/) - Project documentation with Markdown
+!!!info
+    note how `sudo` is being used to install the font as a global / system font - this obvisouly pops up a UAC prompt as it requires elevated provilege to install a system font...
 
-I use this for writing this site:
+```powershell
+scoop bucket add nerd-fonts
+sudo scoop install Delugia-Nerd-Font-Complete
+```
+
+## Productivity Tools
+
+### MkDocs
+> [MkDocs](https://www.mkdocs.org/) "Project documentation with Markdown"
+
+I use this for writing **this site!**:
 ```powershell
 pip install mkdocs
 python .\scoop\apps\python\current\Tools\scripts\win_add2path.py
 ```
 
-### Install the Custom Theme
-Using [Material theme](https://squidfunk.github.io/mkdocs-material/) and [CodeHilite](https://squidfunk.github.io/mkdocs-material/extensions/codehilite/)
+#### Install the Custom Theme
+Using [Material theme](https://squidfunk.github.io/mkdocs-material/) and dependencies for [CodeHilite](https://squidfunk.github.io/mkdocs-material/extensions/codehilite/)
 ```powershell
 pip install mkdocs-material
 pip install pygments # for source code syntax highlighting

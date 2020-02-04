@@ -30,3 +30,6 @@ pip install mkdocs-material
 It can be previewed by running `mkdocs serve`
 
 It's deployed [like this:](https://www.mkdocs.org/user-guide/deploying-your-docs/#organization-and-user-pages)
+```powershell
+ .\gh-deploy.ps1
+```
