@@ -31,7 +31,7 @@ scoop install nodejs
 
 [coreutils](https://github.com/ScoopInstaller/Main/blob/master/bucket/coreutils.json) is a multi-tool package - *"a collection of GNU utilities such as bash, make, gawk and grep based on [MSYS](http://www.mingw.org/wiki/msys)"*
 !!! Tip
-    you can to use the Unix tool `ls` after installing `coreutils` but you first need to remove the `PowerShell` alias already in place\
+    you can use the Unix tool `ls` after installing `coreutils` but you first need to remove the `PowerShell` alias already in place\
     *i.e. add this to your Powershell `$profile`:*
 ```powershell
 Remove-Alias -Name ls
@@ -72,9 +72,8 @@ Referencing the path to an application installed by Scoop
 !!! note
     Those installed with the `--global` (and with the `sudo` command) will reside in the path
 
-    ```
-    %ProgramData%/scoop/apps
-    ```
+    `%ProgramData%/scoop/apps`
+
 For each version of an application the files will be in a directory with the version number, but Scoop creates a *Shim* for the current version in the path `%UserProfile%\scoop\apps\{AppName}\current`.
 
 For example: the path to *Python* (`python.exe`) will be either:
@@ -86,7 +85,7 @@ or:
 %UserProfile%\scoop\apps\python\current\python.exe
 ```
 
-For system tools you'll probably want to user the `current` shim to avoid those tools breaking between updates.
+For system tools you'll probably want to use the `current` shim to avoid those tools breaking between updates.
 
 ### Specifying Application Versions
 
