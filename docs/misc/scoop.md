@@ -47,8 +47,8 @@ Then, I add additional [*Buckets*](https://github.com/lukesampson/scoop/wiki/Buc
 
 ```powershell
 scoop bucket add extras
-scoop bucket add main
 scoop bucket add versions
+scoop bucket add Sysinternals
 ```
 
 Then yet more handy tools I use:
