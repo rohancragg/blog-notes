@@ -26,11 +26,11 @@ I hope to answer the above questions.
 I knew I wanted to build a solution that would combine `cert-manager` and `external-dns` controllers in each Kubernetes cluster so that applications could be deployed without the Application Developers needing to manage either DNS records nor handling certificates or key pairs in deployment pipelines, thus also avoiding any risk of inadvertantly exposing secrets and certificates in source code repositories. My problem was that none of the documentation I could find brought all of these pieces together in a multi-environment solution. I could get pieces working in isolation but how to bring them all together?
 
 !!! info
-    The `external-dns` project
+    **The `external-dns` project** \
     This can be installed into a cluster and it watches deployments for any that require DNS records to be created or updated and it manages records in an associated Azure DNS Zone resource.
 
 !!! info
-    The `cert-manager`project
+    **The `cert-manager`project** \
     This is a native Kubernetes certificate management controller which ca be used to issue certificates automatically. It ensures 
 
 Initially I felt like I was going round in circles simply trying to get a 'multi-environment' design to occur to me by simply reading the documentation for AKS and for these other open-source components.
@@ -90,7 +90,7 @@ This model uses a single DNS Zone resource with an alias record for each Environ
 The only [Microsoft documentation](https://docs.microsoft.com/en-us/azure/aks/http-application-routing) I could find covering `externals-dns` only applies to a cluster where the HTTP application routing add-on has been enabled and given that this add-on is not recommended for production use I wanted to avoiding this add-on.
 
 !!! info
-    The HTTP application routing add-on automatically creates a DNS Zone for you and creates two controllers inside the cluster (an Ingress controller and External-DNS controller) and I wanted to understand how to deploy and manage these components properly without it happening 'auto-magically'!
+    **The HTTP application routing add-on** automatically creates a DNS Zone for you and creates two controllers inside the cluster (an Ingress controller and External-DNS controller) and I wanted to understand how to deploy and manage these components properly without it happening 'auto-magically'!
 
 Eventually I was able to piece together the elements of a solution for using `external-dns` in AKS from [this page](https://github.com/JasonvanBrackel/kubernetes-external-dns-in-rancher) (albeit not using Rancher in my case).
 
@@ -99,6 +99,14 @@ Again this provided a working demonstration of `external-dns` on it's own but no
 My problem is that with `external-dns` the DNS Zone resource represents the first *two parts* of my domain name. In this example, my Apex is `contosoapp.com` which has two parts, and `external-dns` controller would only manage *part three* by adding A-records such as `dev-app` and `staging-app`) but we'll be limited to three-part names.
 
 ## Hierarchy to the rescue!
+
+This image gave me an idea!:
+
+![Image](media/dns-zone-alias.png?raw=true)
+
+from: https://docs.microsoft.com/en-us/azure/dns/dns-domain-delegation
+
+Why not have a hierachy of DNS zone resources, where a parent one delegates to one or more child Zones so that in my multi-environment model, each DNS Zone would be an environemnt (`dev.contosoapps.com`, `staging.contosoapps.com`) and the parent is the production environment (`contosoapps.com`)
 
 !!! note
     In Progress
