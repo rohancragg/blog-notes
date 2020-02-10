@@ -114,7 +114,7 @@ I actually tried this out before I'd identified the area of the documentation th
 
 Once I'd got the idea of DNS zones referencing each other somehow, I went hunting for examples of what the Azure CLI commands for doing this might look like. Whilst searching for `az network dns zone` I came across a tiny snippet of code here: <https://jwendl.net/code-notes/azure/network/> which hinted at what I needed to do, so I went ahead and tried it.
 
-My set of commands to acheive this in Azure CLI \
+My set of commands to acheive this in Azure CLI <br>
 *this is in PowerShell rather then Bash incidentally*:
 
 ``` powershell
@@ -139,6 +139,16 @@ az network dns record-set ns add-record -g $dnsRgName -z $domainName --record-se
 az network dns record-set ns add-record -g $dnsRgName -z $domainName --record-set-name 'dev' --nsdname $ns3
 
 ```
+
+!!! info 
+    ** Delegating my custom domain **
+    As described in the documentation [Tutorial: Host your domain in Azure DNS](https://docs.microsoft.com/en-us/azure/dns/dns-delegate-domain-azure-dns#delegate-the-domain): \
+        *"In the registrar's DNS management page, edit the NS records and replace the NS records with the Azure DNS name servers."*
+
+In my case this was with https://123-reg.co.uk and looks like this:
+
+![Image](media/registrar-update-nameservers.png?raw=true)
+
 
 !!! note
     In Progress
