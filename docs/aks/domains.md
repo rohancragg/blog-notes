@@ -149,7 +149,10 @@ In my case this was with https://123-reg.co.uk and looks like this:
 
 ![Image](media/registrar-update-nameservers.png?raw=true)
 
+### A DNS Zone Per environment
+
+With this solution in place we should now be free to allow an instance of `external-dns` manage each DNS Zone resource separately.
 
 !!! note
     In Progress
-    The plan is to flesh this out a bit more as I keep trying things.
+    I've yet to actually try this last but - the plan is to flesh this article out step-by-step as I keep trying things!
