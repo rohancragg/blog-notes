@@ -107,3 +107,12 @@ Some of the steps in this article are based on [How to convert a PFX to a sepera
 I also referred to the [OpenSSL PKCS12 man pages](https://www.openssl.org/docs/manmaster/man1/openssl-pkcs12.html)
 
 And to [OpenSSL Essentials: Working with SSL Certificates, Private Keys and CSRs](https://www.digitalocean.com/community/tutorials/openssl-essentials-working-with-ssl-certificates-private-keys-and-csrs#convert-certificate-formats)
+
+## Updates
+
+While following an MS Learn module I found this article on using Azure Key Vault to do much of the above:
+[Manage certificates](https://docs.microsoft.com/en-gb/learn/modules/configure-and-manage-azure-key-vault/5-manage-certificates)
+
+> "...you can connect your Key Vault with a trusted certificate issuer (referred to as an integrated CA) and create the certificate directly in Azure Key Vault. You can then request to create a certificate and the Key Vault will interact directly with the CA to fulfill the request"
+
+Alternatively, you can also just use Key Vault to create self-signed certificates for testing, or to create an X.509 certificate signing request (CSR) to pass on to the certificate authority (CA) to process and then later request Key Vault to merge the resulting X.509 certificate with the key pair held in Key Vault.
