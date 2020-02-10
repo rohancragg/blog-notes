@@ -8,7 +8,7 @@ date: 2020-02-04
 
 # Clusters of Domains - designing domains and DNS for AKS
 
-While the [documentation on `Azure DNS`] (https://docs.microsoft.com/en-us/azure/dns/) (at the time of writing in early 2020)) covers the essentials of what you need to know I personally found it somewhat dry in that it assumed that you knew what you wanted to do with Zones and records and mostly explained how to do it, but not when or why.
+While the [documentation on `Azure DNS`](https://docs.microsoft.com/en-us/azure/dns/) (at the time of writing in early 2020)) covers the essentials of what you need to know I personally found it somewhat dry in that it assumed that you knew what you wanted to do with Zones and records and mostly explained how to do it, but not when or why.
 
 I was finding it initially difficult synthesise and apply the pieces of information and there was a lack of something to place it all into a real-world solution-design context.
 
@@ -104,10 +104,41 @@ This image gave me an idea!:
 
 ![Image](media/dns-zone-alias.png?raw=true)
 
-from: https://docs.microsoft.com/en-us/azure/dns/dns-domain-delegation
+from: <https://docs.microsoft.com/en-us/azure/dns/dns-domain-delegation>
 
-Why not have a hierachy of DNS zone resources, where a parent one delegates to one or more child Zones so that in my multi-environment model, each DNS Zone would be an environemnt (`dev.contosoapps.com`, `staging.contosoapps.com`) and the parent is the production environment (`contosoapps.com`)
+Why not have a hierachy of DNS zone resources?!
+
+In a hierarchy of DNS Zone resources a 'parent' one delegates to one or more 'child' DNS Zones. This would enable us to implement my multi-environment model whereby each DNS Zone would be an environment (`dev.contosoapps.com`, `staging.contosoapps.com`) and the parent is the production environment (`contosoapps.com`)
+
+I actually tried this out before I'd identified the area of the documentation that explains how to do it: [Delegate an Azure DNS subdomain](https://docs.microsoft.com/en-us/azure/dns/delegate-subdomain)
+
+Once I'd got the idea of DNS zones referencing each other somehow, I went hunting for examples of what the Azure CLI commands for doing this might look like. Whilst searching for `az network dns zone` I came across a tiny snippet of code here: <https://jwendl.net/code-notes/azure/network/> which hinted at what I needed to do, so I went ahead and tried it.
+
+My set of commands to acheive this in Azure CLI \
+*this is in PowerShell rather then Bash incidentally*:
+
+ ```powershell
+$dnsRgName='RG-DNS-Zones'
+$domainName='contosoapps.xyz'
+$dnsZoneId=$(az network dns zone create -g $dnsRgName -n $domainName --query id -o tsv)
+ 
+$domainNameSub='dev.contosoapps.xyz'
+$dnsZoneIdSub=$(az network dns zone create -g $dnsRgName -n $domainNameSub --query id -o tsv)
+ 
+# list name servers for dev (subdomain) zone
+$ns0=$(az network dns record-set ns show --resource-group $dnsRgName --zone-name $domainNameSub --name '@' --query "nsRecords[0]" -o tsv)
+$ns1=$(az network dns record-set ns show --resource-group $dnsRgName --zone-name $domainNameSub --name '@' --query "nsRecords[1]" -o tsv)
+$ns2=$(az network dns record-set ns show --resource-group $dnsRgName --zone-name $domainNameSub --name '@' --query "nsRecords[2]" -o tsv)
+$ns3=$(az network dns record-set ns show --resource-group $dnsRgName --zone-name $domainNameSub --name '@' --query "nsRecords[3]" -o tsv)
+ 
+# add subdomain NS records to apex zone
+az network dns record-set ns create -g $dnsRgName -z $domainName -n 'dev'
+az network dns record-set ns add-record -g $dnsRgName -z $domainName --record-set-name 'dev' --nsdname $ns0
+az network dns record-set ns add-record -g $dnsRgName -z $domainName --record-set-name 'dev' --nsdname $ns1
+az network dns record-set ns add-record -g $dnsRgName -z $domainName --record-set-name 'dev' --nsdname $ns2
+az network dns record-set ns add-record -g $dnsRgName -z $domainName --record-set-name 'dev' --nsdname $ns3
+````
 
 !!! note
     In Progress
-    The plan is to flesh this out a bit more as I keep trying things, but a wee spoiler is that it's basically inspired by a tiny snippet of code I found here: https://jwendl.net/code-notes/azure/network/
+    The plan is to flesh this out a bit more as I keep trying things.
