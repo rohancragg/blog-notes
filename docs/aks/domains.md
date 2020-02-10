@@ -117,7 +117,7 @@ Once I'd got the idea of DNS zones referencing each other somehow, I went huntin
 My set of commands to acheive this in Azure CLI \
 *this is in PowerShell rather then Bash incidentally*:
 
- ```powershell
+``` powershell
 $dnsRgName='RG-DNS-Zones'
 $domainName='contosoapps.xyz'
 $dnsZoneId=$(az network dns zone create -g $dnsRgName -n $domainName --query id -o tsv)
@@ -137,7 +137,8 @@ az network dns record-set ns add-record -g $dnsRgName -z $domainName --record-se
 az network dns record-set ns add-record -g $dnsRgName -z $domainName --record-set-name 'dev' --nsdname $ns1
 az network dns record-set ns add-record -g $dnsRgName -z $domainName --record-set-name 'dev' --nsdname $ns2
 az network dns record-set ns add-record -g $dnsRgName -z $domainName --record-set-name 'dev' --nsdname $ns3
-````
+
+```
 
 !!! note
     In Progress
