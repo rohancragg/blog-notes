@@ -2,9 +2,13 @@
 
 ## rohancragg's Personal Tech Docs
 
-This repository contains hopelessly hopeful drafts of blog articles and other bobbins and gubbins I want to make sure I don't forget.
+Any time I work on something that I feel I’ve had to hunt around for information on and that I’ve not really found something that fits what I was looking for I tend to want to write up what I’ve found and put it out there for someone to find – if only because it’s more than likely me that’ll come back later and find it!
 
-One day I'll maybe even host these at <https://www.rohancragg.co.uk> - stranger things have happened ;-)
+To this end I’ve finally got a content publishing tool I like working with and have been trying to put out some stuff out there.
+
+You're welcome to browse around and you'll find hopelessly hopeful drafts of articles and other bobbins and gubbins I want to make sure I don't forget. I'll keep trying to organise them into a structure that makes sense...
+
+![Business Cat](https://media.giphy.com/media/26hiu3mZVquuykwhy/giphy.gif)
 
 ---
 
