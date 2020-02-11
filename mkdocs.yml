@@ -46,6 +46,11 @@ markdown_extensions:
       guess_lang: false
   - toc:
       permalink: true
+
+plugins:
+  - search
+  - git-revision-date
+
 theme:
   name: material
   language: 'en'
