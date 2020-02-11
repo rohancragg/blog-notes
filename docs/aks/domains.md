@@ -8,30 +8,40 @@ date: 2020-02-04
 
 # Clusters of Domains - designing domains and DNS for AKS
 
-While the [documentation on `Azure DNS`](https://docs.microsoft.com/en-us/azure/dns/) (at the time of writing in early 2020)) covers the essentials of what you need to know I personally found it somewhat dry in that it assumed that you knew what you wanted to do with Zones and records and mostly explained how to do it, but not when or why.
+While the [documentation on Azure DNS](https://docs.microsoft.com/en-us/azure/dns/) (at the time of writing in early 2020)) covers the essentials of what you need to know I personally found it somewhat dry in that it assumed that you knew what you wanted to do with Zones and records and mostly explained how to do create and configure each component piece without providing much context about when and where you need them and how you combine them into a  solution to meet requirements.
 
-I was finding it initially difficult synthesise and apply the pieces of information and there was a lack of something to place it all into a real-world solution-design context.
+I was finding it initially difficult to synthesise and apply the pieces of information and there was a lack of something to place it all into a real-world solution-design context.
 
 For example, how should I expose a suite of web applications or microservices and their APIs to the public internet whilst supporting a 'route to live' set of environments into which to deploy these artefacts so that they can be tested while they are under development.
 
-In other words how can I efficiently use domain names to support Development, Testing, and Staging Environments? Do I need a separate domain name for each Environment? Do I need to have a separate Kubernetes cluster for each or can I combine domain names and one or more clusters in any combination?
+In other words: 
 
-I hope to answer the above questions.
+> *How can I efficiently use domain names to support Development, Testing, Staging, and Production Environments?*
+
+> *Should I use a separate domain name for each Environment?*
+
+> *Do I need to have a separate Kubernetes cluster for each or can I combine custom domain names with one or more clusters in any combination?*
+
+I'll share what I've found so far and hope to answer the above questions.
 
 !!! note
-    While my original design conundrum arose in how to use a domain name with one or more AKS clusters, this article will contain information relavant to using domain names with Azure Resources generally
+    While my original design conundrum arose in how to use a custom domain name with one or more AKS clusters, this article will contain information relavant to using domain names with Azure Resources generally
 
 ## If at first you don't succeed - Play!
 
-I knew I wanted to build a solution that would combine `cert-manager` and `external-dns` controllers in each Kubernetes cluster so that applications could be deployed without the Application Developers needing to manage either DNS records nor handling certificates or key pairs in deployment pipelines, thus also avoiding any risk of inadvertantly exposing secrets and certificates in source code repositories. My problem was that none of the documentation I could find brought all of these pieces together in a multi-environment solution. I could get pieces working in isolation but how to bring them all together?
+I knew I wanted to build a solution that would combine `cert-manager` and `external-dns` controllers in each Kubernetes cluster so that applications could be deployed without the Application Developers needing to manage either DNS records nor handling certificates or key pairs in deployment pipelines, thus also avoiding any risk of inadvertantly exposing secrets and certificates in source code repositories. 
+
+My problem was that none of the documentation I could find brought all of these pieces together in a multi-environment solution. I could get pieces working in isolation but how to bring them all together?
 
 !!! info
-    **The `external-dns` project** \
+    **The `external-dns` project**
+
     This can be installed into a cluster and it watches deployments for any that require DNS records to be created or updated and it manages records in an associated Azure DNS Zone resource.
 
 !!! info
-    **The `cert-manager`project** \
-    This is a native Kubernetes certificate management controller which ca be used to issue certificates automatically. It ensures 
+    **The `cert-manager`project** 
+
+    This is a native Kubernetes certificate management controller which can be used to issue certificates automatically. It ensures 
 
 Initially I felt like I was going round in circles simply trying to get a 'multi-environment' design to occur to me by simply reading the documentation for AKS and for these other open-source components.
 
@@ -43,7 +53,9 @@ Since I didn't have a custom domain name I could use I attempted to use the Azur
 
 !!! info
     The documentation states it best:
-    *"You can specify a DNS domain name label for a public IP resource, which creates a mapping for domainnamelabel.location.cloudapp.azure.com to the public IP address in the Azure-managed DNS servers"* \
+
+    *"You can specify a DNS domain name label for a public IP resource, which creates a mapping for domainnamelabel.location.cloudapp.azure.com to the public IP address in the Azure-managed DNS servers"*
+    
     from: [IP address types and allocation methods in Azure > DNS hostname resolution](https://docs.microsoft.com/en-us/azure/virtual-network/virtual-network-ip-addresses-overview-arm)
 
 So, in my case, given that adding a name label of `contosoapps` to my PIP the FQDN is therefore `contosoapps.westeurope.cloudapp.azure.com`.
@@ -145,7 +157,7 @@ az network dns record-set ns add-record -g $dnsRgName -z $domainName --record-se
     As described in the documentation [Tutorial: Host your domain in Azure DNS](https://docs.microsoft.com/en-us/azure/dns/dns-delegate-domain-azure-dns#delegate-the-domain): \
         *"In the registrar's DNS management page, edit the NS records and replace the NS records with the Azure DNS name servers."*
 
-In my case this was with https://123-reg.co.uk and looks like this:
+In my case this was with <https://123-reg.co.uk> and looks like this:
 
 ![Image](media/registrar-update-nameservers.png?raw=true)
 
