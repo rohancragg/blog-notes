@@ -10,21 +10,21 @@ Bash and PowerShell have some aspects of syntax in common (e.g. when referencing
 
 But there are some other things that differ (e.g. when assigning a variable like this):
 
-```powershell tab="PowerShell"
+``` powershell tab="PowerShell"
 $myVariable='some text'
 ```
 
-```bash tab="Bash"
-$myVariable='some text'
+``` bash tab="Bash"
+myVariable='some text'
 ```
 
 ... or when setting an environment variable like this:
 
-```powershell tab="PowerShell"
+``` PowerShell tab="PowerShell"
 SET MY_ENV='some text'
 ```
 
-```bash tab="Bash"
+``` bash tab="Bash"
 export MY_ENV='some text'
 ```
 
