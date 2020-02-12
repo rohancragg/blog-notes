@@ -8,6 +8,7 @@ Thumbs.db
 .vs/*
 log/
 obj/
+.ionide/
 
 # APEX and OPS Files
 .migrationtemp
