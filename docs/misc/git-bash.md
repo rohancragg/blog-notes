@@ -36,19 +36,18 @@ export MY_ENV='some text'
 
 ### Coolness pt.1 - Configuring Auto-Complete 
 
+First off, I need a .bashrc file, so I needed to make one as it didn't exist on my machine:
+
 ```bash
 touch ~/.bashrc
-
 ```
 
-#### Git
+!!! info
+    ** What is .bashrc? **
+    According to ,https://www.maketecheasier.com/what-is-bashrc/>
+    *In order to load your preferences, bash runs the contents of the bashrc file at each launch. This shell script is found in each user’s home directory. It’s used to save and load your terminal preferences and environmental variables.*
 
-!!! info 
-    ** What is Git? **
-    
-    Git is a free and open source distributed version control system designed to handle everything from small to very large projects with speed and efficiency.
-    
-    A version-control system is a tool for tracking changes in source code during software development. It is designed for coordinating work among a group of programmers, but it can be used to track changes in any set of files.
+#### Git
 
 Here's how to get auto-complete for `git` commands in Git Bash on Windows.
 
@@ -63,15 +62,16 @@ If using PowerShell (as I often do) then the [`posh-git`](https://github.com/dah
 scoop install posh-git
 ```
 
+!!! info 
+    ** What is Git? **
+    
+    Git is a free and open source distributed version control system designed to handle everything from small to very large projects with speed and efficiency.
+    
+    A version-control system is a tool for tracking changes in source code during software development. It is designed for coordinating work among a group of programmers, but it can be used to track changes in any set of files.
+
 #### kubectl CLI
 
-!!! info 
-    ** What is Kubectl? **
-    
-    Kubectl is a command line tool for controlling Kubernetes clusters.
-
-The kubectl completion script for Bash can be generated with the command `kubectl completion bash`.
-[from here:](https://kubernetes.io/docs/tasks/tools/install-kubectl/#optional-kubectl-configurations)
+The kubectl completion script for Bash can be generated with the command `kubectl completion bash` [more details here](https://kubernetes.io/docs/tasks/tools/install-kubectl/#optional-kubectl-configurations)
 
 Here's how to get auto-complete for `kubectl` commands in Git Bash on Windows.
 
@@ -79,6 +79,12 @@ Here's how to get auto-complete for `kubectl` commands in Git Bash on Windows.
 kubectl completion bash > ~/bash_completion.d/kubectl
 echo "source ~/bash_completion.d/kubectl" >> ~/.bashrc
 ```
+
+!!! info 
+    ** What is Kubectl? **
+    
+    Kubectl is a command line tool for controlling Kubernetes clusters.
+
 
 ### Coolness pt.2 - Using Git Bash as an Integrated Shell in VSCode
 
