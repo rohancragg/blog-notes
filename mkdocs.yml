@@ -10,6 +10,7 @@ nav:
   - About Me: about.md
   - Tools & Techniques:
     - Scoop & Co: misc\scoop.md
+    - Bash Shell on Windows: misc\git-bash.md
     - Miscellanous Notes: misc\misc.md
   - Kubernetes:
     - Clusters and Domains: aks\domains.md
