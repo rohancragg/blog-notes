@@ -44,7 +44,7 @@ export MY_ENV='some text'
 
 ## Cool option - Git Bash
 
-I already had a nice auto-complete experience with `posh-git` in PowerShell so I want the eperience to be just as good in Git Bash, and the auto-complete for Kubectl is one of my reasons for using Git Bash at all so configuring auto-complete is my first step!
+I already had a nice auto-complete experience with `posh-git` in PowerShell so I want the experience to be just as good in Git Bash, and the auto-complete for Kubectl is one of my reasons for using Git Bash at all so configuring auto-complete is my first step!
 
 ### Coolness pt.1 - Configuring Auto-Complete 
 
