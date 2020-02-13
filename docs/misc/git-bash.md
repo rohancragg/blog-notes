@@ -8,11 +8,11 @@ Even though I have Git for Windows (i.e. [`scoop install git`](scoop.md)) and th
 
 ![Posh-Git](https://github.com/dahlbyk/posh-git/wiki/images/PromptDefaultLong.png)
 
-So make no mistake, I'm not advocating using Git Bash all the time. This aricle is about how to get a smooth experience for those times when I do find myself working in the Git Bash shell, as I'll explain below.
+So make no mistake, I'm not advocating using Git Bash all the time. This article is about how to get a smooth experience for those times when I do find myself working in the Git Bash shell, as I'll explain below.
 
 I often find code snippets for automating things in my world (mostly Azure Cloud admin and development) tend to assume that I'm using a Linux shell of some sort and so the commands and scripts are in Bash.
 
-Specifically, I do lots of things with tools such as [Azure CLI](https://docs.microsoft.com/en-us/cli/azure/?view=azure-cli-latest) and Kubectl (the CLI for Kubernetes) and the examples for these technologies often default to giving examples or scripts in Bash shell syntax. While these are usually pretty simple to transpose into something that could exectue in PowerShell (see below) it's still annoying not to be able to copy and paste and execute the commands there and then, or add them to a script file for future use without first translating them to PowerShell.
+Specifically, I do lots of things with tools such as [Azure CLI](https://docs.microsoft.com/en-us/cli/azure/?view=azure-cli-latest) and Kubectl (the CLI for Kubernetes) and the examples for these technologies often default to giving examples or scripts in Bash shell syntax. While these are usually pretty simple to transpose into something that could execute in PowerShell (see below) it's still annoying not to be able to copy-and-paste and execute the commands there and then; or add them to a script file for future use without first translating them to PowerShell.
 
 ## Boring option - Transposing between Bash and PowerShell
 
