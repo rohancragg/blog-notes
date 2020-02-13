@@ -2,7 +2,7 @@
 
 I'm primarily a **Windows 10** user and I primarily use **PowerShell** as my day-to-day command shell (*[Powershell Core](https://github.com/powershell/powershell) 6.2.4 at time of writing*). When I'm reading or editing code or scripts I primarily use [**Visual Studio Code,**](https://code.visualstudio.com/) so I often use the integrated terminal there, and so my daily default is PowerShell Core there too. For work unrelated to code or for more serious admin work I also tend to have a [Windows Terminal](https://github.com/microsoft/terminal) open all day too.
 
-![Visual Studio Code logo](media/vscode-logo.png) or ![Windows Terminal](media/windows-terminal.png)
+I :fa-heart: ![Visual Studio Code logo](media/vscode-logo.png) and I :fa-heart: ![Windows Terminal](media/windows-terminal.png) 
 
 Even though I have Git for Windows (i.e. [`scoop install git`](scoop.md)) and therefore Git Bash is ready and waiting as the most obvious tool for using Git, I **don't** generally use Git Bash. I much prefer doing all my Git version control work in PowerShell with the very capable assistance of the [`posh-git` Module](https://github.com/dahlbyk/posh-git).
 
@@ -63,7 +63,7 @@ touch ~/.bashrc
 
 #### Git
 
-Here's how to get auto-complete for `git` commands in Git Bash on Windows.
+Here's how to get auto-complete for :fa-git: commands in Git Bash on Windows.
 
 ```bash
 mkdir ~/bash_completion.d   
@@ -79,7 +79,7 @@ scoop install posh-git
 !!! info 
     **What is Git?**
     
-    Git is a free and open source distributed version control system designed to handle everything from small to very large projects with speed and efficiency.
+    :fa-git: is a free and open source distributed version control system designed to handle everything from small to very large projects with speed and efficiency.
     
     A version-control system is a tool for tracking changes in source code during software development. It is designed for coordinating work among a group of programmers, but it can be used to track changes in any set of files.
 
