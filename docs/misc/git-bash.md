@@ -1,8 +1,18 @@
 # Bash Shell on Windows
 
+I'm primarily a **Windows 10** user and I primarily use **PowerShell** as my day-to-day command shell (*[Powershell Core](https://github.com/powershell/powershell) 6.2.4 at time of writing*). When I'm reading or editing code or scripts I primarily use [**Visual Studio Code,**](https://code.visualstudio.com/) so I often use the integrated terminal there, and so my daily default is PowerShell Core there too. For work unrelated to code or for more serious admin work I also tend to have a [Windows Terminal](https://github.com/microsoft/terminal) open all day too.
+
+![Visual Studio Code logo](media/vscode-logo.png) or ![Windows Terminal](media/windows-terminal.png)
+
+Even though I have Git for Windows (i.e. [`scoop install git`](scoop.md)) and therefore Git Bash is ready and waiting as the most obvious tool for using Git, I **don't** generally use Git Bash. I much prefer doing all my Git version control work in PowerShell with the very capable assistance of the [`posh-git` Module](https://github.com/dahlbyk/posh-git).
+
+![Posh-Git](https://github.com/dahlbyk/posh-git/wiki/images/PromptDefaultLong.png)
+
+So make no mistake, I'm not advocating using Git Bash all the time. This aricle is about how to get a smooth experience for those times when I do find myself working in the Git Bash shell, as I'll explain below.
+
 I often find code snippets for automating things in my world (mostly Azure Cloud admin and development) tend to assume that I'm using a Linux shell of some sort and so the commands and scripts are in Bash.
 
-Specifically, I do lots of things with tools such as [Azure CLI](https://docs.microsoft.com/en-us/cli/azure/?view=azure-cli-latest) and the examples often default to Bash syntax. While these are usually pretty simple to transpose into something that could exectue in PowerShell (see below) it's still annoying not to be able to copy and paste and execute the commands there and then, or add them to a script file for future use without first translating them to PowerShell.
+Specifically, I do lots of things with tools such as [Azure CLI](https://docs.microsoft.com/en-us/cli/azure/?view=azure-cli-latest) and Kubectl (the CLI for Kubernetes) and the examples for these technologies often default to giving examples or scripts in Bash shell syntax. While these are usually pretty simple to transpose into something that could exectue in PowerShell (see below) it's still annoying not to be able to copy and paste and execute the commands there and then, or add them to a script file for future use without first translating them to PowerShell.
 
 ## Boring option - Transposing between Bash and PowerShell
 
@@ -32,19 +42,23 @@ export MY_ENV='some text'
     **Shell Trivia**
     SH is Bourne Shell and so Bash is Born-again Bourne Shell
 
-## Cool option - Git Bash 
+## Cool option - Git Bash
+
+I already had a nice auto-complete experience with `posh-git` in PowerShell so I want the eperience to be just as good in Git Bash, and the auto-complete for Kubectl is one of my reasons for using Git Bash at all so configuring auto-complete is my first step!
 
 ### Coolness pt.1 - Configuring Auto-Complete 
 
-First off, I need a .bashrc file, so I needed to make one as it didn't exist on my machine:
+First off, I need a `.bashrc` file, so I needed to make one as it didn't exist on my machine:
 
 ```bash
 touch ~/.bashrc
 ```
 
 !!! info
-    ** What is .bashrc? **
-    According to ,https://www.maketecheasier.com/what-is-bashrc/>
+    **What is `.bashrc`?**
+
+    According to <https://www.maketecheasier.com/what-is-bashrc/>
+    
     *In order to load your preferences, bash runs the contents of the bashrc file at each launch. This shell script is found in each user’s home directory. It’s used to save and load your terminal preferences and environmental variables.*
 
 #### Git
@@ -63,7 +77,7 @@ scoop install posh-git
 ```
 
 !!! info 
-    ** What is Git? **
+    **What is Git?**
     
     Git is a free and open source distributed version control system designed to handle everything from small to very large projects with speed and efficiency.
     
@@ -81,7 +95,7 @@ echo "source ~/bash_completion.d/kubectl" >> ~/.bashrc
 ```
 
 !!! info 
-    ** What is Kubectl? **
+    **What is Kubectl?**
     
     Kubectl is a command line tool for controlling Kubernetes clusters.
 
@@ -99,12 +113,15 @@ Whilst there are times when I'll use WSL too, there are times when I want to be 
 >
 > from: [Integrated Terminal](https://code.visualstudio.com/docs/editor/integrated-terminal)
 
-As [this StackOverflow answer](https://stackoverflow.com/a/40489824/5351) explains you can change the default integrated Terminal by updating the setting `terminal.integrated.shell.windows`.
+As [this StackOverflow answer](https://stackoverflow.com/a/40489824/5351) explains you can change the default integrated terminal by updating the setting `terminal.integrated.shell.windows`.
 
-I set mine to `C:/Program Files/Git/bin/bash.exe`
+For now, I set mine to `C:/Program Files/Git/bin/bash.exe`.
+
+!!! note
+    I probably won't keep this as a permanent change to my default integrated terminal, I've also been using the [Shell Launcher extension](https://marketplace.visualstudio.com/items?itemName=Tyriar.shell-launcher) to open up the v arious shells that I tend to use in VSCode)
 
 Now I can use `Ctrl-Shift-'` ( i.e. the default Key Binding to `workbennch.action.terminal.new` ) to open a new integrated terminal which will be running Git Bash and to which I can send commands from text editor windows, like this:
 
 ![Image](media/git-bash-vscode.png?raw=true)
 
-I also added a Terminal [Key Binding](https://code.visualstudio.com/docs/getstarted/keybindings) for the F8 key to be bound to  `workbench.action.terminal.runSelectedText` so that whilst editing a shell (`.sh`) file in the editor, I could easily send the selected commands to my active terminal in VSCode.
+I also added a Terminal [Key Binding](https://code.visualstudio.com/docs/getstarted/keybindings) for the F8 key to be bound to  `workbench.action.terminal.runSelectedText` so that whilst editing a shell (`.sh`) file in the editor, I can easily send the selected commands to my active terminal in VSCode.
