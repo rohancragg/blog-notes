@@ -19,7 +19,7 @@ Get [scoop.sh](https://scoop.sh/) and check out the [wiki](https://github.com/lu
 
 *from: <https://github.com/lukesampson/scoop/wiki/Chocolatey-Comparison>*
 
-### Install `Scoop` and base set of tools
+### Install `scoop` and base set of tools
 ```powershell
 Invoke-Expression (New-Object System.Net.WebClient).DownloadString('https://get.scoop.sh')
 scoop install sudo
@@ -30,9 +30,11 @@ scoop install nodejs
 ```
 
 [coreutils](https://github.com/ScoopInstaller/Main/blob/master/bucket/coreutils.json) is a multi-tool package - *"a collection of GNU utilities such as bash, make, gawk and grep based on [MSYS](http://www.mingw.org/wiki/msys)"*
+
 !!! Tip
     you can use the Unix tool `ls` after installing `coreutils` but you first need to remove the `PowerShell` alias already in place\
     *i.e. add this to your Powershell `$profile`:*
+
 ```powershell
 Remove-Alias -Name ls
 Remove-Alias -Name cat
@@ -53,7 +55,7 @@ scoop bucket add Sysinternals
 
 Then yet more handy tools I use:
 ```powershell
-scoop install azure-cli dotnet-sdk go hugo helm pwsh
+scoop install azure-cli dotnet-sdk pwsh go kubectl helm
 # from extras bucket:
 scoop install vcredist2019 linqpad notepadplusplus paint.net windows-terminal
 ```
@@ -93,9 +95,18 @@ The `versions` bucket contains a way to obtain versions other than the latest ve
 
 For example: [Switching-Ruby-And-Python-Versions](https://github.com/lukesampson/scoop/wiki/Switching-Ruby-And-Python-Versions)
 
+### Updating Applications
+
+`scoop status` is used to display any available updates:
+
+![scoop update](media/scoop-update.png)
+
+...and then `scoop update` is used to update one or more applications (in a single command if you like!).
+
+![scoop update](media/scoop-update2.png)
 
 ## Common Pre-Requisites
-The following is a set of common pre-requisites for installing tools and utilitied (e.g. the `pip` package manager for python tools):
+The following is a set of common pre-requisites for installing tools and utilities (e.g. the `pip` package manager for python tools):
 
 ### `Python` and `PIP`
 ```powershell
