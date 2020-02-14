@@ -2,7 +2,7 @@
 
 I'm primarily a **Windows 10** user and I primarily use **PowerShell** as my day-to-day command shell (*[Powershell Core](https://github.com/powershell/powershell) 6.2.4 at time of writing*). When I'm reading or editing code or scripts I primarily use [**Visual Studio Code,**](https://code.visualstudio.com/) so I often use the integrated terminal there, and so my daily default is PowerShell Core there too. For work unrelated to code or for more serious admin work I also tend to have a [Windows Terminal](https://github.com/microsoft/terminal) open all day too.
 
-I :fa-heart: ![Visual Studio Code logo](media/vscode-logo.png) and I :fa-heart: ![Windows Terminal](media/windows-terminal.png) 
+:fa-heart: ![Visual Studio Code logo](media/vscode-logo.png) :fa-heart: ![Windows Terminal](media/windows-terminal.png) :fa-heart:
 
 Even though I have Git for Windows (i.e. [`scoop install git`](scoop.md)) and therefore Git Bash is ready and waiting as the most obvious tool for using Git, I **don't** generally use Git Bash. I much prefer doing all my Git version control work in PowerShell with the very capable assistance of the [`posh-git` Module](https://github.com/dahlbyk/posh-git).
 
@@ -99,6 +99,23 @@ echo "source ~/bash_completion.d/kubectl" >> ~/.bashrc
     
     Kubectl is a command line tool for controlling Kubernetes clusters.
 
+#### Docker
+
+There also Bash completion files [for Docker client](https://github.com/docker/cli/tree/master/contrib/completion/bash), [for Docker CLI](https://docs.docker.com/machine/completion/) and [for Docker Compose](https://docs.docker.com/compose/completion/)
+
+```bash
+# Docker CLI:
+curl -o ~/bash_completion.d/docker https://raw.githubusercontent.com/docker/cli/master/contrib/completion/bash/docker
+echo "source ~/bash_completion.d/docker" >> ~/.bashrc
+
+# Docker Machine
+curl -o ~/bash_completion.d/docker-machine https://raw.githubusercontent.com/docker/machine/v0.16.0/contrib/completion/bash/docker-machine.bash
+echo "source ~/bash_completion.d/docker-machine" >> ~/.bashrc
+
+# Docker Compose:
+curl -o ~/bash_completion.d/docker-compose https://raw.githubusercontent.com/docker/compose/1.25.3/contrib/completion/bash/docker-compose
+echo "source ~/bash_completion.d/docker-compose" >> ~/.bashrc
+```
 
 ### Coolness pt.2 - Using Git Bash as an Integrated Shell in VSCode
 
@@ -125,3 +142,22 @@ Now I can use `Ctrl-Shift-'` ( i.e. the default Key Binding to `workbennch.actio
 ![Image](media/git-bash-vscode.png?raw=true)
 
 I also added a Terminal [Key Binding](https://code.visualstudio.com/docs/getstarted/keybindings) for the F8 key to be bound to  `workbench.action.terminal.runSelectedText` so that whilst editing a shell (`.sh`) file in the editor, I can easily send the selected commands to my active terminal in VSCode.
+
+## -> TLDR; so what?!
+
+I already mentioned that I wouldn't normally use this as my preferred shell for Git. I'll only use it for Git when I happen to be in the Git Bash shell for some other reason; so what are those reasons?.
+
+I mentioned that I find this useful for **Kubernetes** admin work (i.e. **kubectl**). But it's also more natural than PowerShell for working with the **Docker** client.
+
+For example, if I want to copy and paste code samples for working with Docker such as the ones in the [Dockerfile Best Practices page](https://docs.docker.com/develop/develop-images/dockerfile_best-practices/). I'm not aware of a way to transpose the following command stright into PowerShell terminal:
+
+``` bash
+docker build -<<EOF
+FROM busybox
+RUN echo "hello world"
+EOF
+```
+
+...but I can do it in Git Bash no problem at all!:
+
+![docker build](media/docker-build.png)
