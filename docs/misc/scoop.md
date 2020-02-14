@@ -26,7 +26,6 @@ scoop install sudo
 sudo scoop install 7zip git --global
 scoop install curl grep sed less touch nano
 scoop install coreutils
-scoop install nodejs 
 ```
 
 [coreutils](https://github.com/ScoopInstaller/Main/blob/master/bucket/coreutils.json) is a multi-tool package - *"a collection of GNU utilities such as bash, make, gawk and grep based on [MSYS](http://www.mingw.org/wiki/msys)"*
@@ -55,9 +54,11 @@ scoop bucket add Sysinternals
 
 Then yet more handy tools I use:
 ```powershell
-scoop install azure-cli dotnet-sdk pwsh go kubectl helm
+scoop install pwsh go docker kubectl helm make
+scoop install azure-cli dotnet-sdk pulumi
+scoop install nodejs 
 # from extras bucket:
-scoop install vcredist2019 linqpad notepadplusplus paint.net windows-terminal
+scoop install vcredist2019 linqpad notepadplusplus paint.net windows-terminal postman
 ```
 
 !!! info
@@ -110,7 +111,7 @@ The following is a set of common pre-requisites for installing tools and utiliti
 
 ### `Python` and `PIP`
 ```powershell
-scoop install python
+scoop install python miniconda3
 scoop install curl
 curl https://bootstrap.pypa.io/get-pip.py -o get-pip.py
 python get-pip.py
