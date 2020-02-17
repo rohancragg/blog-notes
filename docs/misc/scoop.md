@@ -148,10 +148,15 @@ pip install pygments # for source code syntax highlighting
 
 This a version of [asciinema](https://asciinema.org/) for recording and re-playing PowerShell terminal sessions. Once recorded you upload the recording and share it with the world!
 
-??? "What is `asiinema` and how do I get it?!"
+??? "What is `asciinema` and how do I get it?!"
     If you've never used asciinema before and you want to share a demo of something at a terminal then you'll love this tool. 
 
-    Simply go to <https://asciinema.org/> click on **Log in / Sign up** | Enter an email address | Click on the linhk in the confirmation email | choose a username
+    - Simply go to <https://asciinema.org/>
+    - click on **Log in / Sign up**
+    - Enter an email address
+    - Click on the link in the confirmation email
+    - Choose a username
+    - Stay logged into that browser on that machine and you can then `PowerSession auth` to create a link between the terminal and your asciinema account
 
     Apparently tt's based on Windows Pseudo Console (ConPTY).
 
