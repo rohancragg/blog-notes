@@ -39,6 +39,7 @@ extra:
       link: 'https://fb.com/rohancragg'
     - type: 'instagram'
       link: 'https://www.instagram.com/rohancragg/'
+  disqus: 'rohancragg'
 
 # Extensions
 markdown_extensions:
