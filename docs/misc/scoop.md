@@ -143,3 +143,36 @@ Using [Material theme](https://squidfunk.github.io/mkdocs-material/) and depende
 pip install mkdocs-material
 pip install pygments # for source code syntax highlighting
 ```
+
+### PowerSession
+
+This a version of [asciinema](https://asciinema.org/) for recording and re-playing PowerShell terminal sessions. Once recorded you upload the recording and share it with the world!
+
+??? "What is `asiinema` and how do I get it?!"
+    If you've never used asciinema before and you want to share a demo of something at a terminal then you'll love this tool. 
+
+    Simply go to <https://asciinema.org/> click on **Log in / Sign up** | Enter an email address | Click on the linhk in the confirmation email | choose a username
+
+    Apparently tt's based on Windows Pseudo Console (ConPTY).
+
+``` powershell
+# Installation
+scoop install PowerSession
+
+# Usage: Log in on the machine where you want to make a recording
+Powersession auth
+# ... copy the URL you're given and paste it into your browser as instructed
+
+# Record a Terminal session (it will open a new session for you)
+PowerSession rec a.txt
+
+# Play back the recording to check that it's OK to upload
+PowerSession play a.txt
+
+# If it's ok then
+PowerSession upload a.txt
+```
+
+An example of an uploaded recording looks like this!
+
+<script id="asciicast-302157" src="https://asciinema.org/a/302157.js" async></script>
