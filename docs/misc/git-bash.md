@@ -38,8 +38,7 @@ SET MY_ENV='some text'
 export MY_ENV='some text'
 ```
 
-!!! info
-    **Shell Trivia**
+??? info "Shell Trivia"
     SH is Bourne Shell and so Bash is Born-again Bourne Shell
 
 ## Cool option - Git Bash
@@ -54,9 +53,7 @@ First off, I need a `.bashrc` file, so I needed to make one as it didn't exist o
 touch ~/.bashrc
 ```
 
-!!! info
-    **What is `.bashrc`?**
-
+??? info "What is `.bashrc`?"
     According to <https://www.maketecheasier.com/what-is-bashrc/>
     
     *In order to load your preferences, bash runs the contents of the bashrc file at each launch. This shell script is found in each user’s home directory. It’s used to save and load your terminal preferences and environmental variables.*
@@ -76,9 +73,7 @@ If using PowerShell (as I often do) then the [`posh-git`](https://github.com/dah
 scoop install posh-git
 ```
 
-!!! info 
-    **What is Git?**
-    
+??? info "What is Git?"
     :fa-git: is a free and open source distributed version control system designed to handle everything from small to very large projects with speed and efficiency.
     
     A version-control system is a tool for tracking changes in source code during software development. It is designed for coordinating work among a group of programmers, but it can be used to track changes in any set of files.
@@ -94,10 +89,10 @@ kubectl completion bash > ~/bash_completion.d/kubectl
 echo "source ~/bash_completion.d/kubectl" >> ~/.bashrc
 ```
 
-!!! info 
-    **What is Kubectl?**
-    
-    Kubectl is a command line tool for controlling Kubernetes clusters.
+??? info "What is Kubectl?"
+    [Kubectl](https://kubernetes.io/docs/reference/kubectl/overview/) is a command line tool for controlling Kubernetes clusters.
+
+    For Azure Kubernetes Service (AKS) users, the [Kubectl CLI tool can be installed using the Azure CLI](https://docs.microsoft.com/en-us/cli/azure/aks?view=azure-cli-latest#az-aks-install-cli) using the command `az aks install-cli`
 
 #### Docker
 
@@ -123,8 +118,8 @@ Git Bash is a 'Linux-like' shell experience without going 'all the way' and drop
 
 Whilst there are times when I'll use WSL too, there are times when I want to be working 'in Windows' but using a more Bash-like experience. This is where Git Bash come to the rescue.
 
-!!! note
-    Git Bash is installed for you when you install Git for Windows, so if you're already using Git then you've kinda got this for free anyway.
+??? tip "Getting Git Bash"
+    Git Bash is installed for you when you install Git for Windows, so if you're already using Git then you've kinda got this for free anyway. To get it use [Scoop](scoop.md) by running this command: `[scoop](scoop.md) install git`
 
 > *In Visual Studio Code, you can open an integrated terminal, initially starting at the root of your workspace. This can be convenient as you don't have to switch windows or alter the state of an existing terminal to perform a quick command-line task.*
 >
@@ -135,7 +130,7 @@ As [this StackOverflow answer](https://stackoverflow.com/a/40489824/5351) explai
 For now, I set mine to `C:/Program Files/Git/bin/bash.exe`.
 
 !!! note
-    I probably won't keep this as a permanent change to my default integrated terminal, I've also been using the [Shell Launcher extension](https://marketplace.visualstudio.com/items?itemName=Tyriar.shell-launcher) to open up the v arious shells that I tend to use in VSCode)
+    I probably won't keep this as a permanent change to my default integrated terminal, I've also been using the [Shell Launcher extension](https://marketplace.visualstudio.com/items?itemName=Tyriar.shell-launcher) to open up the various shells that I tend to use in VSCode)
 
 Now I can use `Ctrl-Shift-'` ( i.e. the default Key Binding to `workbennch.action.terminal.new` ) to open a new integrated terminal which will be running Git Bash and to which I can send commands from text editor windows, like this:
 
