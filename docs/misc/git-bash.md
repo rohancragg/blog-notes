@@ -1,4 +1,10 @@
-# Bash Shell on Windows
+---
+title: Bash Shell on Windows
+hero: For when I need some Linux shell goodness on Windows...
+date: 2020-02-04
+---
+
+# Using a Bash shell on Windows
 
 I'm primarily a **Windows 10** user and I primarily use **PowerShell** as my day-to-day command shell (*[Powershell Core](https://github.com/powershell/powershell) 6.2.4 at time of writing*). When I'm reading or editing code or scripts I primarily use [**Visual Studio Code,**](https://code.visualstudio.com/) so I often use the integrated terminal there, and so my daily default is PowerShell Core there too. For work unrelated to code or for more serious admin work I also tend to have a [Windows Terminal](https://github.com/microsoft/terminal) open all day too.
 

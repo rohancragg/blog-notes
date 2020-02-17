@@ -1,12 +1,9 @@
 ---
 title: Scoop & Co
 summary: Using Scoop (and other Package Managers) to configure my system
-authors:
-    - Rohan Cragg
+hero: The 'Scoop' on my personal machine build...
 date: 2020-02-04
 ---
-
-# The 'Scoop' on my personal machine build
 
 This page describes how I'm `current`-ly using Scoop (and other Package Managers) to configure my system
 
