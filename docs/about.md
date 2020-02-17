@@ -6,6 +6,8 @@ disqus: ''
 
 ## LinkedIn
 
+<div class="LI-profile-badge"  data-version="v1" data-size="medium" data-locale="en_US" data-type="vertical" data-theme="dark" data-vanity="rohancragg"><a class="LI-simple-link" href='https://uk.linkedin.com/in/rohancragg?trk=profile-badge'>Rohan Cragg</a></div>
+
 [![LinkedIn Profile](media/linkedin-profile.png?raw=true)](https://www.linkedin.com/in/rohancragg/)
 
 ## StackExchange

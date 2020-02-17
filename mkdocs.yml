@@ -41,6 +41,9 @@ extra:
       link: 'https://www.instagram.com/rohancragg/'
   disqus: 'rohancragg'
 
+extra_javascript:
+  - 'https://platform.linkedin.com/badges/js/profile.js'
+
 # Extensions
 markdown_extensions:
   - admonition
@@ -49,11 +52,11 @@ markdown_extensions:
   - meta
   - toc:
       permalink: true
-  - pymdownx.arithmatex
+  #- pymdownx.arithmatex
   - pymdownx.betterem:
       smart_enable: all
   - pymdownx.caret
-  - pymdownx.critic
+  #- pymdownx.critic
   - pymdownx.details
   - pymdownx.emoji:
       emoji_generator: !!python/name:pymdownx.emoji.to_svg
