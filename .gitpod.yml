@@ -1,5 +1,5 @@
 tasks:
-  - init: "Configure MkDocs and extensions / plugins"
+  - init: echo "Configure MkDocs and extensions and plugins"
     command: |
       echo "Change to Python 3"
       pyenv local 3.7.6
