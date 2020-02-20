@@ -18,4 +18,4 @@ tasks:
       echo "Install git-revision-date plugin"
       pip install mkdocs-git-revision-date-plugin
       echo "Ready to go!"
-      echo "Site can be previewed by running `mkdocs serve`"
+      echo "Site can be previewed by running \`mkdocs serve\`"
