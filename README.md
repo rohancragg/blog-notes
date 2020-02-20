@@ -7,7 +7,7 @@ This repository contains source code for my MkDocs site hosted on [rohancragg.gi
 ## Built with MkDocs
 
 ### Install Pre-Requisites
-If cloning onto a new machine - bootstrap MkDocs like this:
+If cloning onto a new (Windows) machine - bootstrap MkDocs like this:
 
 ```powershell
 scoop install python
@@ -25,6 +25,15 @@ python .\scoop\apps\python\current\Tools\scripts\win_add2path.py
 Using [Material theme](https://squidfunk.github.io/mkdocs-material/)
 ```powershell
 pip install mkdocs-material
+```
+
+### Install MkDocs Extensions
+```powershell
+pip install pygments # required dependency for CodeHilite: https://squidfunk.github.io/mkdocs-material/extensions/codehilite/
+pip install pymdown-extensions # PyMdown Extensions: https://squidfunk.github.io/mkdocs-material/extensions/pymdown/
+pip install mkdocs-minify-plugin # https://squidfunk.github.io/mkdocs-material/plugins/minify-html/
+pip install mkdocs-git-revision-date-localized-plugin # https://squidfunk.github.io/mkdocs-material/plugins/revision-date/
+pip install fontawesome_markdown # http://bwmarrin.github.io/MkDocsPlus/fontawesome/ 
 ```
 
 It can be previewed by running `mkdocs serve`

@@ -1,0 +1,21 @@
+tasks:
+  - init: echo "Configure MkDocs and extensions and plugins"
+    command: |
+      echo "Change to Python 3"
+      pyenv local 3.7.6
+      echo "Install MkDocs"
+      pip install mkdocs
+      echo "Install the Custom Theme"
+      pip install mkdocs-material
+      echo "Install PyMdown Extensions"
+      pip install pymdown-extensions
+      echo "Install Minify HTML plugin"
+      pip install mkdocs-minify-plugin
+      echo "Install Revision Date plugin"
+      pip install mkdocs-git-revision-date-localized-plugin
+      echo "Install FontAwesome plugin"
+      pip install fontawesome_markdown
+      echo "Install git-revision-date plugin"
+      pip install mkdocs-git-revision-date-plugin
+      echo "Ready to go!"
+      echo "Site can be previewed by running `mkdocs serve`"
