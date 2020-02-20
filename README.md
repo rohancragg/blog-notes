@@ -1,3 +1,5 @@
+[![Gitpod Ready-to-Code](https://img.shields.io/badge/Gitpod-Ready--to--Code-blue?logo=gitpod)](https://gitpod.io/#https://github.com/rohancragg/blog-notes) 
+
 # rohancragg's blog-notes repo-ho-ho
 
 This repository contains source code for my MkDocs site hosted on [rohancragg.github.io](http://rohancragg.github.io)
