@@ -1,4 +1,19 @@
 tasks:
-  - init: echo "Replace me with a build script for the project."
-    command: echo "Replace me with omething that should run on every start, or just
-      remove me entirely."
+  - init: echo "Change to Python 3"
+    command: pyenv local 3.7.6
+  - init: echo "Install MkDocs"
+    command: pip install mkdocs
+  - init: echo "Install the Custom Theme"
+    command: pip install mkdocs-material
+  - init: echo "Install PyMdown Extensions"
+    command: pip install pymdown-extensions
+  - init: echo "Install Minify HTML plugin"
+    command: pip install mkdocs-minify-plugin
+  #- init: echo "Install Revision Date plugin"
+  #  command: pip install mkdocs-git-revision-date-localized-plugin
+  - init: echo "Install FontAwesome plugin"
+    command: pip install fontawesome_markdown
+  - init: echo "Install git-revision-date plugin"
+    command: pip install mkdocs-git-revision-date-plugin
+  - init: echo "Ready to go!"
+    command: echo "Site can be previewed by running `mkdocs serve`"
