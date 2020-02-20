@@ -19,5 +19,3 @@ tasks:
       pip install mkdocs-git-revision-date-plugin
       echo "Ready to go!"
       echo "Site can be previewed by running \`mkdocs serve\`"
-  - init: echo "Booting up MkDocs site (live) preview..."
-    command: mkdocs serve
