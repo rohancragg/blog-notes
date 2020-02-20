@@ -1,19 +1,21 @@
 tasks:
-  - init: echo "Change to Python 3"
-    command: pyenv local 3.7.6
-  - init: echo "Install MkDocs"
-    command: pip install mkdocs
-  - init: echo "Install the Custom Theme"
-    command: pip install mkdocs-material
-  - init: echo "Install PyMdown Extensions"
-    command: pip install pymdown-extensions
-  - init: echo "Install Minify HTML plugin"
-    command: pip install mkdocs-minify-plugin
-  #- init: echo "Install Revision Date plugin"
-  #  command: pip install mkdocs-git-revision-date-localized-plugin
-  - init: echo "Install FontAwesome plugin"
-    command: pip install fontawesome_markdown
-  - init: echo "Install git-revision-date plugin"
-    command: pip install mkdocs-git-revision-date-plugin
-  - init: echo "Ready to go!"
-    command: echo "Site can be previewed by running `mkdocs serve`"
+  - init: "Configure MkDocs and extensions / plugins"
+    command: |
+      echo "Change to Python 3"
+      pyenv local 3.7.6
+      echo "Install MkDocs"
+      pip install mkdocs
+      echo "Install the Custom Theme"
+      pip install mkdocs-material
+      echo "Install PyMdown Extensions"
+      pip install pymdown-extensions
+      echo "Install Minify HTML plugin"
+      pip install mkdocs-minify-plugin
+      echo "Install Revision Date plugin"
+      pip install mkdocs-git-revision-date-localized-plugin
+      echo "Install FontAwesome plugin"
+      pip install fontawesome_markdown
+      echo "Install git-revision-date plugin"
+      pip install mkdocs-git-revision-date-plugin
+      echo "Ready to go!"
+      echo "Site can be previewed by running `mkdocs serve`"
