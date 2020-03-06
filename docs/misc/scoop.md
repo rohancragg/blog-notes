@@ -49,12 +49,12 @@ scoop bucket add versions
 scoop bucket add Sysinternals
 ```
 
-Then yet more handy tools I use:
+Then yet more handy tools I use (*some are from the **extras** bucket*):
 ```powershell
 scoop install pwsh go docker kubectl helm make
-scoop install azure-cli dotnet-sdk pulumi
-scoop install nodejs 
-# from extras bucket:
+scoop install azure-cli azure-ps storageexplorer dotnet-sdk pulumi
+scoop install nodejs openssl 
+scoop install azure-functions-core-tools
 scoop install vcredist2019 linqpad notepadplusplus paint.net windows-terminal postman
 ```
 
