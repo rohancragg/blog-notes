@@ -55,7 +55,8 @@ scoop install pwsh go docker kubectl helm make
 scoop install azure-cli azure-ps storageexplorer dotnet-sdk pulumi
 scoop install nodejs openssl 
 scoop install azure-functions-core-tools
-scoop install vcredist2019 linqpad notepadplusplus paint.net windows-terminal postman
+scoop install vcredist2019 linqpad notepadplusplus windows-terminal postman
+scoop install paint.net krita brackets
 ```
 
 !!! info
