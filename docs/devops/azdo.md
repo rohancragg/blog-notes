@@ -1,5 +1,16 @@
 ## Self-Hosted Agents
 
+???info "About Build Agents"
+    This new Learning Module has some very good explanations:
+
+    >A build agent is a system that performs build tasks. Think of it as a dedicated server that runs your build process.
+
+    >Imagine that you have an Azure Pipelines project that receives build requests many times per day. Or perhaps you have multiple projects that can each use the same type of build agent. You can organize build agents into agent pools to help ensure that there's a server ready to process each build request.
+
+    >When a build is triggered, Azure Pipelines selects an available build agent from the pool. If all agents are busy, the process waits for one to become available.
+    
+    from <https://docs.microsoft.com/en-us/learn/modules/host-build-agent/>
+
 When my colleagues needed a build agent that could communicate with Azure Resources (such as Storage Accounts) inside of a private Virtual Network then the only way to do this without whitelisting a very large set of public IP address ranges (i.e. Azure Datacenter addresses) was to have a Virtual Machine running inside the same private network to which Azure DevOps would schedule build jobs.
 
 Azure DevOps provides a way for you to run your own Build Agents called [**Self-hosted Agents**](https://docs.microsoft.com/en-us/azure/devops/pipelines/agents/agents?view=azure-devops).
@@ -9,6 +20,14 @@ Azure DevOps provides a way for you to run your own Build Agents called [**Self-
 When I learned that the requirement was to build Python wheels to be deployed. I guessed that a Linux Virtual Machine should suffice and be a bit less costly to run that a Windows Server Virtual Machine. I elected to deploy a Ubuntu Server.
 
 When I looked into this I found a few blog posts in addition to [the official documentation](https://docs.microsoft.com/en-us/azure/devops/pipelines/agents/v2-linux?view=azure-devops), but all the articles specified using a desktop browser to download the Agent configuration script, and this seemed very odd for Linux where I'd assumed the default mode would be to do everything at the command line so I thought I'd post here how I acheived all of this with just an SSH terminal.
+
+### Step 0. Pre-requisites
+
+Update the `apt` package manager cache
+
+```bash
+sudo apt-get update
+```
 
 #### Step 1. Create an account under which to run the Agent
 
@@ -34,6 +53,7 @@ curl -o vsts-agent-linux-x64-2.165.0.tar.gz https://vstsagentpackage.azureedge.n
 cd .. 
 mkdir myagent && cd myagent
 tar zxvf ~/Downloads/vsts-agent-linux-x64-2.165.0.tar.gz
+rm -rf ~/Downloads
 sudo ./bin/installdependencies.sh
 ./config.sh
 ```
@@ -41,6 +61,9 @@ sudo ./bin/installdependencies.sh
 You'll see something like this and you are prompted to enter the Azure Devops Organsation ULR and a PAT token:
 
 ![Image](media/agent-config-sh.png)
+
+???tip All-in-One Script
+    There's an even more slick way to do the above steps here: <https://github.com/MicrosoftDocs/mslearn-azure-pipelines-build-agent/blob/master/build-agent.sh>
 
 #### Step 4. Run as a Service
 
