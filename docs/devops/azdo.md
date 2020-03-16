@@ -4,9 +4,9 @@ When my colleagues needed a build agent that could communicate with Azure Resour
 
 Azure DevOps provides a way for you to run your own Build Agents called [**Self-hosted Agents**](https://docs.microsoft.com/en-us/azure/devops/pipelines/agents/agents?view=azure-devops).
 
-### Configuring an agent on Ubunutu Server
+### Configuring an agent on Ubuntu Server
 
-When I learned that the requirement was to build Python wheels to be deployed. I guessed that a Linux Virtual Machine should suffice and be a bit less costly to run that a Windows Server Virtual Machine. I elected to deploy a Ubunutu Server.
+When I learned that the requirement was to build Python wheels to be deployed. I guessed that a Linux Virtual Machine should suffice and be a bit less costly to run that a Windows Server Virtual Machine. I elected to deploy a Ubuntu Server.
 
 When I looked into this I found a few blog posts in addition to [the official documentation](https://docs.microsoft.com/en-us/azure/devops/pipelines/agents/v2-linux?view=azure-devops), but all the articles specified using a desktop browser to download the Agent configuration script, and this seemed very odd for Linux where I'd assumed the default mode would be to do everything at the command line so I thought I'd post here how I acheived all of this with just an SSH terminal.
 
