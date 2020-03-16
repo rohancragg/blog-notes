@@ -20,8 +20,9 @@ Get [scoop.sh](https://scoop.sh/) and check out the [wiki](https://github.com/lu
 ```powershell
 Invoke-Expression (New-Object System.Net.WebClient).DownloadString('https://get.scoop.sh')
 scoop install sudo
-sudo scoop install 7zip git --global
-scoop install curl grep sed less touch nano
+sudo scoop install 7zip git openssh --global
+scoop install aria2 lessmsi
+scoop install curl grep sed less touch
 scoop install coreutils
 ```
 
@@ -106,7 +107,15 @@ For example: [Switching-Ruby-And-Python-Versions](https://github.com/lukesampson
 
 ### Other miscellany
 
-I had a problem installing [Brackets](https://brackets.io) and it was resolved by installing [LessMSI](http://lessmsi.activescott.com/) - but at the moment I'm not sure why...
+#### Multi-Connection Downloads
+
+Downloads can be speeded up by using [Aria2](https://aria2.github.io/). See also <https://github.com/lukesampson/scoop#multi-connection-downloads-with-aria2>
+
+#### MSI extraction
+
+If installed, `scoop` can be prevented from using it if necessary by running `scoop config aria2-enabled $false`
+
+I had [a problem](https://github.com/lukesampson/scoop-extras/issues/3329) installing [Brackets](http://brackets.io) and it was resolved by installing [LessMSI](http://lessmsi.activescott.com/) - but at the moment I'm not sure why...
 
 !!!info What is LessMSI?
     A tool to view and extract the contents of a Windows Installer (.msi) file.
