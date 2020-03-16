@@ -53,9 +53,9 @@ Then yet more handy tools I use (*some are from the **extras** bucket*):
 ```powershell
 scoop install pwsh go docker kubectl helm make
 scoop install azure-cli azure-ps storageexplorer dotnet-sdk pulumi
-scoop install nodejs openssl 
+scoop install nodejs yarn openssl
 scoop install azure-functions-core-tools
-scoop install vcredist2019 linqpad notepadplusplus paint.net windows-terminal postman
+scoop install vcredist2019 linqpad notepadplusplus paint.net windows-terminal postman winmerge
 ```
 
 !!! info
@@ -103,6 +103,18 @@ For example: [Switching-Ruby-And-Python-Versions](https://github.com/lukesampson
 
 ![scoop update](media/scoop-update2.png)
 
+### Other miscellany
+
+I had a problem installing [Brackets](https://brackets.io) and it was resolved by installing [LessMSI](http://lessmsi.activescott.com/) - but at the moment I'm not sure why...
+
+!!!info What is LessMSI?
+    A tool to view and extract the contents of a Windows Installer (.msi) file.
+
+```powershell
+scoop install lessmsi
+scoop config MSIEXTRACT_USE_LESSMSI $true
+```
+
 ## Common Pre-Requisites
 The following is a set of common pre-requisites for installing tools and utilities (e.g. the `pip` package manager for python tools):
 
@@ -112,7 +124,10 @@ scoop install python miniconda3
 scoop install curl
 curl https://bootstrap.pypa.io/get-pip.py -o get-pip.py
 python get-pip.py
+# pip and other tools be later upgraded by re-running the above or running:
 python -m pip install -U pip
+# when running behind a corporate propxy, the following command should still work:
+sudo pip install --upgrade --trusted-host pypi.org --trusted-host files.pythonhosted.org pip setuptools wheel
 ```
 
 ## System Fonts
