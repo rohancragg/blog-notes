@@ -12,6 +12,8 @@ nav:
     - Scoop & Co: misc\scoop.md
     - Bash Shell on Windows: misc\git-bash.md
     - Miscellanous Notes: misc\misc.md
+  - DevOps:
+    - Azure DevOps: devops\azdo.md
   - Kubernetes:
     - Clusters and Domains: aks\domains.md
     - Create a TLS Secret: aks\create-tls-secret.md
