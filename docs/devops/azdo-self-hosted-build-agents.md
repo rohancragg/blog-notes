@@ -48,12 +48,13 @@ sudo apt-get install git
 
 ### Step 3. Install and configure the Agent
 ```bash
-mkdir Downloads && cd Downloads
-curl -o vsts-agent-linux-x64-2.165.0.tar.gz https://vstsagentpackage.azureedge.net/agent/2.165.0/vsts-agent-linux-x64-2.165.0.tar.gz
-cd .. 
-mkdir myagent && cd myagent
-tar zxvf ~/Downloads/vsts-agent-linux-x64-2.165.0.tar.gz
-rm -rf ~/Downloads
+mkdir -p $HOME/Downloads && cd $HOME/Downloads
+curl -o $HOME/Downloads/vsts-agent-linux-x64-2.165.0.tar.gz https://vstsagentpackage.azureedge.net/agent/2.165.0/vsts-agent-linux-x64-2.165.0.tar.gz
+cd $HOME
+mkdir -p $HOME/myagent/ && cd $HOME/myagent/
+tar zxvf $HOME/Downloads/vsts-agent-linux-x64-2.165.0.tar.gz
+rm -rf $HOME/Downloads
+cd $HOME/myagent
 sudo ./bin/installdependencies.sh
 ./config.sh
 ```
@@ -69,10 +70,9 @@ You'll see something like this and you are prompted to enter the Azure Devops Or
 
 Now we usually want to run the agent as a service (i.e. have it run continuously waiting for job to be scheduled) so we need to do the following, [as documented here](https://docs.microsoft.com/en-us/azure/devops/pipelines/agents/v2-linux?view=azure-devops#run-as-a-systemd-service).
 
-***from the myagent/ directory***:
-```
-sudo ./svc.sh install
-sudo ./svc.sh start
+```bash 
+sudo $HOME/myagent/svc.sh install
+sudo $HOME/myagent/svc.sh start
 ```
 
 ---
