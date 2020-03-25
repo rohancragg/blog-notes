@@ -14,6 +14,7 @@ nav:
     - Miscellanous Notes: misc\misc.md
   - DevOps:
     - Azure DevOps - Self-Hosted Build Agents: devops\azdo-self-hosted-build-agents.md
+    - VM Patching in DevTest Labs: compute\patching-devtestlabs.md
   - Kubernetes:
     - Clusters and Domains: aks\domains.md
     - Create a TLS Secret: aks\create-tls-secret.md
