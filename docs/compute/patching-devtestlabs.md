@@ -79,30 +79,38 @@ The ReadMe document in GitHub explains that the scripts have the following requi
 - Follow these links to create an [**Automation Account**](https://docs.microsoft.com/en-us/azure/automation/automation-quickstart-create-account) and a linked [**Log Analytics Workspace**](https://docs.microsoft.com/en-us/azure/azure-monitor/platform/data-platform-logs) with the [**Update Management**](https://docs.microsoft.com/en-us/azure/automation/automation-update-management) solution enabled.
 
 - A **RunAs account** for interacting with the Azure services used by these scripts.
-  - Follow this document to [Create a Run As account](https://docs.microsoft.com/en-gb/azure/automation/manage-runas-account#creating-a-run-as-account-in-azure-portal) either in Azure portal or or with PowerShell. Be aware that you need sufficient privileges (at least Application administrator in Azure Active Directory and an Owner in a subscription) to complete this task.
+    - Follow this document to [Create a Run As account](https://docs.microsoft.com/en-gb/azure/automation/manage-runas-account#creating-a-run-as-account-in-azure-portal) either in Azure portal or or with PowerShell. Be aware that you need sufficient privileges (at least Application administrator in Azure Active Directory and an Owner in a subscription) to complete this task.
 
 - The **ThreadJob** module imported into your Automation Account.
-  - The UpdateManagement modules both depend on the [ThreadJob module](https://www.powershellgallery.com/packages/ThreadJob). This module extends the existing PowerShell BackgroundJob to include a new thread-based job to provide faster operation with less overhead. To install it
-    - go to the URL in a browser <https://www.powershellgallery.com/packages/ThreadJob>
-    - click on the 'Azure Automation' tab
-    - click on the button 'Deploy to Azure Automation'
-    - pick the Subscription name, Resource Group and Location and select the Automation Account you want to install the module into.
+    - The UpdateManagement modules both depend on the [ThreadJob module](https://www.powershellgallery.com/packages/ThreadJob). This module extends the existing PowerShell BackgroundJob to include a new thread-based job to provide faster operation with less overhead. To install it
+        - go to the URL in a browser <https://www.powershellgallery.com/packages/ThreadJob>
+        - click on the 'Azure Automation' tab
+        - click on the button 'Deploy to Azure Automation'
+        - pick the Subscription name, Resource Group and Location and select the Automation Account you want to install the module into.
 
 - The **latest versions of the AzureRM** modules.
-  - In order to [Update Azure PowerShell modules in Azure Automation](https://docs.microsoft.com/en-gb/azure/automation/automation-update-azure-modules) need to download the [Update Azure modules runbook](https://github.com/Microsoft/AzureAutomation-Account-Modules-Update) from GitHub and import and publish it into the list of Runbooks your Automation Account.
+    - In order to [Update Azure PowerShell modules in Azure Automation](https://docs.microsoft.com/en-gb/azure/automation/automation-update-azure-modules) need to download the [Update Azure modules runbook](https://github.com/Microsoft/AzureAutomation-Account-Modules-Update) from GitHub and import and publish it into the list of Runbooks your Automation Account.
 
-![Import Runbook](media/import-runbook.png)
+        ![Import Runbook](media/import-runbook.png)
 
 !!!tip "Top Tip"
-  Rather than download the runbook powershell script from GitHub, you can directly paste the 'raw' file URL from GitHub into the 'Runbook file' textbox i.e. '<https://raw.githubusercontent.com/microsoft/AzureAutomation-Account-Modules-Update/master/Update-AutomationAzureModulesForAccount.ps1>'
+    Rather than download the runbook powershell script from GitHub, you can directly paste the 'raw' file URL from GitHub into the 'Runbook file' textbox i.e. '<https://raw.githubusercontent.com/microsoft/AzureAutomation-Account-Modules-Update/master/Update-AutomationAzureModulesForAccount.ps1>'
 
-Now you can use the Runbook Gallery to import the start-stop scripts as follows:
+Now you can use the **Runbook Gallery** to import the start-stop scripts as follows:
 
 - In the Azure portal, open your Automation account
-- Under Process Automation, click on Runbooks gallery
-- Select Source: Script Center
+- Under Process Automation, click on **Runbooks Gallery**
+- Select *'Source: Script Center'*
 - Enter 'UpdateManagement' into the search box
-- select each module and click 'Import':
-  - Update Management - Turn On VMs
-  - Update Management - Turn Off VMs
-  
+- select each module and click **'Import'**:
+    - *Update Management - Turn On VMs*
+    - *Update Management - Turn Off VMs*
+
+!!!warning "Important"
+    After you import runbooks you need to publish them before they can be used. To do this, find the runbook in **Runbooks** pane and click **Edit** and **Publish**.
+
+Visit the Docs page for details on [how to use these pre and post-scripts in your update deployment](https://docs.microsoft.com/en-us/azure/automation/pre-post-scripts#using-a-pre-script-or-post-script). 
+
+Here's what one of my update deployment runs looks like with the script status showing completed:
+
+![Completed update deployment](media/update-deployment-run.png)
