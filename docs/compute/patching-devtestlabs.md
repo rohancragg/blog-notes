@@ -45,7 +45,7 @@ Our customers have more and more data and they are asking more a more comlex que
 [Data Science Virtual Machines](https://azure.microsoft.com/en-us/services/virtual-machines/data-science-virtual-machines/) (DSVM) are a customized VM image which we typically make available for end-user selection in our DTL environments. These are VMs built specifically for doing data science. They come pre-installed and pre-configured with many popular data science tools which helps to jump-start data engineering and advanced analytics.
 
 The combination of DSVMs and a DevTest Lab Environment is a powerful enabler for people to get started on the job quickly without worrying about precious data assets falling into the wrong hands.
- 
+
 ## Azure Automation - Update Management
 
 We use the [Update Management](https://docs.microsoft.com/en-us/azure/automation/automation-update-management) solution in [Azure Automation](https://docs.microsoft.com/en-us/azure/automation/) to manage operating system updates for virtual machines in our DevTest Labs in Azure.
@@ -66,9 +66,7 @@ As such we needed to find a way to ensure that virtual machines were running whe
 
 Pre-scripts and post-scripts let you run PowerShell runbooks in your Azure Automation account before (pre-task) and after (post-task) a scheduled update management deployment.
 
-The documentation ['Manage pre and post-scripts'](https://docs.microsoft.com/en-us/azure/automation/pre-post-scripts) provided us with most of what we needed to know. At time of writing the document does a good job of explaining the general concept of pre and post-scripts using TurnOnVMS and TurnOffVMs as examples of what you can do with these kinds of runbooks. In this article I'll fill in a few gaps in the end-to-end steps we needed to take to gets all this working for us.
-
-https://github.com/zjalexander/UpdateManagement
+The documentation ['Manage pre and post-scripts'](https://docs.microsoft.com/en-us/azure/automation/pre-post-scripts) provided us with most of what we needed to know. At time of writing the document does a good job of explaining the general concept of pre and post-scripts using script gallery samples such as `UpdateManagement-TurnOnVMS` and `UpdateManagement-TurnOffVMs` as examples of what you can do with these kinds of runbooks. In this article I'll fill in a few gaps in the end-to-end steps we needed to take to get these start/stop scripts working for us as a routine patching solution.
 
 - [UpdateManagement-TurnOnVms](https://www.powershellgallery.com/packages/UpdateManagement-TurnOnVms) - ensures all Azure VMs in the Update Deployment are running so they recieve updates. It stores the names of machines that were started in an Automation variable so only those machines are turned back off (by the accompanying *UpdateManagement-TurnOffVms* script) when the deployment is finished.
 
@@ -78,31 +76,33 @@ Source code for the above modules [can be found from **zjalexander** in GitHub](
 
 The ReadMe document in GitHub explains that the scripts have the following requirements, which I'll explain in a bit more detail here.
 
-- An **Automation Account** and a linked **Log Analytics Workspace** with the **Update Management** solution enabled.
+- Follow these links to create an [**Automation Account**](https://docs.microsoft.com/en-us/azure/automation/automation-quickstart-create-account) and a linked [**Log Analytics Workspace**](https://docs.microsoft.com/en-us/azure/azure-monitor/platform/data-platform-logs) with the [**Update Management**](https://docs.microsoft.com/en-us/azure/automation/automation-update-management) solution enabled.
 
 - A **RunAs account** for interacting with the Azure services used by these scripts.
+  - Follow this document to [Create a Run As account](https://docs.microsoft.com/en-gb/azure/automation/manage-runas-account#creating-a-run-as-account-in-azure-portal) either in Azure portal or or with PowerShell. Be aware that you need sufficient privileges (at least Application administrator in Azure Active Directory and an Owner in a subscription) to complete this task.
 
-- The **ThreadJob** module imported into your Automation Account
+- The **ThreadJob** module imported into your Automation Account.
+  - The UpdateManagement modules both depend on the [ThreadJob module](https://www.powershellgallery.com/packages/ThreadJob). This module extends the existing PowerShell BackgroundJob to include a new thread-based job to provide faster operation with less overhead. To install it
+    - go to the URL in a browser <https://www.powershellgallery.com/packages/ThreadJob>
+    - click on the 'Azure Automation' tab
+    - click on the button 'Deploy to Azure Automation'
+    - pick the Subscription name, Resource Group and Location and select the Automation Account you want to install the module into.
 
 - The **latest versions of the AzureRM** modules.
+  - In order to [Update Azure PowerShell modules in Azure Automation](https://docs.microsoft.com/en-gb/azure/automation/automation-update-azure-modules) need to download the [Update Azure modules runbook](https://github.com/Microsoft/AzureAutomation-Account-Modules-Update) from GitHub and import and publish it into the list of Runbooks your Automation Account.
 
-Follow this document to [Create a Run As account](https://docs.microsoft.com/en-gb/azure/automation/manage-runas-account#creating-a-run-as-account-in-azure-portal) either in Azure portal or or with PowerShell. Be aware that you need sufficient privileges (at least Application administrator in Azure Active Directory and an Owner in a subscription) to complete this task.
+![Import Runbook](media/import-runbook.png)
 
-In order to [Update Azure PowerShell modules in Azure Automation](https://docs.microsoft.com/en-gb/azure/automation/automation-update-azure-modules) need to download the [Update Azure modules runbook](https://github.com/Microsoft/AzureAutomation-Account-Modules-Update) from GitHub and import and publish it into the list of Runbooks your Automation Account.
+!!!tip "Top Tip"
+  Rather than download the runbook powershell script from GitHub, you can directly paste the 'raw' file URL from GitHub into the 'Runbook file' textbox i.e. '<https://raw.githubusercontent.com/microsoft/AzureAutomation-Account-Modules-Update/master/Update-AutomationAzureModulesForAccount.ps1>'
 
-Use the Runbook Gallery to import the following Scripts as follows:
+Now you can use the Runbook Gallery to import the start-stop scripts as follows:
 
 - In the Azure portal, open your Automation account
 - Under Process Automation, click on Runbooks gallery
 - Select Source: Script Center
 - Enter 'UpdateManagement' into the search box
 - select each module and click 'Import':
-    - Update Management - Turn On VMs
-    - Update Management - Turn Off VMs
-
-The UpdateManagement modules both depend on the [ThreadJob module](https://www.powershellgallery.com/packages/ThreadJob). This module extends the existing PowerShell BackgroundJob to include a new thread-based job to provide faster operation with less overhead. To install it 
-
-- go to the URL in a browser <https://www.powershellgallery.com/packages/ThreadJob>
-- click on the 'Azure Automation' tab
-- click on the button 'Deploy to Azure Automation'
-- pick the Subscriptionname, Resource Group and Location and select the Automation Account you want to install the module into.
+  - Update Management - Turn On VMs
+  - Update Management - Turn Off VMs
+  
