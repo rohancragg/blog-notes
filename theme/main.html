@@ -1,5 +1,9 @@
 {% extends "base.html" %}
 
 {% block site_meta %}
-    <link rel="image_src" href="{{ page.meta.og_image }}" />
+    <meta property="og:title" content="{{ page.meta.og_title }}"/>
+    <meta property="og:type" content="{{ page.meta.og_type }}"/>
+    <meta property="og:url" content="{{ page.meta.og_url }}"/>
+    <meta property="og:image" content="{{ page.meta.og_image }}"/>
+    <meta property="og:locale" content="en-GB"/>
 {% endblock %}
