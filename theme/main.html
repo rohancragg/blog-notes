@@ -2,21 +2,23 @@
 
 {% block site_meta %}
     <meta property="og:title" content="{{ page.meta.og_title }}"/>
-    <meta property="og:type" content="{{ page.meta.og_type }}"/>
-    <meta property="og:url" content="{{ page.abs_url | url }}"/>
-{% if page.meta.media_path and page.meta.og_image %}
-    <meta property="og:image" content="{{ page.meta.media_path ~ page.meta.og_image }}"/>
-{% elif page.meta.og_image %}
-    <meta property="og:image" content="{{ page.meta.og_image }}"/>
-{% else %}
-{% endif %}
+    {% if page.meta.og_type %}
+        <meta property="og:type" content="{{ page.meta.og_type }}"/>
+    {% else %}
+        <meta property="og:type" content="website"/>
+    {% endif %}
+    <meta property="og:url" content="{{ page.canonical_url }}"/>
+    {% if page.meta.page_path and page.meta.og_image %}
+        <meta property="og:image" content="{{ config.site_url ~ page.meta.page_path ~ page.meta.og_image }}"/>
+    {% elif page.meta.og_image %}
+        <meta property="og:image" content="{{ config.site_url ~ page.meta.og_image }}"/>
+    {% else %}
+    {% endif %}
     <meta property="og:locale" content="en-GB"/>
 
-    <meta property="base_url" content="{{ base_url }}" />
-    <meta property="site_url" content="{{ site_url }}" />
-    <meta property="page.url" content="{{ page.url }}" />
+    <meta property="base_url" content="{{ base_url | url }}" />
+    <meta property="site_url" content="{{ config.site_url | url }}" />
+    <meta property="page.url" content="{{ page.url | url }}" />
     <meta property="page.abs_url" content="{{ page.abs_url }}" />
-    <meta property="page.canonical_url" content="{{ page.canonical_url }}" />
     <meta property="page.parent" content="{{ page.parent }}" />
-    <meta property="link" content="{{ link }}" />
 {% endblock %}
