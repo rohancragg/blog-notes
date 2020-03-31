@@ -1,7 +1,11 @@
 ---
 title: Azure DevOps - Self-Hosted Build Agents
+description: Keeping Virtual Machines Patched (the Azure DevTest Labs edition)
 hero: Run your own Build Agents in Azure DevOps
 date: 2020-03-16
+og_title: Azure DevOps - Self-Hosted Build Agents
+page_path: devops/
+og_image: media/agent-config-sh.png
 ---
 
 ## Self-Hosted Agents

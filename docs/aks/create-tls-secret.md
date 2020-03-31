@@ -1,4 +1,14 @@
-﻿# How to Create a TLS Secret
+﻿---
+title: How to Create a TLS Secret
+hero: TLS Secret management in AKS
+description: How to Create a TLS Secret in AKS
+authors:
+    - Rohan Cragg
+date: 2020-02-04
+og_title: Create a TLS Secret in AKS
+page_path: aks/
+og_image: media/cert-path.png
+---
 
 I followed the command-line method (the first method) explained in this article [Creating Kubernetes Secrets Using TLS/SSL as an Example](https://shocksolution.com/2018/12/14/creating-kubernetes-secrets-using-tls-ssl-as-an-example/) - i.e. rather than using the second (YAML file) method.
 

@@ -2,6 +2,13 @@
 title: Bash Shell on Windows
 hero: For when I need some Linux shell goodness on Windows...
 date: 2020-02-04
+description: Using Bash Shell on Windows
+authors:
+    - Rohan Cragg
+date: 2020-02-04
+og_title: Bash Shell on Windows
+page_path: misc/
+og_image: media/git-bash-vscode.png
 ---
 
 # Using a Bash shell on Windows

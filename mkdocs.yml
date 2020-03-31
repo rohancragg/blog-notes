@@ -2,7 +2,8 @@
 site_name: What I learned today (@rohancragg)
 site_description: '@rohancragg''s Personal Tech Docs'
 site_author: 'Rohan Cragg'
-site_url: 'https://rohancragg.co.uk'
+site_url: 'https://rohancragg.co.uk/'
+fb_appid: '245640346829400'
 
 # Table of Contents
 nav:

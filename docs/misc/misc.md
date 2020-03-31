@@ -1,11 +1,12 @@
 ---
 title: Miscellanous Notes
-summary: Miscellanous notes and links on tools and techniques that I want to remember
+hero: Miscellanous notes and links on tools and techniques that I want to remember
+description: Miscellanous notes and links on tools and techniques that I want to remember
 authors:
     - Rohan Cragg
 date: 2020-02-04
+og_title: Miscellanous Notes
 ---
-# Miscellanous Notes
 
 ## Windows Subsystem for Linux (WSL) environment
 
