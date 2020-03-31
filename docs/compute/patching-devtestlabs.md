@@ -3,9 +3,10 @@ title: VM Patching in DevTest Labs
 hero: Keeping Virtual Machines Patched (DevTest Labs edition)
 date: 2020-03-25
 og_title: Patching in DevTest Labs
-og_type: article
+og_type: website
 og_url: ../media/dtl.png
 og_image: ../media/dtl.png
+og_locale: en-GB
 ---
 
 # VM Patching in DevTest Labs
