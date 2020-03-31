@@ -1,7 +1,13 @@
 ---
 title: About Me
 disqus: ''
-
+hero: About Me (@rohancragg)
+description: About Me (@rohancragg)
+authors:
+    - Rohan Cragg
+date: 2020-02-04
+og_title: About Me (@rohancragg)
+og_image: https://stackexchange.com/users/flair/3688.png
 ---
 
 ## LinkedIn
