@@ -2,14 +2,13 @@
 title: VM Patching in DevTest Labs
 hero: Keeping Virtual Machines Patched (DevTest Labs edition)
 date: 2020-03-25
+media_path: /compute/media/
 og_title: Patching in DevTest Labs
 og_type: website
 og_url: media/dtl.png
 og_image: media/dtl.png
 og_locale: en-GB
 ---
-
-# VM Patching in DevTest Labs
 
 We regularly help our customers to use Azure's [**DevTest Labs**](https://docs.microsoft.com/en-us/azure/lab-services/)  in combination with [**Data Science Virtual Machines**](https://azure.microsoft.com/en-us/services/virtual-machines/data-science-virtual-machines/) to safely and securely spin up the required resources for rapid-fire projects without slowing down the pace of innovation and time-to-market for new ideas.
 
