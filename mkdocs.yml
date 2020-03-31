@@ -1,6 +1,6 @@
 # Project information
 site_name: What I learned today (@rohancragg)
-site_description: 'A Material Design theme for MkDocs'
+site_description: '@rohancragg''s Personal Tech Docs'
 site_author: 'Rohan Cragg'
 site_url: 'https://rohancragg.co.uk'
 
@@ -80,6 +80,7 @@ plugins:
 theme:
   name: material
   language: 'en'
+  custom_dir: 'theme'
   palette:
     primary: 'deep purple'
     accent: 'green'
