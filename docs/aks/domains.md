@@ -5,7 +5,6 @@ description: Designing domains and DNS for AKS Clusters
 authors:
     - Rohan Cragg
 date: 2020-02-04
-og_title: Designing domains and DNS for AKS Clusters
 page_path: aks/
 og_image: media/dns-zone-alias.png
 ---

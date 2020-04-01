@@ -2,16 +2,21 @@
 
 {% block extrahead %}
     
-    <meta property="og:title" content="{{ page.meta.og_title }}" />
-    {% if page.meta.og_type %}
+    {% if page and page.meta and page.meta.og_title %}
+        <meta property="og:title" content="{{ page.meta.og_title }}" />
+    {% elif page and page.meta and page.meta.title %}
+        <meta property="og:title" content="{{ page.meta.title }}" />
+    {% endif %}
+    
+    {% if page and page.meta and page.meta.og_type %}
         <meta property="og:type" content="{{ page.meta.og_type }}" />
     {% else %}
         <meta property="og:type" content="website" />
     {% endif %}
     <meta property="og:url" content="{{ page.canonical_url }}" />
-    {% if page.meta.page_path and page.meta.og_image %}
+    {% if page and page.meta and page.meta.page_path and page.meta.og_image %}
         <meta property="og:image" content="{{ config.site_url ~ page.meta.page_path ~ page.meta.og_image }}" />
-    {% elif page.meta.og_image %}
+    {% elif page and page.meta and page.meta.og_image %}
         <meta property="og:image" content="{{ page.meta.og_image }}" />
     {% else %}
         <meta property="og:image" content="{{ config.site_url ~ config.theme.favicon }}" />

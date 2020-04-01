@@ -1,12 +1,11 @@
 ---
-title: About Me
+title: About Me (@rohancragg)
 disqus: ''
-hero: About Me (@rohancragg)
-description: About Me (@rohancragg)
+hero: Find out more about me (@rohancragg)
+description: Find out more about me (@rohancragg)
 authors:
     - Rohan Cragg
 date: 2020-02-04
-og_title: About Me (@rohancragg)
 og_image: https://stackexchange.com/users/flair/3688.png
 ---
 

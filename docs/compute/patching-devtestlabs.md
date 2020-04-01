@@ -3,7 +3,6 @@ title: VM Patching in DevTest Labs
 description: Keeping Virtual Machines Patched (the Azure DevTest Labs edition)
 hero: Keeping Virtual Machines Patched (DevTest Labs edition)
 date: 2020-03-25
-og_title: Patching in DevTest Labs
 page_path: compute/
 og_image: media/dtl.png
 ---

@@ -5,7 +5,6 @@ description: Miscellanous notes and links on tools and techniques that I want to
 authors:
     - Rohan Cragg
 date: 2020-02-04
-og_title: Miscellanous Notes
 ---
 
 ## Windows Subsystem for Linux (WSL) environment

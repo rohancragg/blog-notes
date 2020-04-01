@@ -5,7 +5,6 @@ description: How to Create a TLS Secret in AKS
 authors:
     - Rohan Cragg
 date: 2020-02-04
-og_title: Create a TLS Secret in AKS
 page_path: aks/
 og_image: media/cert-path.png
 ---

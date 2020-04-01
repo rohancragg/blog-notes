@@ -5,7 +5,8 @@ description: Sharing links to MkDocs pages using Open Graph Markup
 authors:
     - Rohan Cragg
 date: 2020-04-01
-og_title: Prettier link sharing with MkDocs
+page_path: writing/
+og_image: media/opg.png
 ---
 
 In order to have my posts look as nice as possible when they are shared on Social Media sites such as LinkedIn and Facebook I needed to work out how to control whether an featured image is shown and what text will be displayed by default.
@@ -16,7 +17,7 @@ To show the link sharing working in a couple of Social Media platforms here's ho
 
 ![Facebook Sharing](media/facebook-sharing.png)
 
-And here is is in LinkedIn
+And here it is in LinkedIn:
 
 ![LinkedIn Sharing](media/linkedin-sharing.png)
 

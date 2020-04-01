@@ -6,7 +6,6 @@ description: Using Bash Shell on Windows
 authors:
     - Rohan Cragg
 date: 2020-02-04
-og_title: Bash Shell on Windows
 page_path: misc/
 og_image: media/git-bash-vscode.png
 ---
