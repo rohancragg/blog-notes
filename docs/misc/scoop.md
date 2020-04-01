@@ -1,10 +1,8 @@
 ---
 title: Scoop & Co
-summary: Using Scoop (and other Package Managers) to configure my system
-description: The 'Scoop' on my personal machine build...
+description: Using Scoop (and other Package Managers) to configure my system
 hero: The 'Scoop' on my personal machine build...
 date: 2020-02-04
-description: Using Bash Shell on Windows
 authors:
     - Rohan Cragg
 date: 2020-02-04

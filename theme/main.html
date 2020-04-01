@@ -1,7 +1,7 @@
 {% extends "base.html" %}
 
-{% block site_meta %}
-    {{ super() }}
+{% block extrahead %}
+    
     <meta property="og:title" content="{{ page.meta.og_title }}" />
     {% if page.meta.og_type %}
         <meta property="og:type" content="{{ page.meta.og_type }}" />

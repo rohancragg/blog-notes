@@ -5,7 +5,7 @@ site_author: 'Rohan Cragg'
 site_url: 'https://rohancragg.co.uk/'
 fb_appid: '245640346829400'
 
-# Table of Contents
+# Page tree
 nav:
   - Home: README.md
   - About Me: about.md
@@ -19,6 +19,8 @@ nav:
   - Kubernetes:
     - Clusters and Domains: aks\domains.md
     - Create a TLS Secret: aks\create-tls-secret.md
+  - Writing:
+    - Prettier link sharing with MkDocs: writing/social-media-sharing/
 
 # Repository
 repo_name: 'rohancragg/blog-notes'
@@ -27,6 +29,25 @@ repo_url: 'https://github.com/rohancragg/blog-notes'
 # Copyright
 copyright: 'Copyright &copy; 2019 - 2020 Rohan Cragg'
 
+# Configuration
+theme:
+  name: material
+  language: 'en'
+  custom_dir: 'theme'
+  palette:
+    primary: 'deep purple'
+    accent: 'green'
+  font:
+    text: 'Noto Sans'
+    code: 'Ubuntu Mono'
+
+# Plugins
+plugins:
+  - search
+  - git-revision-date
+  - minify:
+      minify_html: false
+      
 # Customization
 extra:
   manifest: 'manifest.webmanifest'
@@ -51,21 +72,30 @@ extra_javascript:
 # Extensions
 markdown_extensions:
   - admonition
+  - attr_list
   - codehilite:
       guess_lang: false
+  - def_list
+  - footnotes
   - meta
   - toc:
       permalink: true
-  #- pymdownx.arithmatex
+  - pymdownx.arithmatex
   - pymdownx.betterem:
       smart_enable: all
   - pymdownx.caret
-  #- pymdownx.critic
+  - pymdownx.critic
   - pymdownx.details
   - pymdownx.emoji:
+      emoji_index: !!python/name:pymdownx.emoji.twemoji
       emoji_generator: !!python/name:pymdownx.emoji.to_svg
+  - pymdownx.escapeall
   - pymdownx.inlinehilite
-  - pymdownx.magiclink
+  - pymdownx.keys
+  - pymdownx.magiclink:
+      repo_url_shorthand: true
+      user: rohancragg
+      repo: blog-notes
   - pymdownx.mark
   - pymdownx.smartsymbols
   - pymdownx.superfences
@@ -73,18 +103,3 @@ markdown_extensions:
       custom_checkbox: true
   - pymdownx.tilde
   - fontawesome_markdown
-
-plugins:
-  - search
-  - git-revision-date
-
-theme:
-  name: material
-  language: 'en'
-  custom_dir: 'theme'
-  palette:
-    primary: 'deep purple'
-    accent: 'green'
-  font:
-    text: 'Noto Sans'
-    code: 'Ubuntu Mono'
