@@ -6,7 +6,7 @@ authors:
     - Rohan Cragg
 date: 2020-04-01
 page_path: writing/
-og_image: media/opg.png
+og_image: media/ogp.png
 ---
 
 In order to have my posts look as nice as possible when they are shared on Social Media sites such as LinkedIn and Facebook I needed to work out how to control whether an featured image is shown and what text will be displayed by default.
