@@ -7,6 +7,7 @@ authors:
 date: 2020-04-01
 page_path: writing/
 og_image: media/ogp.png
+og_image_type: image/png
 ---
 
 In order to have my posts look as nice as possible when they are shared on Social Media sites such as LinkedIn and Facebook I needed to work out how to control whether an featured image is shown and what text will be displayed by default.
@@ -38,6 +39,8 @@ I found [this page](https://developers.facebook.com/docs/sharing/webmasters) on 
 
 ???about "The Open Graph protocol"
     The [Open Graph protocol](https://ogp.me/) enables any web page to become a rich object in a social graph. The Open Graph protocol was originally created at Facebook and is inspired by [Dublin Core](http://en.wikipedia.org/wiki/Dublin_Core), [link-rel canonical](http://googlewebmastercentral.blogspot.com/2009/02/specify-your-canonical.html), [Microformats](http://microformats.org/), and [RDFa](http://en.wikipedia.org/wiki/RDFa)
+
+    There's a great [blog post by Neil Patel](https://neilpatel.com/blog/open-graph-meta-tags/) that explains all about Open Graph meta tags.
 
 Because `<meta>` tags always go inside the `<head>` element of an `<html>` page I needed to work out how to manipulate the content of the `<head>` in each of the pages on this site.
 
