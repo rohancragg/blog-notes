@@ -20,7 +20,7 @@ nav:
     - Clusters and Domains: aks\domains.md
     - Create a TLS Secret: aks\create-tls-secret.md
   - Writing:
-    - Prettier link sharing with MkDocs: writing/social-media-sharing/
+    - Prettier link sharing with MkDocs: writing\social-media-sharing.md
 
 # Repository
 repo_name: 'rohancragg/blog-notes'
