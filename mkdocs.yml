@@ -40,10 +40,16 @@ theme:
   font:
     text: 'Noto Sans'
     code: 'Ubuntu Mono'
+  features:
+    - tabs
+    - instant
+  icon:
+    logo: material/library
 
 # Plugins
 plugins:
-  - search
+  - search:
+      separator: '[\s\-\.]+'
   - git-revision-date
   - minify:
       minify_html: false
@@ -52,19 +58,22 @@ plugins:
 extra:
   manifest: 'manifest.webmanifest'
   social:
-    - type: 'linkedin'
+    - icon: fontawesome/brands/linkedin
       link: 'https://www.linkedin.com/in/rohancragg'
-    - type: 'twitter'
+    - icon: fontawesome/brands/twitter
       link: 'https://twitter.com/rohancragg'
-    - type: 'github'
+    - icon: fontawesome/brands/github
       link: 'https://github.com/rohancragg'
-    - type: 'facebook'
+    - icon: fontawesome/brands/facebook
       link: 'https://fb.com/rohancragg'
-    - type: 'instagram'
+    - icon: fontawesome/brands/instagram
       link: 'https://www.instagram.com/rohancragg/'
-    - type: 'terminal'
+    - icon: fontawesome/solid/terminal
       link: 'https://asciinema.org/~rohancragg'
   disqus: 'rohancragg'
+  theme:
+    icon:
+      repo: fontawesome/brands/gitlab
 
 extra_javascript:
   - 'https://platform.linkedin.com/badges/js/profile.js'
@@ -98,7 +107,6 @@ markdown_extensions:
       repo: blog-notes
   - pymdownx.mark
   - pymdownx.smartsymbols
-  - pymdownx.superfences
   - pymdownx.tasklist:
       custom_checkbox: true
   - pymdownx.tilde
