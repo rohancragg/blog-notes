@@ -32,23 +32,31 @@ Bash and PowerShell have some aspects of syntax in common (e.g. when referencing
 
 But there are some other things that differ (e.g. when assigning a variable like this):
 
-``` powershell tab="PowerShell"
-$myVariable='some text'
-```
+=== "Powershell"
 
-``` bash tab="Bash"
-myVariable='some text'
-```
+    ```powershell
+    $myVariable='some text'
+    ```
+
+=== "Bash"
+
+    ```bash
+    myVariable='some text'
+    ```
 
 ... or when setting an environment variable like this:
 
-``` PowerShell tab="PowerShell"
-SET MY_ENV='some text'
-```
+=== "Powershell"
 
-``` bash tab="Bash"
-export MY_ENV='some text'
-```
+    ```powershell
+    SET MY_ENV='some text'
+    ```
+
+=== "Bash"
+
+    ```bash
+    export MY_ENV='some text'
+    ```
 
 ??? info "Shell Trivia"
     SH is Bourne Shell and so Bash is Born-again Bourne Shell

@@ -188,38 +188,46 @@ import hello_world
 
 Tabbed fences
 
-```Bash tab=
-#!/bin/bash
-STR="Hello World!"
-echo $STR
-```
+=== "Bash"
 
-```C tab=
-#include 
+    ```Bash
+        #!/bin/bash
+        STR="Hello World!"
+        echo $STR
+    ```
 
-int main(void) {
-  printf("hello, world\n");
-}
-```
+=== "C"
 
-```C++ tab=
-#include <iostream>
+    ```C
+        #include 
 
-int main() {
-  std::cout << "Hello, world!\n";
-  return 0;
-}
-```
+        int main(void) {
+        printf("hello, world\n");
+        }
+    ```
 
-```C# tab=
-using System;
+=== "C++"
 
-class Program {
-  static void Main(string[] args) {
-    Console.WriteLine("Hello, world!");
-  }
-}
-```
+    ```C++
+        #include <iostream>
+
+        int main() {
+        std::cout << "Hello, world!\n";
+        return 0;
+        }
+    ```
+
+=== "C#"
+
+    ```C#
+        using System;
+
+        class Program {
+            static void Main(string[] args) {
+                Console.WriteLine("Hello, world!");
+            }
+        }
+    ```
 
 in context
 
@@ -303,6 +311,8 @@ sequenceDiagram
 
     - list item a
     - list item b
+
+###  two separate tab sets
 
 === "Tab 1"
     Markdown **content**.
