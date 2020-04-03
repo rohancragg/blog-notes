@@ -16,24 +16,25 @@ curl https://bootstrap.pypa.io/get-pip.py -o get-pip.py
 python get-pip.py
 python -m pip install -U pip
 ```
+
 ### Install MkDocs
+
 ```powershell
 pip install mkdocs
-python .\scoop\apps\python\current\Tools\scripts\win_add2path.py
+python $env:USERPROFILE\scoop\apps\python\current\Tools\scripts\win_add2path.py
 ```
+
 ### Install the Custom Theme
+
 Using [Material theme](https://squidfunk.github.io/mkdocs-material/)
+
 ```powershell
 pip install mkdocs-material
 ```
 
 ### Install MkDocs Extensions
 ```powershell
-pip install pygments # required dependency for CodeHilite: https://squidfunk.github.io/mkdocs-material/extensions/codehilite/
-pip install pymdown-extensions # PyMdown Extensions: https://squidfunk.github.io/mkdocs-material/extensions/pymdown/
-pip install mkdocs-minify-plugin # https://squidfunk.github.io/mkdocs-material/plugins/minify-html/
-pip install mkdocs-git-revision-date-localized-plugin # https://squidfunk.github.io/mkdocs-material/plugins/revision-date/
-pip install fontawesome_markdown # http://bwmarrin.github.io/MkDocsPlus/fontawesome/ 
+pip install -r ./requirements.txt
 ```
 
 It can be previewed by running `mkdocs serve`
