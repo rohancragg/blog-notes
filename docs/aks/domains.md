@@ -162,7 +162,7 @@ az network dns record-set ns add-record -g $dnsRgName -z $domainName --record-se
 
 In my case this was with <https://123-reg.co.uk> and looks like this:
 
-![Image](media/registrar-update-nameservers.png?raw=true)
+![Image](media/registrar-update-nameservers.png)
 
 ### A DNS Zone Per environment
 
