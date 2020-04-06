@@ -76,6 +76,7 @@ extra:
       repo: fontawesome/brands/gitlab
 
 extra_javascript:
+  - js/extra.js
   - 'https://platform.linkedin.com/badges/js/profile.js'
 
 extra_css:
@@ -96,7 +97,7 @@ markdown_extensions:
   - markdown.extensions.tables
   - markdown.extensions.toc:
       permalink: true 
-  - pymdownx.arithmatex
+  - pymdownx.arithmatex:
   - pymdownx.betterem:
       smart_enable: all
   - pymdownx.betterem:
@@ -107,10 +108,27 @@ markdown_extensions:
   - pymdownx.emoji:
       emoji_index: !!python/name:pymdownx.emoji.twemoji
       emoji_generator: !!python/name:pymdownx.emoji.to_svg
-  - pymdownx.escapeall
-  - pymdownx.highlight
-  - pymdownx.inlinehilite
-  - pymdownx.keys
+  - pymdownx.escapeall:
+      hardbreak: True
+      nbsp: True
+  - pymdownx.highlight:
+      extend_pygments_lang:
+        - name: php-inline
+          lang: php
+          options:
+            startinline: true
+        - name: pycon3
+          lang: pycon
+          options:
+            python3: true
+      linenums_style: pymdownx-inline
+  - pymdownx.inlinehilite:
+      custom_inline:
+        - name: math
+          class: arithmatex
+          format: !!python/name:pymdownx.arithmatex.inline_mathjax_format
+  - pymdownx.keys:
+      separator: "\uff0b"
   - pymdownx.magiclink:
       repo_url_shortener: true
       repo_url_shorthand: true
@@ -123,8 +141,16 @@ markdown_extensions:
   - pymdownx.mark
   - pymdownx.progressbar
   - pymdownx.smartsymbols
-  - pymdownx.snippets
-  - pymdownx.superfences
+  - pymdownx.snippets:
+      base_path: docs/_snippets
+  - pymdownx.superfences:
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+          format: !!python/name:pymdownx.superfences.fence_code_format
+        - name: math
+          class: arithmatex
+          format: !!python/name:pymdownx.arithmatex.fence_mathjax_format
   - pymdownx.tasklist:
       custom_checkbox: true
   - pymdownx.tabbed

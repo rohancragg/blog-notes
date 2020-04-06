@@ -1,6 +1,20 @@
 ---
 disqus:
 ---
+
+## Arithmatex
+
+$$
+E(\mathbf{v}, \mathbf{h}) = -\sum_{i,j}w_{ij}v_i h_j - \sum_i b_i v_i - \sum_j c_j h_j
+$$
+
+\[3 < 4\]
+
+\begin{align}
+    p(v_i=1|\mathbf{h}) & = \sigma\left(\sum_j w_{ij}h_j + b_i\right) \\
+    p(h_j=1|\mathbf{v}) & = \sigma\left(\sum_i w_{ij}v_i + c_j\right)
+\end{align}
+
 ## Carets
 Testing ^^carets^^
 
@@ -34,7 +48,6 @@ Don't act so surprised, Your {~~Queen~>Highness~~}{>>@gsw sounds better<<}. You 
 
 ## Highlight
 
-**NOTE: not yet working**
 `#!php-inline $a = array("foo" => 0, "bar" => 1);`
 
 ## InlineHilite 
@@ -168,8 +181,8 @@ c/o
 ## Snippets
 
 --8<--
-docs\misc\snip1.md
-docs\misc\snip2.md
+snip1.md
+snip2.md
 --8<--
 
 ## superfences
@@ -277,13 +290,7 @@ import boo.baz
 import foo.bar.baz
 ```
 
-```mermaid
-graph TD
-    A[Hard] -->|Text| B(Round)
-    B --> C{Decision}
-    C -->|One| D[Result 1]
-    C -->|Two| E[Result 2]
-```
+!!! example "Sequence Diagram Example"
 
 ```mermaid
 sequenceDiagram
@@ -298,6 +305,7 @@ sequenceDiagram
     John->>Bob: How about you?
     Bob-->>John: Jolly good!
 ```
+
 
 ## Tabbed
 
@@ -350,12 +358,13 @@ Task List
 
 ## tilde
 
-Delete ~~Delete me~~
+Delete: ~~Delete me~~
 
-Subscript 
-
-CH~3~CH~2~OH
+Subscript: CH~3~CH~2~OH
 
 text~a\ subscript~
 
-
+--8<--
+mermaid.txt
+mathjax.txt
+--8<--
