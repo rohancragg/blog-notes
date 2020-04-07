@@ -9,6 +9,7 @@ fb_appid: '245640346829400'
 nav:
   - Home: README.md
   - About Me: about.md
+  - What's New: whats-new.md
   - Tools & Techniques:
     - Scoop & Co: misc\scoop.md
     - Bash Shell on Windows: misc\git-bash.md

@@ -64,6 +64,9 @@ scoop install nodejs yarn openssl
 scoop install azure-functions-core-tools
 scoop install vcredist2019 linqpad notepadplusplus windows-terminal postman
 scoop install paint.net krita brackets
+
+scoop bucket add instrumenta https://github.com/instrumenta/bucket-instrumenta
+scoop install kubeval
 ```
 
 !!! info
