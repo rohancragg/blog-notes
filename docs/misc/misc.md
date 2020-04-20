@@ -23,3 +23,12 @@ As always, Scott Hanselman has the low-down to end all low-downs:
 !!! info
     See my page on [Scoop & Co.](../misc/scoop.md) for how to quickly and easily install `Delugia Nerd Font` mentioned in Scott's pretty prompt post above
 
+## Free Resources for Publishing
+
+[Unsplash](https://unsplash.com/)
+The internet’s source of freely usable images.
+Powered by creators everywhere.
+
+![Photo by Zoe Schaeffer on Unsplash](media/zoe-schaeffer-r2SY2zsBmgM-unsplash.jpg)
+
+> Photo by [Zoe Schaeffer](https://unsplash.com/@dirtjoy)

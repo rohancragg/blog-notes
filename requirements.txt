@@ -1,9 +1,5 @@
 # Direct dependencies
-mkdocs>=1.0
-Pygments>=2.4
-markdown>=3.2
-pymdown-extensions>=7.0b2
-mkdocs-material>=5.0.0rc4
+mkdocs-material
 mkdocs-minify-plugin
 mkdocs-git-revision-date-plugin
 mkdocs-git-revision-date-localized-plugin
