@@ -35,6 +35,8 @@ As a developer, I prefer to describe data structures and processes using text wh
 
 ![Mermaid.js](https://mermaid-js.github.io/mermaid/img/header.png)
 
+You can use the [Mermaid Live Editor](https://mermaid-js.github.io/mermaid-live-editor) to learn the syntax.
+
 Amazingly, Mermaid can also be imported into **Diagrams.net**:
 
 > [Use Mermaid syntax to create diagrams in Diagrams.net](https://www.diagrams.net/blog/mermaid-diagrams)
