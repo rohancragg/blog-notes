@@ -23,6 +23,7 @@ nav:
     - Create a TLS Secret: aks\create-tls-secret.md
   - Writing:
     - Prettier link sharing with MkDocs: writing\social-media-sharing.md
+    - Technical Diagramming: writing\diagrams.md
 
 # Repository
 repo_name: 'rohancragg/blog-notes'
