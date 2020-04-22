@@ -16,7 +16,7 @@ Since I don't have a licence for Visio I tend to use the popular drawing tool [d
 
 ???info "More about `diagrams.net`"
     **diagrams.net** used to be called **draw.io**.
-    
+
     It lets you create a wide range of diagrams, from simple tree and flow diagrams, to highly technical network, rack and electrical diagrams.
 
     It’s a free, online diagram editor and viewer with a wide variety of shapes, icons, connector and templates to help you get started quickly. It’s also feature-rich–experienced diagrammers will feel at home.
@@ -24,6 +24,8 @@ Since I don't have a licence for Visio I tend to use the popular drawing tool [d
     It aims to provide free, high quality diagramming software for everyone, and disrupt the diagramming industry in the process.
 
     You can [deploy diagrams.net in a docker container](https://github.com/jgraph/docker-drawio) for secure diagramming in your company behind your firewall.
+
+If you're a user of **diagrams.net** / **draw.io** then have a look at my page on how to [Import Shapes into Draw.io](https://rohancragg.co.uk/misc/shapes/)
 
 ## Diagrams-as-Code
 
@@ -125,8 +127,6 @@ classDiagram
     }
 ```
 
-
 --8<--
 mermaid.txt
-mathjax.txt
 --8<--
