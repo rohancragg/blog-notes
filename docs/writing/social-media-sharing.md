@@ -5,7 +5,7 @@ description: Sharing links to MkDocs pages using Open Graph Markup
 authors:
     - Rohan Cragg
 date: 2020-04-01
-page_path: writing/
+page_path: misc/
 og_image: media/ogp.png
 og_image_type: image/png
 ---
