@@ -8,6 +8,24 @@ date: 2020-04-07
 og_image: https://zeplin.io/static/img/imgExportDesignsInOneClick.png
 og_image_type: image/png
 ---
+## May 2020
+
+I just discovered [Azure Static Web Apps](https://docs.microsoft.com/en-gb/azure/static-web-apps/overview) - this might well prompt me to migrate away from using GitHub Pages for publishing this site...
+
+Still trying to catch up on some of the news from Microsoft Build 2020
+
+https://mybuild.microsoft.com/
+https://channel9.msdn.com/Events/Build/2020
+https://youtube.com/c/microsoftdeveloper
+
+There was some good coverage here: https://arstechnica.com/gadgets/2020/05/microsofts-romance-with-open-source-software-on-display-at-build-2020/
+
+In terms of training and learning I found that I'd happily already completed 100% on the [Build Cloud Skills Challenge - Azure DevOps](https://docs.microsoft.com/en-us/users/buildcloudskillschallenge/collections/60j5u7og741dgd). I really need to crack on and re-book an online proctored exam for [Exam AZ-400 - Designing and Implementing Microsoft DevOps Solutions](https://docs.microsoft.com/en-gb/learn/certifications/exams/az-400) to finally gain my [https://docs.microsoft.com/en-gb/learn/certifications/devops-engineer](https://docs.microsoft.com/en-gb/learn/certifications/devops-engineer).
+
+A [free exam voucher](https://docs.microsoft.com/en-us/learn/certifications/microsoft-build-cloud-skills-challenge-2020-free-certification-exam-offer) is available for redemption starting June 8, 2020 and is valid until January 31, 2021
+
+My colleage @twitter:d0ugs mode some notes that have prompted me to go back and watch this [Building Azure Apps using the Common Data Service](https://www.youtube.com/watch?v=8My4Nh2MUEo)
+
 ## April 2020
 
 ### Reading
