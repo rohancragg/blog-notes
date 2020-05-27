@@ -26,6 +26,8 @@ A [free exam voucher](https://docs.microsoft.com/en-us/learn/certifications/micr
 
 My colleage @twitter:d0ugs mode some notes that have prompted me to go back and watch this [Building Azure Apps using the Common Data Service](https://www.youtube.com/watch?v=8My4Nh2MUEo)
 
+Also annouced into public preview - [Azure Synapse Analytics](https://docs.microsoft.com/en-us/azure/synapse-analytics/overview-what-is) is the 'Data Lakehouse' we've all (apparently) been waiting for: https://youtu.be/HvEi13pWNps - it's an all-in-one studio for everything Data
+
 ## April 2020
 
 ### Reading
