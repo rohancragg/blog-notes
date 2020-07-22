@@ -2,6 +2,7 @@
     "cSpell.ignoreWords": [
         "gubbins"
     ],
+    "peacock.color": "#557c9b",
     "workbench.colorCustomizations": {
         "activityBar.activeBackground": "#7295b1",
         "activityBar.activeBorder": "#e8d6e0",
@@ -19,6 +20,5 @@
         "titleBar.border": "#557c9b",
         "titleBar.inactiveBackground": "#557c9b99",
         "titleBar.inactiveForeground": "#e7e7e799"
-    },
-    "peacock.color": "#557c9b"
+    }
 }

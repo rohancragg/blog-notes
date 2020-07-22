@@ -10,7 +10,7 @@ page_path: misc/
 og_image: media/vm-size.png
 ---
 
-This page describes how I configure myself a Dev VM in Microsoft Azure
+This page (probably evolving) describes how I configure myself a Dev VM in Microsoft Azure
 
 ## How I build my workstations in the sky
 
@@ -28,7 +28,7 @@ If I want to use WSL [Windows Subsystem for Linux](https://docs.microsoft.com/en
 
 ### Linux VM or Linux on a Windows VM?
 
-As I mentioned on my [Bash shell on Windows](git-bash.md) article in April I'm still primarily a Windows user but have been gradually using Linux tools and shells and even SSH-ing onto Linux servers for work. As such I've recently decided to spend more time doing my work in a WSL environment on Windows (which allows you to use Linux distros directly from your Windows 10 machine). Now that the next interation of WSL has been released (WSL2) it seemed like a great time to take the next leap.
+As I mentioned on my [Bash shell on Windows](git-bash.md) article in April I'm still primarily a Windows user but have been gradually using more and more Linux tools and shells and even SSH-ing onto Linux servers for work. As such I've recently decided to spend more time doing my work in a WSL environment on Windows (which allows you to use Linux distros directly from your Windows 10 machine). Now that the next interation of WSL has been released (WSL2) it seemed like a great time to take the next leap.
 
 ### Tips for a great Dev environment with WSL2
 
@@ -37,9 +37,9 @@ As I mentioned on my [Bash shell on Windows](git-bash.md) article in April I'm s
 
 #### Get WSL2
 
-Before installing any Linux distributions on Windows, you must enable the "Windows Subsystem for Linux" optional feature, and to update to WSL 2, you must meet the following criteria:
+Before installing any Linux distributions on Windows, you must enable the "Windows Subsystem for Linux" optional feature and for WSL2 you enable the 'Virtual Machine Platform' optional component.
 
-The steps are slightly different when running Windows 10 or Windows Server. If I pick a Windows 10 rather than a Windows Server VM the [commands for installing Hyper-V on Windows 10](https://docs.microsoft.com/en-us/virtualization/hyper-v-on-windows/quick-start/enable-hyper-v) are slightly different:
+Full details are in the links below but be aware that the steps are slightly different when running Windows 10 or Windows Server. If I pick a Windows 10 rather than a Windows Server VM the [commands for installing Hyper-V on Windows 10](https://docs.microsoft.com/en-us/virtualization/hyper-v-on-windows/quick-start/enable-hyper-v) are slightly different:
 
 ```powershell
 # Windows 10 (version 2004 and later)
@@ -48,12 +48,14 @@ Enable-WindowsOptionalFeature -Online -FeatureName Microsoft-Hyper-V -All
 # Windows Server 2019 (version 1709 and later)
 Install-WindowsFeature -Name Hyper-V -ComputerName <computer_name> -IncludeManagementTools
 ```
+
 - [Install WSL2 on Windows Server](https://docs.microsoft.com/en-gb/windows/wsl/install-on-server)
+
 - [Install WSL2 on Windows 10](https://docs.microsoft.com/en-gb/windows/wsl/install-win10)
 
 #### Use a single `Git Credential Manager` on Windows
 
-Even thogh you may not be aware of it, when you use Git on Windows Git a Git Credential Manager stores authentication tokens securely in the Windows Credential Manager. After the first time, you can use git to talk to your hosting provider you then no longer need to keep re-authenticating. It will just access the token in the Windows Credential Manager.
+Even thogh you may not be aware of it, when you use Git on Windows Git uses a credential manager component to store authentication tokens securely in Windows Credential Manager. After the first time you enter credentials or an access token Git will to talk to your hosting provider you then the credential manager will ensure that you no longer need to keep re-authenticating. It will just access the token in the Windows Credential Manager.
 
 To set up Git Credential Manager for use with a WSL distribution, open your distribution and enter this command (as described in [this article](https://docs.microsoft.com/en-us/windows/wsl/tutorials/wsl-git#git-credential-manager-setup)):
 
@@ -69,7 +71,7 @@ git config --global credential.helper "/mnt/c/Users/rohanc/scoop/apps/git/curren
 
 #### Use Visual Studio Code inside of WSL
 
-I was amazed to find that I can open VSCode from a directory in the WSL shell (e.g. perhaps I just cloned a code repo and navigated into a folder). I can simply hit `code .` and we're away:
+I was amazed to find that I can open VSCode from a directory in the WSL shell (e.g. perhaps I just cloned a code repo and navigated into a folder). I can simply hit `code .` and I'm off!
 
 More here: <https://docs.microsoft.com/en-us/windows/wsl/tutorials/wsl-vscode#open-a-wsl-project-in-visual-studio-code>
 
