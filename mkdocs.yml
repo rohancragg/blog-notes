@@ -11,6 +11,7 @@ nav:
   - About Me: about.md
   - What's New: whats-new.md
   - Tools & Techniques:
+    - A Dev VM in the sky: misc\cloud-dev-vms.md
     - Import Shapes into Draw.io: misc\shapes.md
     - Scoop & Co: misc\scoop.md
     - Bash Shell on Windows: misc\git-bash.md
