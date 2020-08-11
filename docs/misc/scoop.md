@@ -53,20 +53,27 @@ Then, I add additional [*Buckets*](https://github.com/lukesampson/scoop/wiki/Buc
 ```powershell
 scoop bucket add extras
 scoop bucket add versions
-scoop bucket add Sysinternals
+scoop bucket add Sysinternals 'https://github.com/Ash258/Scoop-Sysinternals.git'
 ```
 
 Then yet more handy tools I use (*some are from the **extras** bucket*):
 ```powershell
-scoop install pwsh go docker kubectl helm make
+scoop install pwsh
+scoop install go docker kubectl helm make
 scoop install azure-cli azure-ps storageexplorer dotnet-sdk pulumi
 scoop install nodejs yarn openssl
 scoop install azure-functions-core-tools
 scoop install vcredist2019 linqpad notepadplusplus windows-terminal postman
 scoop install paint.net krita brackets
+scoop install obs-studio
+scoop install openoffice
 
-scoop bucket add instrumenta https://github.com/instrumenta/bucket-instrumenta
+scoop bucket add instrumenta https://github.com/instrumenta/scoop-instrumenta
 scoop install kubeval
+scoop install conftest
+
+# SysInternals
+scoop install Autoruns ZoomIt DiskView ProcessExplorer TCPView
 ```
 
 !!! info
@@ -157,7 +164,7 @@ Here's another place where Scoop comes to the rescue to avoid clunky download an
 
 ```powershell
 scoop bucket add nerd-fonts
-sudo scoop install Delugia-Nerd-Font-Complete
+sudo scoop install Delugia-Nerd-Font-Complete Cascadia-Code
 ```
 
 ## Productivity Tools
