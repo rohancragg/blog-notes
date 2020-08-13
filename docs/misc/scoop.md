@@ -15,7 +15,7 @@ This page describes how I'm `current`-ly using Scoop (and other Package Managers
 
 ## *The Daddy...* **Scoop**!
 
-Get [scoop.sh](https://scoop.sh/) and check out the [wiki](https://github.com/lukesampson/scoop/wiki) for latest info - or see below for the `TL;DR`
+Get [scoop.sh](https://scoop.sh/) and check out the [Scoop Home Page](https://scoop.netlify.app/) (which seems to have superceded the [wiki](https://github.com/lukesampson/scoop/wiki)) for latest info - or see below for the `TL;DR`
 
 > Scoop focuses on open-source, command-line developer tools" but then those are the kinds of tools I'm using more and more...
 ...You're familiar with UNIX tools, and you wish there were more of them on Windows
@@ -24,12 +24,25 @@ Get [scoop.sh](https://scoop.sh/) and check out the [wiki](https://github.com/lu
 
 ### Install `scoop` and base set of tools
 ```powershell
+Set-ExecutionPolicy RemoteSigned -Scope CurrentUser
 Invoke-Expression (New-Object System.Net.WebClient).DownloadString('https://get.scoop.sh')
+scoop help
 scoop install sudo
-sudo scoop install 7zip git openssh --global
 scoop install aria2 lessmsi innounp
-scoop install curl grep sed less touch dig nano 
+scoop install 7zip git openssh
+scoop install curl grep sed less touch dig nano
 scoop install coreutils
+# vim
+scoop install vim
+'
+set ff=unix
+
+set cindent
+set tabstop=4
+set shiftwidth=4
+set expandtab
+set backupdir=$TEMP
+' | out-file ~/.vimrc -enc oem -append
 ```
 
 [coreutils](https://github.com/ScoopInstaller/Main/blob/master/bucket/coreutils.json) is a multi-tool package - *"a collection of GNU utilities such as bash, make, gawk and grep based on [MSYS](http://www.mingw.org/wiki/msys)"*
