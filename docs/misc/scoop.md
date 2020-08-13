@@ -27,8 +27,8 @@ Get [scoop.sh](https://scoop.sh/) and check out the [wiki](https://github.com/lu
 Invoke-Expression (New-Object System.Net.WebClient).DownloadString('https://get.scoop.sh')
 scoop install sudo
 sudo scoop install 7zip git openssh --global
-scoop install aria2 lessmsi
-scoop install curl grep sed less touch
+scoop install aria2 lessmsi innounp
+scoop install curl grep sed less touch dig nano 
 scoop install coreutils
 ```
 
@@ -58,15 +58,16 @@ scoop bucket add Sysinternals 'https://github.com/Ash258/Scoop-Sysinternals.git'
 
 Then yet more handy tools I use (*some are from the **extras** bucket*):
 ```powershell
-scoop install pwsh
+scoop install pwsh oh-my-posh posh-git
 scoop install go docker kubectl helm make
-scoop install azure-cli azure-ps storageexplorer dotnet-sdk pulumi
+scoop install azure-cli azure-ps storageexplorer dotnet-sdk pulumi vscode-insiders
 scoop install nodejs yarn openssl
 scoop install azure-functions-core-tools
-scoop install vcredist2019 linqpad notepadplusplus windows-terminal postman
+scoop install vcredist2019 linqpad notepadplusplus windows-terminal postman powertoys
 scoop install paint.net krita brackets
 scoop install obs-studio
-scoop install openoffice
+scoop install skype
+#scoop install openoffice
 
 scoop bucket add instrumenta https://github.com/instrumenta/scoop-instrumenta
 scoop install kubeval
