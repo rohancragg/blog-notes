@@ -8,6 +8,14 @@ date: 2020-04-07
 og_image: https://zeplin.io/static/img/imgExportDesignsInOneClick.png
 og_image_type: image/png
 ---
+## Aug 2020
+
+### Recent Listening
+
+I just rediscovered across this Dub album that was in my collection as a teenager:
+
+<iframe style="border: 0; width: 100%; height: 120px;" src="https://bandcamp.com/EmbeddedPlayer/album=2099528426/size=large/bgcol=333333/linkcol=9a64ff/tracklist=false/artwork=small/transparent=true/" seamless><a href="http://dubsyndicate.bandcamp.com/album/tunes-from-the-missing-channel">Tunes From The Missing Channel by Dub Syndicate</a></iframe>
+
 ## May 2020
 
 I just discovered [Azure Static Web Apps](https://docs.microsoft.com/en-gb/azure/static-web-apps/overview) - this might well prompt me to migrate away from using GitHub Pages for publishing this site...
