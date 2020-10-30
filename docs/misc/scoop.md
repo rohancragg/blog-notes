@@ -27,9 +27,10 @@ Get [scoop.sh](https://scoop.sh/) and check out the [Scoop Home Page](https://sc
 Set-ExecutionPolicy RemoteSigned -Scope CurrentUser
 Invoke-Expression (New-Object System.Net.WebClient).DownloadString('https://get.scoop.sh')
 scoop help
+
+scoop install 7zip git
 scoop install sudo
 scoop install aria2 lessmsi innounp
-scoop install 7zip git openssh
 scoop install curl grep sed less touch dig nano
 scoop install coreutils
 # vim
@@ -51,7 +52,13 @@ set backupdir=$TEMP
     you can use the Unix tool `ls` after installing `coreutils` but you first need to remove the `PowerShell` alias already in place\
     *i.e. add this to your Powershell `$profile`:*
 
-```powershell
+``` powershell
+scoop install pwsh
+```
+
+...switch to powershell core
+
+```powershell 6 and above
 Remove-Alias -Name ls
 Remove-Alias -Name cat
 Remove-Alias -Name mv
@@ -71,15 +78,16 @@ scoop bucket add Sysinternals 'https://github.com/Ash258/Scoop-Sysinternals.git'
 
 Then yet more handy tools I use (*some are from the **extras** bucket*):
 ```powershell
-scoop install pwsh oh-my-posh posh-git
+scoop install vscode
+scoop install oh-my-posh posh-git
 scoop install go docker kubectl helm make
-scoop install azure-cli azure-ps storageexplorer dotnet-sdk pulumi vscode-insiders
+scoop install azure-cli azure-ps storageexplorer dotnet-sdk
 scoop install nodejs yarn openssl
 scoop install azure-functions-core-tools
-scoop install vcredist2019 linqpad notepadplusplus windows-terminal postman powertoys
+scoop install vcredist2019
+scoop install notepadplusplus windows-terminal postman
 scoop install paint.net krita brackets
 scoop install obs-studio
-scoop install skype
 #scoop install openoffice
 
 scoop bucket add instrumenta https://github.com/instrumenta/scoop-instrumenta
