@@ -51,18 +51,36 @@ git config --global user.name 'Your Name'
 git config --global user.email 'your.name@your.org'
 ```
 
+???Info "What if I forget?"
+    If you forget to set your email you get apretty helpful error message like this:
+
+    ```
+    Author identity unknown
+
+    *** Please tell me who you are.
+
+    Run
+
+      git config --global user.email "you@example.com"
+      git config --global user.name "Your Name"
+
+    to set your account's default identity.
+    Omit --global to set the identity only in this repository.
+
+    fatal: unable to auto-detect email address
+    ```
 ### Work on an existing Repository
 
 Get the Git Clone URL from a repository you want to work on
 
-![Clone URL - Azure DevOps](media\git-clone-azdo.png)
+![Clone URL - Azure DevOps](media/git-clone-azdo.png)
 
 Open VSCode
 
 then in VS Code Ctrl-Shift-P and then type 'git clone'
 
-!!!Info 'Git Branches'
-    Using Azure DevOps to [create and delete a branch in your Git repo](https://docs.microsoft.com/en-us/azure/devops/repos/git/branches?view=azure-devops&tabs=command-line)
+!!!Info "Git Branches"
+    You can read a brief guide on using Git branches in Azure DevOps to [create and delete a branch in your Git repo](https://docs.microsoft.com/en-us/azure/devops/repos/git/branches?view=azure-devops&tabs=command-line)
 
 ```powershell
 git branch feature/TryingSomething

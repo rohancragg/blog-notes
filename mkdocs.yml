@@ -17,6 +17,7 @@ nav:
     - Bash Shell on Windows: misc\git-bash.md
     - Miscellanous Notes: misc\misc.md
   - DevOps:
+    - DevOps for the Terrified: devops\devops-for-the-terrified.md
     - Azure DevOps - Self-Hosted Build Agents: devops\azdo-self-hosted-build-agents.md
     - VM Patching in DevTest Labs: compute\patching-devtestlabs.md
   - Kubernetes:
@@ -57,7 +58,7 @@ plugins:
   - git-revision-date
   - minify:
       minify_html: true
-      
+
 # Customization
 extra:
   manifest: 'manifest.webmanifest'
@@ -100,7 +101,7 @@ markdown_extensions:
   - markdown.extensions.meta
   - markdown.extensions.tables
   - markdown.extensions.toc:
-      permalink: true 
+      permalink: true
   - pymdownx.arithmatex:
   - pymdownx.betterem:
       smart_enable: all
@@ -159,4 +160,3 @@ markdown_extensions:
       custom_checkbox: true
   - pymdownx.tabbed
   - pymdownx.tilde
-  
