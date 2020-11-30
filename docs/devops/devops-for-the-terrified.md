@@ -119,6 +119,34 @@ Do what is says in the message!
 
 ```powershell
 git push --set-upstream origin feature/TryingSomething
+# create and merge a Pull Request
+# now, you no longer need the feature branch as it's been deleted on the remote copy
+git checkout main
+git pull
+# delete the local copy
+git branch -D feature/TryingSomething
+```
+
+```powershell
+# make changes
+git add .
+git commit -m 'my commit message'
+# get any recent changes in the trunk (main branch)
+git checkout main
+git rebase origin/main
+# ensure that the branch is up to date with changes in the trunk (main branch)
+git checkout feature/TryingSomethingElse
+git merge --no-edit main
+git push -u origin feature/TryingSomethingElse
+# create and merge a Pull Request
+git fetch --prune --tags
+git checkout main
+# delete the (now redundant) local branch
+git branch -D feature/TryingSomethingElse
+git fetch --prune --tags
+# get any recent changes in the trunk (main branch) - there will be new commits due to the Pull Request merge activity
+git rebase origin/main
+git push --tags
 ```
 
 ### Going even faster!
@@ -151,6 +179,6 @@ git town prune-branches
 git town sync
 ```
 
-Here's the whole process in action!
+[Here's the whole process in action!](https://asciinema.org/a/xxY6bfxValIgJZzQ2kkZlBZZw)
 
 <script id="asciicast-xxY6bfxValIgJZzQ2kkZlBZZw" src="https://asciinema.org/a/xxY6bfxValIgJZzQ2kkZlBZZw.js" async></script>
