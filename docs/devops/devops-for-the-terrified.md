@@ -14,7 +14,7 @@ I've been preparing some videos and learning materials for colleagues that work 
 
 ## Preparing your machine
 
-Install the most common extensions you might need. This is using [a tool called `scoop` which I've talked about before](\).
+Install the most common extensions you might need. This is using [a tool called `scoop` which I've talked about before](/misc/scoop).
 
 Open Powershell and run this:
 
