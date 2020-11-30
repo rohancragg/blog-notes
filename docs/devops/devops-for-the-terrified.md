@@ -82,6 +82,8 @@ then in VS Code Ctrl-Shift-P and then type 'git clone'
 !!!Info "Git Branches"
     You can read a brief guide on using Git branches in Azure DevOps to [create and delete a branch in your Git repo](https://docs.microsoft.com/en-us/azure/devops/repos/git/branches?view=azure-devops&tabs=command-line)
 
+Create a branch to work on
+
 ```powershell
 git branch feature/TryingSomething
 git checkout feature/TryingSomething
@@ -121,8 +123,12 @@ git push --set-upstream origin feature/TryingSomething
 
 ### Going even faster!
 
+A quicker way to run through the steps from 'Create a branch to work on' above is to use a tool called [`Git Town`](https://www.git-town.com/)
+
 ```powershell
+# installs the tool
 scoop install git-town
+# make a feature branch to work on
 git town hack feature/TrySomethingElse
 ```
 
@@ -133,7 +139,10 @@ git commit -m 'Your commit message'
 git town sync
 ```
 
-Open up your Repository in Azure DevOps or GitHub and create a pull request. If all goes well your Pull Request will get approved and merged and you no longer need your local branch for this feature (the remote branch will have been deleted and it can be pretty fiddly with just Git commands to clean up your working directory)
+Open up your Repository in Azure DevOps or GitHub and create a pull request.
+![Create Pull Request](media/create-pull-request.png)
+
+If all goes well your Pull Request will get approved and merged and you no longer need your local branch for this feature (the remote branch will have been deleted and it can be pretty fiddly with just Git commands to clean up your working directory)
 
 ```powershell
 git town
