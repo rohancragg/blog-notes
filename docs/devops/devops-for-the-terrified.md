@@ -126,6 +126,7 @@ git pull
 # delete the local copy
 git branch -D feature/TryingSomething
 ```
+The full set of commands that avoids any errors due to having a stale copy of the repository (this can happen if other people are making changes) is as follows:
 
 ```powershell
 # make changes
@@ -148,8 +149,9 @@ git fetch --prune --tags
 git rebase origin/main
 git push --tags
 ```
-
 ### Going even faster!
+
+Clearly this is alot of commands to have to exectue each time so there's a great tool that makes this much easier!
 
 A quicker way to run through the steps from 'Create a branch to work on' above is to use a tool called [`Git Town`](https://www.git-town.com/)
 
