@@ -144,8 +144,10 @@ Open up your Repository in Azure DevOps or GitHub and create a pull request.
 
 If all goes well your Pull Request will get approved and merged and you no longer need your local branch for this feature (the remote branch will have been deleted and it can be pretty fiddly with just Git commands to clean up your working directory)
 
+![Merge Pull Request](media/merge-pull-request.png)
+
 ```powershell
-git town
+git town sync
 ```
 
 ## Pipelines for Build and Deployment
