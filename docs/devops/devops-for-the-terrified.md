@@ -146,8 +146,11 @@ If all goes well your Pull Request will get approved and merged and you no longe
 
 ![Merge Pull Request](media/merge-pull-request.png)
 
-```powershell
+```powershelltouch newfile
+git town prune-branches
 git town sync
 ```
 
-## Pipelines for Build and Deployment
+Here's the whole process in action!
+
+<script id="asciicast-xxY6bfxValIgJZzQ2kkZlBZZw" src="https://asciinema.org/a/xxY6bfxValIgJZzQ2kkZlBZZw.js" async></script>
