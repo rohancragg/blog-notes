@@ -173,8 +173,8 @@ git town hack feature/TrySomethingElse
 
 Do some work...
 
-```bash
-touch newfile.txt
+```powershell
+Add-Content newfile.txt ''
 ```
 
 Add and commit the changes:
