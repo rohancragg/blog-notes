@@ -14,7 +14,7 @@ I've been preparing some videos and learning materials for colleagues that work 
 
 ## Preparing your machine
 
-Install the most common extensions you might need. This is using [a tool called `scoop` which I've talked about before](/misc/scoop).
+Install the most common extensions you might need. This is using [a tool called **Scoop** which I've talked about before](/misc/scoop).
 
 Open Powershell and run this:
 
@@ -40,19 +40,35 @@ code --install-extension ms-vscode.powershell
 code --install-extension msazurermtools.azurerm-vscode-tools
 ```
 
-## Git for Version Control
+## Use Git for Version Control
 
-[Enable Long Paths in Windows](https://github.com/Azure/Enterprise-Scale/blob/main/docs/Deploy/getting-started.md#enabling-long-paths-on-windows)
-
-Set some default configuration
+### Set some default configuration
 
 ```powershell
-git config --global user.name 'Your Name'
-git config --global user.email 'your.name@your.org'
+git config --system core.longpaths true
 ```
+And enable long paths (see: [Enable Long Paths in Windows](https://github.com/Azure/Enterprise-Scale/blob/main/docs/Deploy/getting-started.md#enabling-long-paths-on-windows))
+
+Tell Git who you are (used as the author name/email when you issue the `git commit` command):
+
+=== "Global Default"
+
+    ```powershell
+    # default details used for all repositories (if not over-ridden by a local config)
+    git config --global user.name 'Your Name'
+    git config --global user.email 'your.name@your.org'
+    ```
+
+=== "Current Repository"
+
+    ```powershell
+    # details used for the current repository (i.e over-riding any global config)
+    git config --local user.name 'Your Name'
+    git config --local user.email 'your.name@your.org'
+    ```
 
 ???Info "What if I forget?"
-    If you forget to set your email you get apretty helpful error message like this:
+    If you forget to set your email you get a pretty helpful error message like this:
 
     ```
     Author identity unknown
@@ -69,9 +85,10 @@ git config --global user.email 'your.name@your.org'
 
     fatal: unable to auto-detect email address
     ```
-### Work on an existing Repository
 
-Get the Git Clone URL from a repository you want to work on
+### Start work on an existing Repository
+
+Get the Git Clone URL from a repository you want to work on:
 
 ![Clone URL - Azure DevOps](media/git-clone-azdo.png)
 
@@ -79,108 +96,118 @@ Open VSCode
 
 then in VS Code Ctrl-Shift-P and then type 'git clone'
 
-!!!Info "Git Branches"
-    You can read a brief guide on using Git branches in Azure DevOps to [create and delete a branch in your Git repo](https://docs.microsoft.com/en-us/azure/devops/repos/git/branches?view=azure-devops&tabs=command-line)
+Change directory into the new directory that gets created after you have cloned the Repository
 
-Create a branch to work on
+???Tip "Using different repositories with different credentials"
+    If you commit to different repositories with different credentials then you will need to give Git some configuration info about yourself [as explained above](#set-some-default-configuration)
+    ```powershell
+    git config --local user.name 'Your Name'
+    git config --local user.email 'your.name@your.org'
+    ```
+
+### Create a branch to work on
+
+Use the branch command to [create the branch](https://docs.microsoft.com/en-us/azure/devops/repos/git/branches?view=azure-devops&tabs=command-line#create-a-branch) and checkout to swap to that branch.
 
 ```powershell
 git branch feature/TryingSomething
 git checkout feature/TryingSomething
 ```
 
-Change directory into the new directory that gets created after you have cloned the Repository
-
-Give Git some configuration info about yourself for it to use when you puch your changes back to the central copy of the Repository (i.e. hosted in Azure DevOps or GitHub for example).
-
-```powershell
-git config user.name 'Your Name'
-git config user.email 'your.name@your.org'
-```
-
-Once you have edited or added some files do this:
+Once you have edited or added some files you need to push you changes (but it's important to [update your branch with changes in the trunk](https://docs.microsoft.com/en-us/azure/devops/repos/git/pulling?view=azure-devops&tabs=command-line#update-your-branch-with-the-latest-changes-from-master) to avoid later merge conflicts when making a Pull Request]):
 
 ```powershell
 git add .
 git commit -m 'my commit message'
-git push
-```
-
-you'll get an error if you followed the above:
-
-```powershell
-fatal: The current branch feature/TryingSomething has no upstream branch.
-To push the current branch and set the remote as upstream, use
-
-    git push --set-upstream origin feature/TryingSomething
-```
-
-Do what is says in the message!
-
-```powershell
+# merge the latest changes from main into the feature branch
+git pull origin main
 git push --set-upstream origin feature/TryingSomething
-# create and merge a Pull Request
-# now, you no longer need the feature branch as it's been deleted on the remote copy
+```
+
+???Question "Why not just use `git push`?"
+    i.e. what's the `--set-upstream` about?
+    You'll get an error if you just use `git push` because [the remote branch doesn't yet exist](https://docs.microsoft.com/en-us/azure/devops/repos/git/pushing?view=azure-devops&tabs=command-line#share-your-code-with-push)):
+
+    ```powershell
+    fatal: The current branch feature/TryingSomething has no upstream branch.
+    To push the current branch and set the remote as upstream, use
+
+        git push --set-upstream origin feature/TryingSomething
+    ```
+
+### Create and merge a Pull Request
+
+Open up your Repository in Azure DevOps or GitHub and create a pull request:
+
+![Create Pull Request](media/create-pull-request.png)
+
+If all goes well your Pull Request will get approved and merged and you no longer need your local branch for this feature (the remote branch will have been deleted and you need to clean up your working directory).
+
+![Merge Pull Request](media/merge-pull-request.png)
+
+### Deleting your branch
+
+You no longer need the Feature Branch as it's been deleted on the remote
+
+```powershell
 git checkout main
+## update the local copy of the main branch
 git pull
 # delete the local copy
 git branch -D feature/TryingSomething
 ```
-The full set of commands that avoids any errors due to having a stale copy of the repository (this can happen if other people are making changes) is as follows:
 
-```powershell
-# make changes
-git add .
-git commit -m 'my commit message'
-# get any recent changes in the trunk (main branch)
-git checkout main
-git rebase origin/main
-# ensure that the branch is up to date with changes in the trunk (main branch)
-git checkout feature/TryingSomethingElse
-git merge --no-edit main
-git push -u origin feature/TryingSomethingElse
-# create and merge a Pull Request
-git fetch --prune --tags
-git checkout main
-# delete the (now redundant) local branch
-git branch -D feature/TryingSomethingElse
-git fetch --prune --tags
-# get any recent changes in the trunk (main branch) - there will be new commits due to the Pull Request merge activity
-git rebase origin/main
-git push --tags
-```
-### Going even faster!
+## Going even faster with `git town`
 
-Clearly this is alot of commands to have to exectue each time so there's a great tool that makes this much easier!
+Clearly this is a lot of commands to have to exectue each time you need to do some Feature work so there's a great tool that makes this much easier!
 
-A quicker way to run through the steps from 'Create a branch to work on' above is to use a tool called [`Git Town`](https://www.git-town.com/)
+A quicker way to run through the steps starting from [create a branch](#create-a-branch-to-work-on) above is to use a tool called [`Git Town`](https://www.git-town.com/)
 
 ```powershell
 # installs the tool
 scoop install git-town
-# make a feature branch to work on
+
+# makes a feature branch to work on and drops you into it!
 git town hack feature/TrySomethingElse
 ```
 
 Do some work...
 
+```bash
+touch newfile.txt
+```
+
+Add and commit the changes:
+
 ```powershell
+git add .
 git commit -m 'Your commit message'
+```
+
+This command then does all the hard work of getting your `main` up to date and merging your local branch and then pushing your work up to the remote (all in one line!)
+
+```powershell
 git town sync
 ```
 
-Open up your Repository in Azure DevOps or GitHub and create a pull request.
-![Create Pull Request](media/create-pull-request.png)
+[Create and merge a Pull Request](create-and-merge-a-pull-request) as above
 
-If all goes well your Pull Request will get approved and merged and you no longer need your local branch for this feature (the remote branch will have been deleted and it can be pretty fiddly with just Git commands to clean up your working directory)
-
-![Merge Pull Request](media/merge-pull-request.png)
-
-```powershelltouch newfile
+```powershell
+# cleans up and deletes redundant local branches
 git town prune-branches
+# get everything up to date
 git town sync
 ```
 
-[Here's the whole process in action!](https://asciinema.org/a/xxY6bfxValIgJZzQ2kkZlBZZw)
-
+Here's the [whole process](https://asciinema.org/a/xxY6bfxValIgJZzQ2kkZlBZZw) in action!:
 <script id="asciicast-xxY6bfxValIgJZzQ2kkZlBZZw" src="https://asciinema.org/a/xxY6bfxValIgJZzQ2kkZlBZZw.js" async></script>
+
+## Some common questions
+
+I hope to come back and answer these questions in due course:
+
+### What if I already made a Pull Request and want to make some more changes?
+
+### What about creating a new Repository from scratch?
+
+### What if I already have some files locally that I need to put into an existing Repository?
