@@ -206,9 +206,7 @@ Here's the [whole process](https://asciinema.org/a/xxY6bfxValIgJZzQ2kkZlBZZw) in
 
 I hope to come back and answer these questions in due course:
 
-### What about deployment pipelines?
-
-I'm hoping to write about those too!
+### Why are you making me type commands. Can't I just use the GUI?
 
 ### What if I already made a Pull Request and want to make some more changes?
 
@@ -221,3 +219,7 @@ I'm hoping to write about those too!
 Short answer - it gets it from Windows.
 
 ### What if I'm behind a corporate proxy
+
+### What about deployment pipelines?
+
+I'm hoping to write about those too in due course!
