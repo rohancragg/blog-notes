@@ -206,8 +206,18 @@ Here's the [whole process](https://asciinema.org/a/xxY6bfxValIgJZzQ2kkZlBZZw) in
 
 I hope to come back and answer these questions in due course:
 
+### What about deployment pipelines?
+
+I'm hoping to write about those too!
+
 ### What if I already made a Pull Request and want to make some more changes?
 
 ### What about creating a new Repository from scratch?
 
 ### What if I already have some files locally that I need to put into an existing Repository?
+
+### How does Git get my remote (i.e. GitHub / Azure DevOps) credentials?
+
+Short answer - it gets it from Windows.
+
+### What if I'm behind a corporate proxy
