@@ -31,7 +31,7 @@ scoop help
 scoop install 7zip git
 scoop install sudo
 scoop install aria2 lessmsi innounp
-scoop install curl grep sed less touch dig nano
+scoop install curl grep sed less dig nano
 scoop install coreutils
 # vim
 scoop install vim
@@ -58,7 +58,8 @@ scoop install pwsh
 
 ...switch to powershell core
 
-```powershell 6 and above
+```powershell
+#powershell 6 and above
 Remove-Alias -Name ls
 Remove-Alias -Name cat
 Remove-Alias -Name mv
@@ -212,7 +213,7 @@ pip install pygments # for source code syntax highlighting
 This a version of [asciinema](https://asciinema.org/) for recording and re-playing PowerShell terminal sessions. Once recorded you upload the recording and share it with the world!
 
 ??? "What is `asciinema` and how do I get it?!"
-    If you've never used asciinema before and you want to share a demo of something at a terminal then you'll love this tool. 
+    If you've never used asciinema before and you want to share a demo of something at a terminal then you'll love this tool.
 
     - Simply go to <https://asciinema.org/>
     - click on **Log in / Sign up**
