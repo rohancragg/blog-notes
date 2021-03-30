@@ -15,6 +15,7 @@ nav:
     - Import Shapes into Draw.io: misc\shapes.md
     - Scoop & Co: misc\scoop.md
     - Bash Shell on Windows: misc\git-bash.md
+    - About PowerShell Module Paths: misc\ps-module-paths.md
     - Miscellanous Notes: misc\misc.md
   - DevOps:
     - DevOps for the Terrified: devops\devops-for-the-terrified.md
