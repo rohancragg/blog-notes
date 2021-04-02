@@ -158,9 +158,9 @@ git branch -D feature/TryingSomething
 ```
 ### Managing changes and conflicts
 
-Finding that somsone else has modified the same file in a previous (or even concurrent) commit or in another branch that you're now merging your code with can be a truly terror-inducing prospect. I recently discovered how to use Visual Studio Code as the user interface for seeing what the conflict is and deciding whether to take **their** changes, keep **my** changes or take some combination of the two - all in the same code editor rather than learning lots of commands or jumping to another tool.
+Finding that someone else has modified the same file in a previous (or even concurrent) commit or in another branch that you're now merging your code with can be a truly terror-inducing prospect. I recently discovered how to use Visual Studio Code as the user interface for seeing what the conflict is and deciding whether to take **their** changes, keep **my** changes or take some combination of the two - all in the same code editor rather than learning lots of commands or jumping to another tool.
 
-I highly recommend reading this post - [How to use VS Code as your Git editor, difftool, and mergetool](https://roboleary.net/vscode/2020/09/15/vscode-git.html). I couldn't have explained it myself.
+I highly recommend reading this post - [How to use VS Code as your Git editor, difftool, and mergetool](https://roboleary.net/vscode/2020/09/15/vscode-git.html). I couldn't have explained it better myself!
 
 ![Merge conflict](https://roboleary.net/assets/img/blog/2020-09-15-vscode-git/vscode-merge.png)
 
