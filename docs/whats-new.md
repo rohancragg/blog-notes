@@ -8,6 +8,11 @@ date: 2020-04-07
 og_image: https://zeplin.io/static/img/imgExportDesignsInOneClick.png
 og_image_type: image/png
 ---
+
+## Apr 2021
+
+Embarassed that I keep having to DuckDuckGo this but found a really good simple explanation here [How to update a forked repo from an upstream with git rebase (or merge)](https://timonweb.com/misc/how-to-update-a-forked-repo-from-an-upstream-with-git-rebase-or-merge/) another good on I found is [here](https://medium.com/sweetmeat/how-to-keep-a-downstream-git-repository-current-with-upstream-repository-changes-10b76fad6d97)
+
 ## Aug 2020
 
 ### Recent Listening
