@@ -7,6 +7,16 @@ authors:
 date: 2020-02-04
 ---
 
+## GitHub CLI and Command Completions in Powershell
+
+[This comment in the CLI issues](https://github.com/cli/cli/issues/695#issuecomment-619247050) gave me a hint how best to add command completions for [GitHub CLI `gh`](https://cli.github.com/) in PowerShell (the shell I still use most often - and the [GitHub CLI docs](https://cli.github.com/manual/gh_completion) only mention `bash` and `zsh`).
+
+In my $profile file I added this line, so to edit my PowerShell profile I execute `code $profile` and then:
+
+```powershell
+Invoke-Expression -Command $(gh completion -s powershell | Out-String)
+```
+
 ## Windows Subsystem for Linux (WSL) environment
 
 Install: <https://docs.microsoft.com/en-us/windows/wsl/install-win10>
