@@ -80,7 +80,6 @@ scoop bucket add Sysinternals 'https://github.com/Ash258/Scoop-Sysinternals.git'
 Then yet more handy tools I use (*some are from the **extras** bucket*):
 ```powershell
 scoop install vscode
-scoop install oh-my-posh posh-git
 scoop install go docker kubectl helm make
 scoop install azure-cli azure-ps storageexplorer dotnet-sdk
 scoop install nodejs yarn openssl
@@ -88,8 +87,7 @@ scoop install azure-functions-core-tools
 scoop install vcredist2019
 scoop install notepadplusplus windows-terminal postman
 scoop install paint.net krita brackets
-scoop install obs-studio
-#scoop install openoffice
+scoop install gh
 
 scoop bucket add instrumenta https://github.com/instrumenta/scoop-instrumenta
 scoop install kubeval
@@ -97,6 +95,11 @@ scoop install conftest
 
 # SysInternals
 scoop install Autoruns ZoomIt DiskView ProcessExplorer TCPView
+
+# Used to install with scoop but are now in PSGallery
+Install-PackageProvider -Name NuGet -MinimumVersion 2.8.5.201 -Force -Scope CurrentUser
+Install-Module posh-git -Scope CurrentUser
+Install-Module oh-my-posh -Scope CurrentUser
 ```
 
 !!! info

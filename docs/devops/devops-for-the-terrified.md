@@ -209,6 +209,39 @@ git town sync
 Here's the [whole process](https://asciinema.org/a/xxY6bfxValIgJZzQ2kkZlBZZw) in action!:
 <script id="asciicast-xxY6bfxValIgJZzQ2kkZlBZZw" src="https://asciinema.org/a/xxY6bfxValIgJZzQ2kkZlBZZw.js" async></script>
 
+## Creating and completing Pull Requests in Azure Repos from command-line
+
+If you're using Azure Repos (Azure DevOps) rather than GitHub then here's a neat way to [create a Pull Request](https://docs.microsoft.com/en-us/cli/azure/repos?view=azure-cli-latest#az_repos_create) (using the [Azure CLI DevOps extension](https://docs.microsoft.com/en-gb/azure/devops/cli/?view=azure-devops)) from the current feature branch without leaving the command prompt
+
+Create a Pull request:
+
+`$prId=(az repos pr create --query 'pullRequestId' -o tsv)`
+
+Open in browser (NB: we can also use the --open flag with the `az repos create` command above):
+
+`az repos pr show --id  $prId --open`
+
+Get details:
+
+`az repos pr show --id  $prId --query '{Id:pullRequestId,Status:status,Title:title}' -o table`
+
+Set to Approved:
+
+`az repos pr set-vote --vote approve --id  $prId`
+
+Complete the pull request:
+
+`az repos pr update --status completed --id  $prId --squash true`
+
+## Another way to clean up redundant local branches
+
+I use [this great tool from Maks Nemisj](https://github.com/nemisj/git-removed-branches) to remove local branches which are no longer present in my Git remote (usually because closing my Pull Request has also caused the remote branch to be deleted).
+
+
+```
+git removed-branches --prune --force
+```
+
 ## Some common questions
 
 I hope to come back and answer these questions in due course:
