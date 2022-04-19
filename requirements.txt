@@ -1,6 +1,0 @@
-# Direct dependencies
-mkdocs-material
-mkdocs-minify-plugin
-mkdocs-git-revision-date-plugin
-mkdocs-git-revision-date-localized-plugin
-fontawesome_markdown

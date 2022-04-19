@@ -1,9 +1,0 @@
-tasks:
-  - init: echo "Configure MkDocs and extensions and plugins"
-    command: |
-      echo "Change to Python 3"
-      pyenv local 3.7.6
-      echo "Install PIP Dependencies"
-      pip install -r ./requirements.txt
-      echo "Ready to go!"
-      echo "Site can be previewed by running \`mkdocs serve\`"
