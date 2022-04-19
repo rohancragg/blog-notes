@@ -28,10 +28,10 @@ Set-ExecutionPolicy RemoteSigned -Scope CurrentUser
 Invoke-Expression (New-Object System.Net.WebClient).DownloadString('https://get.scoop.sh')
 scoop help
 
-scoop install 7zip git
+scoop install 7zip git git-filter-repo
 scoop install sudo
 scoop install aria2 lessmsi innounp
-scoop install curl grep sed less dig nano
+scoop install curl grep sed less nano bind
 scoop install coreutils
 # vim
 scoop install vim
@@ -79,22 +79,23 @@ scoop bucket add Sysinternals 'https://github.com/Ash258/Scoop-Sysinternals.git'
 
 Then yet more handy tools I use (*some are from the **extras** bucket*):
 ```powershell
-scoop install vscode
-scoop install go docker kubectl helm make
-scoop install azure-cli azure-ps storageexplorer dotnet-sdk
-scoop install nodejs yarn openssl
+scoop install vscode azure-cli azure-ps storageexplorer dotnet-sdk
+scoop install go lua docker kubectl helm make
+scoop install nodejs nvs yarn openssl
 scoop install azure-functions-core-tools
 scoop install vcredist2019
 scoop install notepadplusplus windows-terminal postman
-scoop install paint.net krita brackets
+scoop install paint.net
 scoop install gh
 
 scoop bucket add instrumenta https://github.com/instrumenta/scoop-instrumenta
 scoop install kubeval
 scoop install conftest
 
-# SysInternals
-scoop install Autoruns ZoomIt DiskView ProcessExplorer TCPView
+# SysInternals (now in extras bucket)
+scoop install sysinternals
+
+#scoop install krita brackets
 
 # Used to install with scoop but are now in PSGallery
 Install-PackageProvider -Name NuGet -MinimumVersion 2.8.5.201 -Force -Scope CurrentUser
@@ -190,7 +191,7 @@ Here's another place where Scoop comes to the rescue to avoid clunky download an
 
 ```powershell
 scoop bucket add nerd-fonts
-sudo scoop install Delugia-Nerd-Font-Complete Cascadia-Code
+sudo scoop install Delugia-Nerd-Font-Complete Cascadia-Code Meslo-NF Meslo-NF-Mono
 ```
 
 ## Productivity Tools
