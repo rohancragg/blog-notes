@@ -3,8 +3,8 @@ title: Azure DevOps - Self-Hosted Build Agents
 description: Keeping Virtual Machines Patched (the Azure DevTest Labs edition)
 hero: Run your own Build Agents in Azure DevOps
 date: 2020-03-16
-page_path: devops/
-og_image: media/agent-config-sh.png
+page_path: learning/
+og_image: media/dysps.jpg
 ---
 
 ## Self-Hosted Agents
@@ -17,7 +17,7 @@ og_image: media/agent-config-sh.png
     >Imagine that you have an Azure Pipelines project that receives build requests many times per day. Or perhaps you have multiple projects that can each use the same type of build agent. You can organize build agents into agent pools to help ensure that there's a server ready to process each build request.
 
     >When a build is triggered, Azure Pipelines selects an available build agent from the pool. If all agents are busy, the process waits for one to become available.
-    
+
     from <https://docs.microsoft.com/en-us/learn/modules/host-build-agent/>
 
 When my colleagues needed a build agent that could communicate with Azure Resources (such as Storage Accounts) inside of a private Virtual Network then the only way to do this without whitelisting a very large set of public IP address ranges (i.e. Azure Datacenter addresses) was to have a Virtual Machine running inside the same private network to which Azure DevOps would schedule build jobs.
@@ -79,7 +79,7 @@ You'll see something like this and you are prompted to enter the Azure Devops Or
 
 Now we usually want to run the agent as a service (i.e. have it run continuously waiting for job to be scheduled) so we need to do the following, [as documented here](https://docs.microsoft.com/en-us/azure/devops/pipelines/agents/v2-linux?view=azure-devops#run-as-a-systemd-service).
 
-```bash 
+```bash
 sudo $HOME/myagent/svc.sh install
 sudo $HOME/myagent/svc.sh start
 ```

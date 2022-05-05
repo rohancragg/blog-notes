@@ -27,6 +27,8 @@ nav:
   - Writing:
     - Prettier link sharing with MkDocs: writing\social-media-sharing.md
     - Technical Diagramming: writing\diagrams.md
+  - Learning and Mentoring:
+    - Dysart Code Club: learning\dyscc.md
 
 # Repository
 repo_name: 'rohancragg/blog-notes'
