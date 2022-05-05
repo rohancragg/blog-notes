@@ -41,20 +41,38 @@ One of the game pad manufacturers (Tinkergen) has [their own set of tutorials an
 
 ![Image](media/tinkergen-courses.png)
 
-### Coming up...
+### Bookmarks for games we've looked at so far
 
-#### (RaspberryPi) Code Club's 10th Birthday
+- [Falling Duck](https://arcade.makecode.com/84487-43288-49339-22583)
+
+  ![Image](media/falling-duck.png)
+
+- [Water-drop and Hamburger](https://makecode.com/_VtU9tW53VPuy)
+
+  ![Image](media/hamburger.png)
+
+- [Trampoline](https://makecode.com/_MDU0zaFCWFUY)
+
+  ![Image](media/trampoline.png)
+
+- [Interstellar](https://makecode.com/_Jc9EgX0gMDoi)
+
+  ![Image](media/interstellar.png)
+
+## Coming up...
+
+### (RaspberryPi) Code Club's 10th Birthday
 
 [​Code Club](https://projects.raspberrypi.org/en/codeclub), a global network of free coding clubs
 for 9- to 13-year-olds run by the RaspberryPi Foundation, is celebrating its 10th birthday this year. To celebrate [we're going to create a swinging piñata](https://projects.raspberrypi.org/en/projects/party-pinata/0) that releases treats when it is hit, and eventually breaks to reveal a birthday message!
 
 Did you know that there are Code Clubs on six out of seven continents around the world? That’s a lot of coders making things with code! Do you think any other clubs will be doing this project right now?
 
-#### Making Beats with SonicPi
+### Making Beats with SonicPi
 
 [Sonic Pi](https://sonic-pi.net/) is a new kind of musical instrument, designed for creating sounds with code. We'll follow some of these [lessons on Code Club site](https://projects.raspberrypi.org/en/codeclub/sonic-pi)
 
-### Possible future project ideas
+## Possible future project ideas
 
 Using the free [Blender](https://www.blender.org/) software to [make rich 3D animations](https://projects.raspberrypi.org/en/projects/blender-animate-snow-scene)
 
