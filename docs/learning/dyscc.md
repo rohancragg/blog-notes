@@ -43,6 +43,10 @@ One of the game pad manufacturers (Tinkergen) has [their own set of tutorials an
 
 ### Bookmarks for games we've looked at so far
 
+- [Swinging Piñata](https://projects.raspberrypi.org/en/projects/party-pinata/0)
+
+  ![Image](media/pinata.png)]
+
 - [Falling Duck](https://arcade.makecode.com/84487-43288-49339-22583)
 
   ![Image](media/falling-duck.png)
@@ -60,6 +64,13 @@ One of the game pad manufacturers (Tinkergen) has [their own set of tutorials an
   ![Image](media/interstellar.png)
 
 ## Coming up...
+
+### More Fun with MakeCode Arcade
+
+As featured on the Hanselminutes Podcast [How kids learn how to Code with MakeCode's Kiki Prottsman](https://hanselminutes.com/835/how-kids-learn-how-to-code-with-makecodes-kiki-prottsman)
+ I found a nice simple animation game on [Kiki's blog](https://medium.com/kikis-corner/bunny-glow-up-f18915bc98c9). This will be great for the kids I know that like to customise their sprites and backgrounds.
+
+We'll also try the [ZooKeeper's Adventure Skillmap](https://arcade.makecode.com/--skillmap#zoo)
 
 ### (RaspberryPi) Code Club's 10th Birthday
 
