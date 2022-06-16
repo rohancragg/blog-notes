@@ -73,8 +73,6 @@ Here's my remix!
 
   ![Image](media/interstellar.png)
 
-![The kids having fun in code club](media/class-fun.jpg)
-
 ## Coming up...
 
 ### More Fun with MakeCode Arcade
