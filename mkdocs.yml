@@ -87,9 +87,6 @@ extra_javascript:
   - js/extra.js
   - 'https://platform.linkedin.com/badges/js/profile.js'
 
-extra_css:
-  - stylesheets/extra.css
-
 # Extensions
 markdown_extensions:
   - fontawesome_markdown
