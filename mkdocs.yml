@@ -67,10 +67,12 @@ plugins:
 extra:
   manifest: 'manifest.webmanifest'
   social:
+    - icon: fontawesome/brands/mastodon
+      link: 'https://mastodon.scot/@rohancragg'
     - icon: fontawesome/brands/linkedin
       link: 'https://www.linkedin.com/in/rohancragg'
-    - icon: fontawesome/brands/twitter
-      link: 'https://twitter.com/rohancragg'
+    #- icon: fontawesome/brands/twitter
+    #  link: 'https://twitter.com/rohancragg'
     - icon: fontawesome/brands/github
       link: 'https://github.com/rohancragg'
     - icon: fontawesome/brands/facebook

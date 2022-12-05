@@ -9,6 +9,10 @@ date: 2020-02-04
 og_image: https://stackexchange.com/users/flair/3688.png
 ---
 
+## Fediverse
+
+<a rel="me" href="https://mastodon.scot/@rohancragg">Mastodon</a>
+
 ## Exams and Credentials
 
 [My Credly Profile](https://www.credly.com/users/rohan-cragg/badges?sort=-state_updated_at&page=1){:target="_blank"}
