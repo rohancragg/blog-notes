@@ -93,7 +93,7 @@ extra_javascript:
 
 # Extensions
 markdown_extensions:
-  - fontawesome_markdown
+  #- fontawesome_markdown
   - markdown.extensions.abbr
   - markdown.extensions.admonition
   - markdown.extensions.attr_list
