@@ -37,7 +37,11 @@ pip install mkdocs-material
 pip install -r ./requirements.txt
 ```
 
-It can be previewed by running `mkdocs serve`
+It can be previewed by running:
+
+```powershell
+mkdocs serve
+```
 
 It's deployed [like this:](https://www.mkdocs.org/user-guide/deploying-your-docs/#organization-and-user-pages)
 ```powershell
