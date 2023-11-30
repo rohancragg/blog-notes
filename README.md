@@ -1,6 +1,6 @@
 # rohancragg's blog-notes repo-ho-ho
 
-This repository contains source code for my MkDocs site hosted on [rohancragg.github.io](http://rohancragg.github.io)
+This repository contains source code for my MkDocs site hosted on [my GitHub Pages site (rohancragg.co.uk)](http://rohancragg.co.uk)
 
 [![Open in Gitpod](https://gitpod.io/button/open-in-gitpod.svg)](https://gitpod.io/#https://github.com/rohancragg/blog-notes)
 
