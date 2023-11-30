@@ -51,15 +51,34 @@ theme:
     text: 'Noto Sans'
     code: 'Ubuntu Mono'
   features:
-    - tabs
-    - instant
+    - navigation.tabs
+    - navigation.instant
+    - navigation.footer
+    - navigation.sidebar
+    - navigation.top
+    - toc.tabs
+    - toc.collapse
+    - toc.float
+    - toc.sticky
+    - toc.nest
+    - content.code.copy
+    - content.action.view
+    - content.image.figure
+    - content.image.lightbox
+    - content.table.wrap
+    - content.tabs
+    - content.tabs.pills
+
   icon:
     logo: material/library
+    repo: fontawesome/brands/github
 
 # Plugins
 plugins:
   - search:
       separator: '[\s\-\.]+'
+      lang:
+        - en
   - git-revision-date
   - minify:
       minify_html: true
@@ -89,24 +108,28 @@ extra:
 
 extra_javascript:
   - js/extra.js
+  - js/mathjax.js
+  - https://polyfill.io/v3/polyfill.min.js?features=es6
+  - https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js
   - 'https://platform.linkedin.com/badges/js/profile.js'
 
 # Extensions
 markdown_extensions:
   #- fontawesome_markdown
-  - markdown.extensions.abbr
-  - markdown.extensions.admonition
-  - markdown.extensions.attr_list
-  - markdown.extensions.codehilite:
+  - abbr
+  - admonition
+  - attr_list
+  - codehilite:
       guess_lang: false
-  - markdown.extensions.def_list
-  - markdown.extensions.footnotes
-  - markdown.extensions.md_in_html
-  - markdown.extensions.meta
-  - markdown.extensions.tables
-  - markdown.extensions.toc:
+  - def_list
+  - footnotes
+  - md_in_html
+  - meta
+  - tables
+  - toc:
       permalink: true
   - pymdownx.arithmatex:
+      generic: true
   - pymdownx.betterem:
       smart_enable: all
   - pymdownx.betterem:
