@@ -10,7 +10,8 @@ nav:
   - Home: README.md
   - About Me: about.md
   - What's New: whats-new.md
-  - Tools & Techniques:
+  - Tools & Tips:
+    - Artifical Intelligence: misc\ai.md
     - A Dev VM in the sky: misc\cloud-dev-vms.md
     - Import Shapes into Draw.io: misc\shapes.md
     - Scoop & Co: misc\scoop.md
@@ -75,6 +76,8 @@ theme:
 
 # Plugins
 plugins:
+  - glightbox:
+      auto_caption: true
   - search:
       separator: '[\s\-\.]+'
       lang:
@@ -112,6 +115,9 @@ extra_javascript:
   - https://polyfill.io/v3/polyfill.min.js?features=es6
   - https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js
   - 'https://platform.linkedin.com/badges/js/profile.js'
+
+extra_css:
+  - stylesheets/extra.css
 
 # Extensions
 markdown_extensions:

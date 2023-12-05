@@ -1,0 +1,13 @@
+﻿.gallery {
+    display: flex;
+}
+
+.gallery div {
+    flex: 1;
+    padding: 5px;
+}
+
+.gallery img {
+    flex: 1;
+    padding: 5px;
+}
