@@ -12,7 +12,10 @@ The prompt I gave to the image generation model was some variation of the follow
 
 [Click here to make your own variation!](https://designer.microsoft.com/image-creator?p=Caricature+profile+photo+of+a+%5Bmiddle-aged%5D+%5Bfather+%5Dnamed+%27%5BRohan%5D%27+wearing+%5Ba+green+lambs-wool+sweater%5D+and+a+%5Byellow+check+shirt%5D+%5Bplaying+the+fiddle%5D+in+the+style+of+%5BThe+Simpson%27s+cartoon%5D&referrer=PromptTemplate)
 
-See if you can guess what variations of the above prompt I used for these!
+!!! Tip
+    This isn't at all clear from the user interface, but each time you generate an image in Microsoft Designer (it's purely a web app) it saves the three generated images into the [OneDrive](https://onedrive.live.com/) storage for the account that you used to sign in to Designer. If you are signed into the OneDrive app on your PC desktop then you will also see the files syncronosed to your OneDrive directory location in a folder named `\Apps\Designer\Generated Content\`
+
+See if you can guess what variations of the above prompt I used for these!:
 
 <div class="gallery" markdown>
 
