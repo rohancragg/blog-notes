@@ -51,7 +51,8 @@ On Linux or macOS, use `.venv/bin/python` instead. The preview is available at
 <http://127.0.0.1:8000/>. Generated output in `site/` is ignored by Git.
 
 GitHub Actions installs the locked dependencies and runs a strict build on
-Windows and Linux for pushes and pull requests. It does not publish the site.
+Windows and Linux for pushes and pull requests. After both checks succeed, pushes
+to `main` publish the site automatically. Pull requests never publish.
 New, uncommitted pages have no Git revision date; the date plugin falls back to
 today's date. Clone with full Git history for accurate revision dates.
 
@@ -70,6 +71,20 @@ files. When changing Python versions, update `.python-version`, regenerate the
 lockfile for that version, and recreate `.venv`.
 
 ### Publish
+
+After merging to `main`, GitHub Actions builds and publishes the site to
+`rohancragg/rohancragg.github.io`, branch `main`. Deployments are serialised and
+preserve the custom domain `rohancragg.co.uk`. You can also use **Run workflow**
+on the `main` branch to rebuild and publish manually.
+
+Authentication uses the source repository's `GH_PAGES_DEPLOY_KEY` Actions secret.
+Its public key is registered as a write-enabled deploy key only on the destination
+repository. For a fork or a new destination, configure both halves of a dedicated
+key pair; the default `GITHUB_TOKEN` cannot publish to another repository.
+Never commit the private key. GitHub Pages on the destination must serve the root
+of its `main` branch.
+
+### Manual Fallback
 
 Use PowerShell (PowerShell 7 on Linux/macOS) and Git credentials with write access
 to the publishing repository. Check the destination without publishing:
