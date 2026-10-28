@@ -1,0 +1,6 @@
+mkdocs>=1.6.1,<2
+mkdocs-material>=9.8,<10
+mkdocs-minify-plugin
+mkdocs-git-revision-date-plugin
+mkdocs-glightbox
+ghp-import

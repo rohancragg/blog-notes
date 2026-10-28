@@ -14,7 +14,7 @@ I've been preparing some videos and learning materials for colleagues that work 
 
 ## Preparing your machine
 
-Install the most common extensions you might need. This is using [a tool called **Scoop** which I've talked about before](/misc/scoop).
+Install the most common extensions you might need. This is using [a tool called **Scoop** which I've talked about before](../misc/scoop.md).
 
 Open Powershell and run this:
 
@@ -197,7 +197,7 @@ This command then does all the hard work of getting your `main` up to date and m
 git town sync
 ```
 
-[Create and merge a Pull Request](create-and-merge-a-pull-request) as above
+[Create and merge a Pull Request](#create-and-merge-a-pull-request) as above
 
 ```powershell
 # cleans up and deletes redundant local branches
