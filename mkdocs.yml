@@ -19,31 +19,34 @@ validation:
 
 # Page tree
 nav:
-  - Home: README.md
-  - About Me: about.md
-  - What's New: whats-new.md
-  - Tools & Tips:
-    - Artificial Intelligence: misc/ai.md
-    - A Dev VM in the sky: misc/cloud-dev-vms.md
-    - Import Shapes into Draw.io: misc/shapes.md
-    - Scoop & Co: misc/scoop.md
-    - Bash Shell on Windows: misc/git-bash.md
-    - About PowerShell Module Paths: misc/ps-module-paths.md
-    - Microsoft Forms: misc/ms-forms.md
-    - Miscellaneous Notes: misc/misc.md
-  - DevOps:
-    - DevOps for the Terrified: devops/devops-for-the-terrified.md
-    - Testing Infrastructure as Code: devops/testing-iac.md
-    - Azure DevOps - Self-Hosted Build Agents: devops/azdo-self-hosted-build-agents.md
-    - VM Patching in DevTest Labs: compute/patching-devtestlabs.md
-  - Kubernetes:
-    - Clusters and Domains: aks/domains.md
-    - Create a TLS Secret: aks/create-tls-secret.md
-  - Writing:
-    - Prettier link sharing with MkDocs: writing/social-media-sharing.md
-    - Technical Diagramming: writing/diagrams.md
-  - Learning and Mentoring:
-    - Dysart Code Club: learning/dyscc.md
+- Home: README.md
+- About Me: about.md
+- What's New: whats-new.md
+- Cloud Solution Architecture:
+  - Azure APIs to Windows-Authenticated Services: architecture/bridging-azure-apis-to-windows-authenticated-services.md
+  - Private Networking Changes Your AI-Agent Architecture: architecture/private-networking-changes-your-ai-agent-architecture.md
+- Tools & Tips:
+  - Artificial Intelligence: misc/ai.md
+  - A Dev VM in the sky: misc/cloud-dev-vms.md
+  - Import Shapes into Draw.io: misc/shapes.md
+  - Scoop & Co: misc/scoop.md
+  - Bash Shell on Windows: misc/git-bash.md
+  - About PowerShell Module Paths: misc/ps-module-paths.md
+  - Microsoft Forms: misc/ms-forms.md
+  - Miscellaneous Notes: misc/misc.md
+- DevOps:
+  - DevOps for the Terrified: devops/devops-for-the-terrified.md
+  - Testing Infrastructure as Code: devops/testing-iac.md
+  - Azure DevOps - Self-Hosted Build Agents: devops/azdo-self-hosted-build-agents.md
+  - VM Patching in DevTest Labs: compute/patching-devtestlabs.md
+- Kubernetes:
+  - Clusters and Domains: aks/domains.md
+  - Create a TLS Secret: aks/create-tls-secret.md
+- Writing:
+  - Prettier link sharing with MkDocs: writing/social-media-sharing.md
+  - Technical Diagramming: writing/diagrams.md
+- Learning and Mentoring:
+  - Dysart Code Club: learning/dyscc.md
 
 # Repository
 repo_name: 'rohancragg/blog-notes'
@@ -65,12 +68,12 @@ theme:
     text: 'Noto Sans'
     code: 'Ubuntu Mono'
   features:
-    - navigation.tabs
-    - navigation.instant
-    - navigation.footer
-    - navigation.top
-    - content.code.copy
-    - content.action.view
+  - navigation.tabs
+  - navigation.instant
+  - navigation.footer
+  - navigation.top
+  - content.code.copy
+  - content.action.view
 
   icon:
     logo: material/library
@@ -78,118 +81,118 @@ theme:
 
 # Plugins
 plugins:
-  - glightbox:
-      auto_caption: true
-  - search:
-      separator: '[\s\-\.]+'
-      lang:
-        - en
-  - git-revision-date
-  - minify:
-      minify_html: true
+- glightbox:
+    auto_caption: true
+- search:
+    separator: '[\s\-\.]+'
+    lang:
+    - en
+- git-revision-date
+- minify:
+    minify_html: true
 
 # Customization
 extra:
   fb_appid: '245640346829400'
   manifest: 'manifest.webmanifest'
   social:
-    - icon: fontawesome/brands/mastodon
-      link: 'https://mastodon.scot/@rohancragg'
-    - icon: fontawesome/brands/linkedin
-      link: 'https://www.linkedin.com/in/rohancragg'
-    #- icon: fontawesome/brands/twitter
-    #  link: 'https://twitter.com/rohancragg'
-    - icon: fontawesome/brands/github
-      link: 'https://github.com/rohancragg'
-    - icon: fontawesome/brands/facebook
-      link: 'https://fb.com/rohancragg'
-    - icon: fontawesome/brands/instagram
-      link: 'https://www.instagram.com/rohancragg/'
-    - icon: fontawesome/solid/terminal
-      link: 'https://asciinema.org/~rohancragg'
+  - icon: fontawesome/brands/mastodon
+    link: 'https://mastodon.scot/@rohancragg'
+  - icon: fontawesome/brands/linkedin
+    link: 'https://www.linkedin.com/in/rohancragg'
+  #- icon: fontawesome/brands/twitter
+  #  link: 'https://twitter.com/rohancragg'
+  - icon: fontawesome/brands/github
+    link: 'https://github.com/rohancragg'
+  - icon: fontawesome/brands/facebook
+    link: 'https://fb.com/rohancragg'
+  - icon: fontawesome/brands/instagram
+    link: 'https://www.instagram.com/rohancragg/'
+  - icon: fontawesome/solid/terminal
+    link: 'https://asciinema.org/~rohancragg'
   disqus: 'rohancragg'
   theme:
     icon:
       repo: fontawesome/brands/gitlab
 
 extra_javascript:
-  - js/extra.js
-  - js/mathjax.js
-  - https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js
-  - 'https://platform.linkedin.com/badges/js/profile.js'
+- js/extra.js
+- js/mathjax.js
+- https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js
+- 'https://platform.linkedin.com/badges/js/profile.js'
 
 extra_css:
-  - stylesheets/extra.css
+- stylesheets/extra.css
 
 # Extensions
 markdown_extensions:
-  - abbr
-  - admonition
-  - attr_list
-  - codehilite:
-      guess_lang: false
-  - def_list
-  - footnotes
-  - md_in_html
-  - meta
-  - tables
-  - toc:
-      permalink: true
-  - pymdownx.arithmatex:
-      generic: true
-  - pymdownx.betterem:
-      smart_enable: all
-  - pymdownx.caret
-  - pymdownx.critic
-  - pymdownx.details
-  - pymdownx.emoji:
-      emoji_index: !!python/name:pymdownx.emoji.twemoji
-      emoji_generator: !!python/name:pymdownx.emoji.to_svg
-  - pymdownx.escapeall:
-      hardbreak: True
-      nbsp: True
-  - pymdownx.highlight:
-      extend_pygments_lang:
-        - name: php-inline
-          lang: php
-          options:
-            startinline: true
-        - name: pycon3
-          lang: pycon
-          options:
-            python3: true
-      linenums_style: pymdownx-inline
-  - pymdownx.inlinehilite:
-      custom_inline:
-        - name: math
-          class: arithmatex
-          format: !!python/object/apply:pymdownx.arithmatex.arithmatex_inline_format {}
-  - pymdownx.keys:
-      separator: "\uff0b"
-  - pymdownx.magiclink:
-      repo_url_shortener: true
-      repo_url_shorthand: true
-      hide_protocol: true
-      social_url_shortener: true
-      social_url_shorthand: true
-      provider: github
-      user: rohancragg
-      repo: blog-notes
-  - pymdownx.mark
-  - pymdownx.progressbar
-  - pymdownx.smartsymbols
-  - pymdownx.snippets:
-      base_path: docs/_snippets
-  - pymdownx.superfences:
-      custom_fences:
-        - name: mermaid
-          class: mermaid
-          format: !!python/name:pymdownx.superfences.fence_code_format
-        - name: math
-          class: arithmatex
-          format: !!python/object/apply:pymdownx.arithmatex.arithmatex_fenced_format {}
-  - pymdownx.tasklist:
-      custom_checkbox: true
-  - pymdownx.tabbed:
-      alternate_style: true
-  - pymdownx.tilde
+- abbr
+- admonition
+- attr_list
+- codehilite:
+    guess_lang: false
+- def_list
+- footnotes
+- md_in_html
+- meta: {}
+- tables
+- toc:
+    permalink: true
+- pymdownx.arithmatex:
+    generic: true
+- pymdownx.betterem:
+    smart_enable: all
+- pymdownx.caret
+- pymdownx.critic
+- pymdownx.details
+- pymdownx.emoji:
+    emoji_index: !!python/name:pymdownx.emoji.twemoji ""
+    emoji_generator: !!python/name:pymdownx.emoji.to_svg ""
+- pymdownx.escapeall:
+    hardbreak: True
+    nbsp: True
+- pymdownx.highlight:
+    extend_pygments_lang:
+    - name: php-inline
+      lang: php
+      options:
+        startinline: true
+    - name: pycon3
+      lang: pycon
+      options:
+        python3: true
+    linenums_style: pymdownx-inline
+- pymdownx.inlinehilite:
+    custom_inline:
+    - name: math
+      class: arithmatex
+      format: !!python/object/apply:pymdownx.arithmatex.arithmatex_inline_format {}
+- pymdownx.keys:
+    separator: "＋"
+- pymdownx.magiclink:
+    repo_url_shortener: true
+    repo_url_shorthand: true
+    hide_protocol: true
+    social_url_shortener: true
+    social_url_shorthand: true
+    provider: github
+    user: rohancragg
+    repo: blog-notes
+- pymdownx.mark
+- pymdownx.progressbar: {}
+- pymdownx.smartsymbols
+- pymdownx.snippets:
+    base_path: docs/_snippets
+- pymdownx.superfences:
+    custom_fences:
+    - name: mermaid
+      class: mermaid
+      format: !!python/name:pymdownx.superfences.fence_code_format ""
+    - name: math
+      class: arithmatex
+      format: !!python/object/apply:pymdownx.arithmatex.arithmatex_fenced_format {}
+- pymdownx.tasklist:
+    custom_checkbox: true
+- pymdownx.tabbed:
+    alternate_style: true
+- pymdownx.tilde

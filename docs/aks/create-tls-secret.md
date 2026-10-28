@@ -23,7 +23,7 @@ I needed obtain a TLS certificate and create a TLS Secret object in Kubernetes s
 
 ![Image](media/cert-path.png?raw=true)
 
-_(i.e. the TLS/HTTPS certificate should include the CA chain.)_
+(i.e. the TLS/HTTPS certificate should include the CA chain.)
 
 ## Getting the right files
 

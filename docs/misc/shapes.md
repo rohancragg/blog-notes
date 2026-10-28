@@ -16,11 +16,11 @@ When I need to draw technical diagrams for projects we're working on using Azure
 
 ![now diagrams.net](media/shapes-now-diagrams.png)
 
-After a quick search one I found was a Visio stencil for Azure architecture design and documentation. 
+After a quick search one I found was a Visio stencil for Azure architecture design and documentation.
 
 ## Importing Shapes from a Visio stencil
 
-Here's how 
+Here's how
 
 Download the zip file from Dave Summers' [Github Repository](https://github.com/David-Summers/Azure-Design):
 

@@ -46,6 +46,8 @@ One of the game pad manufacturers (Tinkergen) has [their own set of tutorials an
 - [Grow a Dragonfly](https://projects.raspberrypi.org/en/projects/grow-a-dragonfly)
 
 Here's my remix!
+
+<!-- markdownlint-disable-next-line MD033 -->
 <iframe src="https://scratch.mit.edu/projects/702661412/embed" allowtransparency="true" width="485" height="402" frameborder="0" scrolling="no" allowfullscreen></iframe>
 
 - As featured on the Hanselminutes Podcast [How kids learn how to Code with MakeCode's Kiki Prottsman](https://hanselminutes.com/835/how-kids-learn-how-to-code-with-makecodes-kiki-prottsman)
@@ -73,7 +75,7 @@ Here's my remix!
 
   ![Image](media/interstellar.png)
 
-## Coming up...
+## Coming up
 
 ### More Fun with MakeCode Arcade
 

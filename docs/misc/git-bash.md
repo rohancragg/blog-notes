@@ -32,6 +32,8 @@ Bash and PowerShell have some aspects of syntax in common (e.g. when referencing
 
 But there are some other things that differ (e.g. when assigning a variable like this):
 
+<!-- markdownlint-disable MD046 -->
+
 === "Powershell"
 
     ```powershell
@@ -61,11 +63,13 @@ But there are some other things that differ (e.g. when assigning a variable like
 ??? info "Shell Trivia"
     SH is Bourne Shell and so Bash is Born-again Bourne Shell
 
+<!-- markdownlint-enable MD046 -->
+
 ## Cool option - Git Bash
 
 I already had a nice auto-complete experience with `posh-git` in PowerShell so I want the experience to be just as good in Git Bash, and the auto-complete for Kubectl is one of my reasons for using Git Bash at all so configuring auto-complete is my first step!
 
-### Coolness pt.1 - Configuring Auto-Complete 
+### Coolness pt.1 - Configuring Auto-Complete
 
 First off, I need a `.bashrc` file, so I needed to make one as it didn't exist on my machine:
 
@@ -73,10 +77,14 @@ First off, I need a `.bashrc` file, so I needed to make one as it didn't exist o
 touch ~/.bashrc
 ```
 
+<!-- markdownlint-disable MD046 -->
+
 ??? info "What is `.bashrc`?"
     According to <https://www.maketecheasier.com/what-is-bashrc/>
-    
+
     *In order to load your preferences, bash runs the contents of the bashrc file at each launch. This shell script is found in each user’s home directory. It’s used to save and load your terminal preferences and environmental variables.*
+
+<!-- markdownlint-enable MD046 -->
 
 #### Git
 
@@ -89,14 +97,19 @@ echo "source ~/bash_completion.d/git" >> ~/.bashrc
 ```
 
 If using PowerShell (as I often do) then the [`posh-git`](https://github.com/dahlbyk/posh-git) Module is a great option too.
+
 ```powershell
 scoop install posh-git
 ```
 
+<!-- markdownlint-disable MD046 -->
+
 ??? info "What is Git?"
     :fa-git: is a free and open source distributed version control system designed to handle everything from small to very large projects with speed and efficiency.
-    
+
     A version-control system is a tool for tracking changes in source code during software development. It is designed for coordinating work among a group of programmers, but it can be used to track changes in any set of files.
+
+<!-- markdownlint-enable MD046 -->
 
 #### kubectl CLI
 
@@ -109,10 +122,14 @@ kubectl completion bash > ~/bash_completion.d/kubectl
 echo "source ~/bash_completion.d/kubectl" >> ~/.bashrc
 ```
 
+<!-- markdownlint-disable MD046 -->
+
 ??? info "What is Kubectl?"
     [Kubectl](https://kubernetes.io/docs/reference/kubectl/overview/) is a command line tool for controlling Kubernetes clusters.
 
     For Azure Kubernetes Service (AKS) users, the [Kubectl CLI tool can be installed using the Azure CLI](https://docs.microsoft.com/en-us/cli/azure/aks?view=azure-cli-latest#az-aks-install-cli) using the command `az aks install-cli`
+
+<!-- markdownlint-enable MD046 -->
 
 #### Docker
 
@@ -158,7 +175,7 @@ Now I can use `Ctrl-Shift-'` ( i.e. the default Key Binding to `workbennch.actio
 
 I also added a Terminal [Key Binding](https://code.visualstudio.com/docs/getstarted/keybindings) for the F8 key to be bound to  `workbench.action.terminal.runSelectedText` so that whilst editing a shell (`.sh`) file in the editor, I can easily send the selected commands to my active terminal in VSCode.
 
-## -> TLDR; so what?!
+## -> TLDR; so what?
 
 I already mentioned that I wouldn't normally use this as my preferred shell for Git. I'll only use it for Git when I happen to be in the Git Bash shell for some other reason; so what are those reasons?.
 

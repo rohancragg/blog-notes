@@ -16,6 +16,7 @@ $$
 \end{align}
 
 ## Carets
+
 Testing ^^carets^^
 
 ## Critic
@@ -26,22 +27,27 @@ Don't act so surprised, Your {~~Queen~>Highness~~}{>>@gsw sounds better<<}. You 
 
 ## Details
 
+<!-- markdownlint-disable MD046 -->
+
 ???+ note "Open styled details"
 
     ??? danger "Nested details!"
         And more content again.
 
 ??? success
-   Content.
+     Content.
 
 ??? warning classes
-   Content.
+     Content.
+
+<!-- markdownlint-enable MD046 -->
 
 ## Emoji
 
 :smile: :heart: :thumbsup:
 
 ## EscapeAll
+
 \W\e\ \c\a\n\ \e\s\c\a\p\e
 \e\v\e\r\y\t\h\i\n\g\!\ \
 \❤\😄
@@ -50,13 +56,14 @@ Don't act so surprised, Your {~~Queen~>Highness~~}{>>@gsw sounds better<<}. You 
 
 `#!php-inline $a = array("foo" => 0, "bar" => 1);`
 
-## InlineHilite 
+## InlineHilite
 
 Here is some code: `#!py3 import pymdownx; pymdownx.__version__`.
 
 The mock shebang will be treated like text here: ` #!js var test = 0; `.
 
 ### inline math
+
 `#!math p(x|y) = \frac{p(y|x)p(x)}{p(y)}`
 
 ## Keys
@@ -65,8 +72,12 @@ The mock shebang will be treated like text here: ` #!js var test = 0; `.
 
 ## auto linking
 
+<!-- markdownlint-disable MD034 -->
+
 - Just paste links directly in the document like this: https://google.com.
 - Or even an email address: fake.email@email.com.
+
+<!-- markdownlint-enable MD034 -->
 
 ### mentions
 
@@ -124,6 +135,8 @@ gitlab:pycqa/flake8@1ecf97005a024391fb07ad8941f4d25c4e0aae6e...9bea7576ac33a8e4f
 
 ### link shorteners - external
 
+<!-- markdownlint-disable MD034 -->
+
 - https://github.com/facelessuser
 - https://github.com/facelessuser/pymdown-extensions
 - https://gitlab.com/pycqa/flake8/issues/385
@@ -136,6 +149,8 @@ gitlab:pycqa/flake8@1ecf97005a024391fb07ad8941f4d25c4e0aae6e...9bea7576ac33a8e4f
 - https://github.com/facelessuser/pymdown-extensions/commit/3f6b07a8eeaa9d606115758d90f55fec565d4e2a
 - https://github.com/facelessuser/pymdown-extensions/compare/e2ed7e0b3973f3f9eb7a26b8ef7ae514eebfe0d2...90b6fb8711e75732f987982cc024e9bb0111beac
 - https://github.com/facelessuser/Rummage/commit/181c06d1f11fa29961b334e90606ed1f1ec7a7cc
+
+<!-- markdownlint-enable MD034 -->
 
 ## Mark
 
@@ -201,6 +216,8 @@ import hello_world
 
 Tabbed fences
 
+<!-- markdownlint-disable MD046 -->
+
 === "Bash"
 
     ```Bash
@@ -212,7 +229,7 @@ Tabbed fences
 === "C"
 
     ```C
-        #include 
+        #include
 
         int main(void) {
         printf("hello, world\n");
@@ -242,15 +259,17 @@ Tabbed fences
         }
     ```
 
+<!-- markdownlint-enable MD046 -->
+
 in context
 
-```
+```text
 ============================================================
-T	Tp	Sp	D	Dp	S	D7	T
+T Tp Sp D Dp S D7 T
 ------------------------------------------------------------
-A	F#m	Bm	E	C#m	D	E7	A
-A#	Gm	Cm	F	Dm	D#	F7	A#
-B♭	Gm	Cm	F	Dm	E♭m	F7	B♭
+A F#m Bm E C#m D E7 A
+A# Gm Cm F Dm D# F7 A#
+B♭ Gm Cm F Dm E♭m F7 B♭
 ```
 
 ```py3
@@ -274,7 +293,6 @@ import foo.bar
 import boo.baz
 import foo.bar.baz
 ```
-
 
 ``` hl_lines="1 3"
 """Some file."""
@@ -306,8 +324,9 @@ sequenceDiagram
     Bob-->>John: Jolly good!
 ```
 
-
 ## Tabbed
+
+<!-- markdownlint-disable MD046 -->
 
 === "Tab 1"
     Markdown **content**.
@@ -320,7 +339,7 @@ sequenceDiagram
     - list item a
     - list item b
 
-###  two separate tab sets
+### two separate tab sets
 
 === "Tab 1"
     Markdown **content**.
@@ -337,22 +356,25 @@ sequenceDiagram
     Different tab set.
 
 === "Tab B"
-    ```
+
+    ```text
     More content.
     ```
+
+<!-- markdownlint-enable MD046 -->
 
 ## Tasklist
 
 Task List
 
 - [X] item 1
-    * [X] item A
-    * [ ] item B
+    - [X] item A
+    - [ ] item B
         more text
-        + [x] item a
-        + [ ] item b
-        + [x] item c
-    * [X] item C
+        - [x] item a
+        - [ ] item b
+        - [x] item c
+    - [X] item C
 - [ ] item 2
 - [ ] item 3
 

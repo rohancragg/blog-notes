@@ -24,6 +24,8 @@ And here it is in LinkedIn:
 
 When you enter a URL the platform picks a layout but it selects the title, a description, and an image by trying to parse information from the HTML page content. Facebook and others will primarily look for this information in Open Graph `<meta>` tags. Without these tags, the Facebook crawler will do its best to identify content some other way, but for me this was not working very well until I worked out how to add these tags to each content page, and how to have this content be relevant to each page.
 
+<!-- markdownlint-disable MD046 -->
+
 ???question "What is a META tag?"
     W3Schools describes a [META tag](https://www.w3schools.com/tags/tag_meta.asp) as follows:
 
@@ -35,12 +37,18 @@ When you enter a URL the platform picks a layout but it selects the title, a des
 
     > The metadata can be used by browsers (how to display content or reload page), search engines (keywords), or other web services.
 
+<!-- markdownlint-enable MD046 -->
+
 I found [this page](https://developers.facebook.com/docs/sharing/webmasters) on the [Facebook for developers](https://developers.facebook.com/) site about how to use [Open Graph](https://ogp.me/) META tags
+
+<!-- markdownlint-disable MD046 -->
 
 ???about "The Open Graph protocol"
     The [Open Graph protocol](https://ogp.me/) enables any web page to become a rich object in a social graph. The Open Graph protocol was originally created at Facebook and is inspired by [Dublin Core](http://en.wikipedia.org/wiki/Dublin_Core), [link-rel canonical](http://googlewebmastercentral.blogspot.com/2009/02/specify-your-canonical.html), [Microformats](http://microformats.org/), and [RDFa](http://en.wikipedia.org/wiki/RDFa)
 
     There's a great [blog post by Neil Patel](https://neilpatel.com/blog/open-graph-meta-tags/) that explains all about Open Graph meta tags.
+
+<!-- markdownlint-enable MD046 -->
 
 Because `<meta>` tags always go inside the `<head>` element of an `<html>` page I needed to work out how to manipulate the content of the `<head>` in each of the pages on this site.
 
@@ -63,7 +71,7 @@ Much of the control over how the Markdown format is converted into HTML using Mk
 {% endraw %}
 ```
 
-You can also see from the sample above that I'm referencing the `page.meta` object which is where I can get data specific to each page and use it to build the content of each meta tag. *You can see the full code for the template override file `main.html` [here](https://github.com/rohancragg/blog-notes/blob/master/theme/main.html).*
+You can also see from the sample above that I'm referencing the `page.meta` object which is where I can get data specific to each page and use it to build the content of each meta tag. *You can see the full code in the [template override source](https://github.com/rohancragg/blog-notes/blob/master/theme/main.html).*
 
 ## Defining document meta-data
 
@@ -82,12 +90,14 @@ page_path: misc/
 og_image: media/scoop-update.png
 ---
 ```
+
 The path to the image is then used in my template override to build a `<meta>` tag that looks like this
 
 ```html
 <meta property="og:image" content="http://rohancragg.co.uk/misc/media/scoop-update.png" />
 ```
-## Testing it out!
+
+## Testing it out
 
 To assist with testing the tags in your Markup, Facebook provide a [Sharing Debugger](https://developers.facebook.com/tools/debug/?q=https%3A%2F%2Frohancragg.co.uk%2Fmisc%2Fscoop%2F). Here you can see that it provides a preview of what link sharing will look like for any URL you provide it to test:
 

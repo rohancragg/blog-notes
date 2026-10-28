@@ -21,6 +21,6 @@ I felt that what was lacking was a hello-world example that would demonstrate th
 
 Once I'd done that it became clear that I could use this project to show other people in my company so I pushed it up to the Quorum GitHub organization so that I could do an internal 'Communities of Practice (CoP)' talk using this as a demo. I soon decided that I may as well make it a public repository so that everyone could benefit from seeing it, and so I added a few more tweaks (such as making it compatible with GitHub Codespaces) that would make it easy for anyone to come along and try out the tool.
 
-Try it out [here!](https://github.com/qnrl/PsRule-Demo)
+Try out the [PsRule demo repository](https://github.com/qnrl/PsRule-Demo).
 
 ![Image](media/test-iac-clouds.png)

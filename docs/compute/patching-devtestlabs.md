@@ -92,7 +92,7 @@ The ReadMe document in GitHub explains that the scripts have the following requi
 - The **latest versions of the AzureRM** modules.
     - In order to [Update Azure PowerShell modules in Azure Automation](https://docs.microsoft.com/en-gb/azure/automation/automation-update-azure-modules) need to download the [Update Azure modules runbook](https://github.com/Microsoft/AzureAutomation-Account-Modules-Update) from GitHub and import and publish it into the list of Runbooks your Automation Account.
 
-        ![Import Runbook](media/import-runbook.png)
+      ![Import Runbook](media/import-runbook.png)
 
 !!!tip "Top Tip"
     Rather than download the runbook powershell script from GitHub, you can directly paste the 'raw' file URL from GitHub into the 'Runbook file' textbox i.e. '<https://raw.githubusercontent.com/microsoft/AzureAutomation-Account-Modules-Update/master/Update-AutomationAzureModulesForAccount.ps1>'
@@ -110,7 +110,7 @@ Now you can use the **Runbook Gallery** to import the start-stop scripts as foll
 !!!warning "Important"
     After you import runbooks you need to publish them before they can be used. To do this, find the runbook in **Runbooks** pane and click **Edit** and **Publish**.
 
-Visit the Docs page for details on [how to use these pre and post-scripts in your update deployment](https://docs.microsoft.com/en-us/azure/automation/pre-post-scripts#using-a-pre-script-or-post-script). 
+Visit the Docs page for details on [how to use these pre and post-scripts in your update deployment](https://docs.microsoft.com/en-us/azure/automation/pre-post-scripts#using-a-pre-script-or-post-script).
 
 Here's what one of my update deployment runs looks like with the script status showing completed:
 
