@@ -17,6 +17,7 @@ The prompt I gave to the image generation model was some variation of the follow
 
 See if you can guess what variations of the above prompt I used for these!:
 
+<!-- markdownlint-disable-next-line MD033 -->
 <div class="gallery" markdown>
 
 ![0](media/dall-e/dalle000.jpg){ width="100" data-gallery="dall-e" data-description="claymation" data-caption-position="right" }

@@ -110,8 +110,11 @@ The full script for the demo is:
     ```
 
 [Here's a demo in PowerShell 5.1](https://asciinema.org/a/ZW1bBQsoXBWtYItsl3WSeONJ6):
+
+<!-- markdownlint-disable-next-line MD033 -->
 <script id="asciicast-ZW1bBQsoXBWtYItsl3WSeONJ6" src="https://asciinema.org/a/ZW1bBQsoXBWtYItsl3WSeONJ6.js" async></script>
 
 ... and [here's the same demo in PowerShell 7.1](https://asciinema.org/a/uTL9C2ohUBvrBFP3p5krlVToi):
-<script id="asciicast-uTL9C2ohUBvrBFP3p5krlVToi" src="https://asciinema.org/a/uTL9C2ohUBvrBFP3p5krlVToi.js" async></script>
 
+<!-- markdownlint-disable-next-line MD033 -->
+<script id="asciicast-uTL9C2ohUBvrBFP3p5krlVToi" src="https://asciinema.org/a/uTL9C2ohUBvrBFP3p5krlVToi.js" async></script>

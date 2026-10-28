@@ -13,7 +13,7 @@ og_image: media/scoop-update.png
 
 This page describes how I'm `current`-ly using Scoop (and other Package Managers) to configure my system
 
-## *The Daddy...* **Scoop**!
+## *The Daddy...* **Scoop**
 
 Get [scoop.sh](https://scoop.sh/) and check out the [Scoop Home Page](https://scoop.netlify.app/) (which seems to have superceded the [wiki](https://github.com/lukesampson/scoop/wiki)) for latest info - or see below for the `TL;DR`
 
@@ -23,6 +23,7 @@ Get [scoop.sh](https://scoop.sh/) and check out the [Scoop Home Page](https://sc
 *from: <https://github.com/lukesampson/scoop/wiki/Chocolatey-Comparison>*
 
 ### Install `scoop` and base set of tools
+
 ```powershell
 Set-ExecutionPolicy RemoteSigned -Scope CurrentUser
 Invoke-Expression (New-Object System.Net.WebClient).DownloadString('https://get.scoop.sh')
@@ -69,6 +70,7 @@ Remove-Alias -Name rm
 ```
 
 ### Buckets
+
 Then, I add additional [*Buckets*](https://github.com/lukesampson/scoop/wiki/Buckets). Buckets are collections of apps which are additional / optional to the [*main*](https://github.com/ScoopInstaller/Main/blob/master/bucket) bucket
 
 ```powershell
@@ -78,6 +80,7 @@ scoop bucket add Sysinternals 'https://github.com/Ash258/Scoop-Sysinternals.git'
 ```
 
 Then yet more handy tools I use (*some are from the **extras** bucket*):
+
 ```powershell
 scoop install vscode azure-cli azure-ps storageexplorer dotnet-sdk
 scoop install go lua docker kubectl helm make
@@ -103,30 +106,44 @@ Install-Module posh-git -Scope CurrentUser
 Install-Module oh-my-posh -Scope CurrentUser
 ```
 
+<!-- markdownlint-disable MD046 -->
+
 !!! info
     Other useful (possibly useful?) buckets that I've not yet had a use for:
 
     - [nonportable](https://github.com/TheRandomLabs/scoop-nonportable/tree/master/bucket) - non-portable Applications that need to retain state between versions
     - full list of [known buckets](https://github.com/lukesampson/scoop#known-application-buckets)
 
+<!-- markdownlint-enable MD046 -->
+
 ### Paths
+
 Referencing the path to an application installed by Scoop
-```
+
+```text
 %UserProfile%/scoop/apps
 ```
+
+<!-- markdownlint-disable MD046 -->
+
 !!! note
     Those installed with the `--global` (and with the `sudo` command) will reside in the path
 
     `%ProgramData%/scoop/apps`
 
+<!-- markdownlint-enable MD046 -->
+
 For each version of an application the files will be in a directory with the version number, but Scoop creates a *Shim* for the current version in the path `%UserProfile%\scoop\apps\{AppName}\current`.
 
 For example: the path to *Python* (`python.exe`) will be either:
-```
+
+```text
 %UserProfile%\scoop\apps\python\3.8.1\python.exe
 ```
+
 or:
-```
+
+```text
 %UserProfile%\scoop\apps\python\current\python.exe
 ```
 
@@ -169,9 +186,11 @@ scoop config MSIEXTRACT_USE_LESSMSI $true
 ```
 
 ## Common Pre-Requisites
+
 The following is a set of common pre-requisites for installing tools and utilities (e.g. the `pip` package manager for python tools):
 
 ### `Python` and `PIP`
+
 ```powershell
 scoop install python miniconda3
 scoop install curl
@@ -184,6 +203,7 @@ sudo pip install --upgrade --trusted-host pypi.org --trusted-host files.pythonho
 ```
 
 ## System Fonts
+
 Here's another place where Scoop comes to the rescue to avoid clunky download and installs for system fonts!
 
 !!!info
@@ -197,16 +217,20 @@ sudo scoop install Delugia-Nerd-Font-Complete Cascadia-Code Meslo-NF Meslo-NF-Mo
 ## Productivity Tools
 
 ### MkDocs
+>
 > [MkDocs](https://www.mkdocs.org/) "Project documentation with Markdown"
 
 I use this for writing **this site!**:
+
 ```powershell
 pip install mkdocs
 python .\scoop\apps\python\current\Tools\scripts\win_add2path.py
 ```
 
 #### Install the Custom Theme
+
 Using [Material theme](https://squidfunk.github.io/mkdocs-material/) and dependencies for [CodeHilite](https://squidfunk.github.io/mkdocs-material/extensions/codehilite/)
+
 ```powershell
 pip install mkdocs-material
 pip install pygments # for source code syntax highlighting
@@ -215,6 +239,8 @@ pip install pygments # for source code syntax highlighting
 ### PowerSession
 
 This a version of [asciinema](https://asciinema.org/) for recording and re-playing PowerShell terminal sessions. Once recorded you upload the recording and share it with the world!
+
+<!-- markdownlint-disable MD046 -->
 
 ??? "What is `asciinema` and how do I get it?!"
     If you've never used asciinema before and you want to share a demo of something at a terminal then you'll love this tool.
@@ -227,6 +253,8 @@ This a version of [asciinema](https://asciinema.org/) for recording and re-playi
     - Stay logged into that browser on that machine and you can then `PowerSession auth` to create a link between the terminal and your asciinema account
 
     Apparently tt's based on Windows Pseudo Console (ConPTY).
+
+<!-- markdownlint-enable MD046 -->
 
 ``` powershell
 # Installation
@@ -248,4 +276,5 @@ PowerSession upload a.txt
 
 An example of an uploaded recording looks like this!
 
+<!-- markdownlint-disable-next-line MD033 -->
 <script id="asciicast-302157" src="https://asciinema.org/a/302157.js" async></script>

@@ -29,7 +29,6 @@ As always, Scott Hanselman has the low-down to end all low-downs:
 - [Shiny Linux Dev Environment](https://www.hanselman.com/blog/SettingUpAShinyDevelopmentEnvironmentWithinLinuxOnWindows10.aspx)
 - [How to make a pretty prompt in Windows Terminal](https://www.hanselman.com/blog/HowToMakeAPrettyPromptInWindowsTerminalWithPowerlineNerdFontsCascadiaCodeWSLAndOhmyposh.aspx)
 
-
 !!! info
     See my page on [Scoop & Co.](../misc/scoop.md) for how to quickly and easily install `Delugia Nerd Font` mentioned in Scott's pretty prompt post above
 

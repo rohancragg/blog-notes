@@ -9,6 +9,8 @@ og_image: media/dysps.jpg
 
 ## Self-Hosted Agents
 
+<!-- markdownlint-disable MD046 -->
+
 ???info "About Build Agents"
     This new Learning Module has some very good explanations:
 
@@ -19,6 +21,8 @@ og_image: media/dysps.jpg
     >When a build is triggered, Azure Pipelines selects an available build agent from the pool. If all agents are busy, the process waits for one to become available.
 
     from <https://docs.microsoft.com/en-us/learn/modules/host-build-agent/>
+
+<!-- markdownlint-enable MD046 -->
 
 When my colleagues needed a build agent that could communicate with Azure Resources (such as Storage Accounts) inside of a private Virtual Network then the only way to do this without whitelisting a very large set of public IP address ranges (i.e. Azure Datacenter addresses) was to have a Virtual Machine running inside the same private network to which Azure DevOps would schedule build jobs.
 
@@ -49,6 +53,7 @@ sudo ls -la /root
 ```
 
 ### Step 2. Install Git2
+
 ```bash
 sudo add-apt-repository ppa:git-core/ppa
 sudo apt-get update
@@ -56,6 +61,7 @@ sudo apt-get install git
 ```
 
 ### Step 3. Install and configure the Agent
+
 ```bash
 mkdir -p $HOME/Downloads && cd $HOME/Downloads
 curl -o $HOME/Downloads/vsts-agent-linux-x64-2.165.0.tar.gz https://vstsagentpackage.azureedge.net/agent/2.165.0/vsts-agent-linux-x64-2.165.0.tar.gz
@@ -108,11 +114,13 @@ mkdir -p $HOME/myagent/_work/_tool
 #### 2. Install Python
 
 Install tools required to build Python from source:
+
 ```bash
 sudo apt-get install -y make build-essential libssl-dev zlib1g-dev libbz2-dev libreadline-dev libsqlite3-dev wget curl llvm libncurses5-dev  libncursesw5-dev xz-utils tk-dev
 ```
 
 Install required Python version (replace `x.y.z` with the required Python version, e.g. 3.6.7):
+
 ```bash
 wget https://www.python.org/ftp/python/3.6.7/Python-x.y.z.tgz
 tar -xzf Python-x.y.z.tgz
@@ -126,6 +134,7 @@ touch $HOME/myagent/_work/_tool/Python/x.y.z/x64.complete
 ```
 
 If required, create major/ major.minor version link to latest Python version:
+
 ```bash
 ln -s $HOME/myagent/_work/_tool/Python/x/x64 $HOME/myagent/_work/_tool/Python/x.y.z/x64
 ln -s $HOME/myagent/_work/_tool/Python/x.y/x64 $HOME/myagent/_work/_tool/Python/x.y.z/x64
@@ -134,14 +143,17 @@ ln -s $HOME/myagent/_work/_tool/Python/x.y/x64 $HOME/myagent/_work/_tool/Python/
 #### 3. Install Conda
 
 Install the latest Conda release:
+
 ```bash
 mkdir -p $HOME/myagent/_work/_tool/miniconda
 wget https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh
 bash ./Miniconda3-latest-Linux-x86_64.sh
 ```
+
 Note: When prompted, select the installation directory as `/home/agentsvc/myagent/_work/_tool/minconda`
 
 Initialise Conda:
+
 ```bash
 eval "$(/home/agentsvc/myagent/_work/_tool/miniconda3/bin/conda shell.bash hook)"
 conda init bash
@@ -149,6 +161,7 @@ conda config --set auto_activate_base false
 ```
 
 Make Conda available to the agent by adding `/home/agentsvc/myagent/_work/_tool/miniconda3/condabin` to the PATH agent environment variable:
-```
+
+```bash
 vi $HOME/myagent/.path
 ```

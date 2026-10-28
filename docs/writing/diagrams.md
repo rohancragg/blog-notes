@@ -10,9 +10,13 @@ og_image: media/mermaid-in-markdown.png
 og_image_type: image/png
 ---
 
+<!-- markdownlint-configure-file {"MD046": {"style": "fenced"}} -->
+
 ## Online Diagramming Tools
 
 Since I don't have a licence for Visio I tend to use the popular drawing tool [diagrams.net](https://www.diagrams.net/) which is an excellent and highly flexible open source, online, desktop and container-deployable diagramming tool.
+
+<!-- markdownlint-disable MD046 -->
 
 ???info "More about `diagrams.net`"
     **diagrams.net** used to be called **draw.io**.
@@ -24,6 +28,8 @@ Since I don't have a licence for Visio I tend to use the popular drawing tool [d
     It aims to provide free, high quality diagramming software for everyone, and disrupt the diagramming industry in the process.
 
     You can [deploy diagrams.net in a docker container](https://github.com/jgraph/docker-drawio) for secure diagramming in your company behind your firewall.
+
+  <!-- markdownlint-enable MD046 -->
 
 If you're a user of **diagrams.net** / **draw.io** then have a look at my page on how to [Import Shapes into Draw.io](https://rohancragg.co.uk/misc/shapes/)
 
@@ -47,7 +53,7 @@ Having learned the Mermaid syntax, I can also used it on my website without expo
 
 So that this!
 
-````
+````markdown
 ```mermaid
 graph TD
     A[Client] --> B[Load Balancer]
@@ -67,7 +73,7 @@ Becomes this!
 
 As I [mention elsewhere](../misc/scoop.md#mkdocs), I use MkDocs to generate this website into HTML from a textual format called MarkDown. An extension for Python Markdown called [SuperFences](https://facelessuser.github.io/pymdown-extensions/extensions/superfences/) allows textual representations of diagrams in formats such as the Mermaid format mentioned above to be rendered directly into the page, simply by adding it to the MarkDown document. SuperFences is part of the [PyMdown Extensions](https://facelessuser.github.io/pymdown-extensions/) project which itself is bundled with [Material for Markdown](https://squidfunk.github.io/mkdocs-material/extensions/pymdown/)
 
-> ![](media/pymdown-superfences.png)
+> ![PyMdown SuperFences diagram rendering example](media/pymdown-superfences.png)
 
 Here are the examples from the Diagrams.net blog post to show that they work in MkDocs too!
 

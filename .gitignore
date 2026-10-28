@@ -27,3 +27,6 @@ site/
 .venv/
 __pycache__/
 .cache/
+
+# Browser validation artifacts
+/.playwright-mcp/

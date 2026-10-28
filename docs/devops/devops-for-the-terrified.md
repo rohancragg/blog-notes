@@ -7,8 +7,10 @@ page_path: devops/
 og_image: media/simon-migaj-Yui5vfKHuzs-unsplash.jpg
 ---
 
+<!-- markdownlint-configure-file {"MD046": {"style": "fenced"}} -->
+
 ![Terrified](media/simon-migaj-Yui5vfKHuzs-unsplash.jpg)
-<span>Photo by <a href="https://unsplash.com/@simonmigaj?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText">Simon Migaj</a> on <a href="https://unsplash.com/s/photos/alone?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText">Unsplash</a></span>
+Photo by [Simon Migaj](https://unsplash.com/@simonmigaj?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText) on [Unsplash](https://unsplash.com/s/photos/alone?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText).
 
 I've been preparing some videos and learning materials for colleagues that work in Cloud but don't come from a Software Engineering background where disciplines such as version control and continuous integration are taken as granted.
 
@@ -47,9 +49,12 @@ code --install-extension msazurermtools.azurerm-vscode-tools
 ```powershell
 git config --system core.longpaths true
 ```
+
 And enable long paths (see: [Enable Long Paths in Windows](https://github.com/Azure/Enterprise-Scale/blob/main/docs/Deploy/getting-started.md#enabling-long-paths-on-windows))
 
 Tell Git who you are (used as the author name/email when you issue the `git commit` command):
+
+<!-- markdownlint-disable MD046 -->
 
 === "Global Default"
 
@@ -86,6 +91,8 @@ Tell Git who you are (used as the author name/email when you issue the `git comm
     fatal: unable to auto-detect email address
     ```
 
+<!-- markdownlint-enable MD046 -->
+
 ### Start work on an existing Repository
 
 Get the Git Clone URL from a repository you want to work on:
@@ -98,12 +105,17 @@ then in VS Code Ctrl-Shift-P and then type 'git clone'
 
 Change directory into the new directory that gets created after you have cloned the Repository
 
+<!-- markdownlint-disable MD046 -->
+
 ???Tip "Using different repositories with different credentials"
     If you commit to different repositories with different credentials then you will need to give Git some configuration info about yourself [as explained above](#set-some-default-configuration)
+
     ```powershell
     git config --local user.name 'Your Name'
     git config --local user.email 'your.name@your.org'
     ```
+
+<!-- markdownlint-enable MD046 -->
 
 ### Create a branch to work on
 
@@ -124,6 +136,8 @@ git pull origin main
 git push --set-upstream origin feature/TryingSomething
 ```
 
+<!-- markdownlint-disable MD046 -->
+
 ???Question "Why not just use `git push`?"
     i.e. what's the `--set-upstream` about?
     You'll get an error if you just use `git push` because [the remote branch doesn't yet exist](https://docs.microsoft.com/en-us/azure/devops/repos/git/pushing?view=azure-devops&tabs=command-line#share-your-code-with-push)):
@@ -134,6 +148,8 @@ git push --set-upstream origin feature/TryingSomething
 
         git push --set-upstream origin feature/TryingSomething
     ```
+
+<!-- markdownlint-enable MD046 -->
 
 ### Create and merge a Pull Request
 
@@ -156,6 +172,7 @@ git pull
 # delete the local copy
 git branch -D feature/TryingSomething
 ```
+
 ### Managing changes and conflicts
 
 Finding that someone else has modified the same file in a previous (or even concurrent) commit or in another branch that you're now merging your code with can be a truly terror-inducing prospect. I recently discovered how to use Visual Studio Code as the user interface for seeing what the conflict is and deciding whether to take **their** changes, keep **my** changes or take some combination of the two - all in the same code editor rather than learning lots of commands or jumping to another tool.
@@ -207,6 +224,8 @@ git town sync
 ```
 
 Here's the [whole process](https://asciinema.org/a/xxY6bfxValIgJZzQ2kkZlBZZw) in action!:
+
+<!-- markdownlint-disable-next-line MD033 -->
 <script id="asciicast-xxY6bfxValIgJZzQ2kkZlBZZw" src="https://asciinema.org/a/xxY6bfxValIgJZzQ2kkZlBZZw.js" async></script>
 
 ## Creating and completing Pull Requests in Azure Repos from command-line
@@ -237,8 +256,7 @@ Complete the pull request:
 
 I use [this great tool from Maks Nemisj](https://github.com/nemisj/git-removed-branches) to remove local branches which are no longer present in my Git remote (usually because closing my Pull Request has also caused the remote branch to be deleted).
 
-
-```
+```powershell
 git removed-branches --prune --force
 ```
 
