@@ -24,3 +24,6 @@ AzureMigration.ps1
 
 # MkDocs
 site/
+.venv/
+__pycache__/
+.cache/

@@ -1,49 +1,97 @@
 # rohancragg's blog-notes repo-ho-ho
 
-This repository contains source code for my MkDocs site hosted on [my GitHub Pages site (rohancragg.co.uk)](http://rohancragg.co.uk)
-
-[![Open in Gitpod](https://gitpod.io/button/open-in-gitpod.svg)](https://gitpod.io/#https://github.com/rohancragg/blog-notes)
+This repository contains source code for my MkDocs site hosted on [my GitHub Pages site (rohancragg.co.uk)](https://rohancragg.co.uk)
 
 ## Built with MkDocs
 
-### Install Pre-Requisites
-If cloning onto a new (Windows) machine - bootstrap MkDocs like this:
+### Prerequisites
+
+Use Git and Python 3.13, as specified in [.python-version](.python-version).
+The site uses [Material for MkDocs](https://squidfunk.github.io/mkdocs-material/)
+and the plugins listed in [requirements.in](requirements.in).
+
+### Local Setup
+
+Run these commands from the repository root with [uv](https://docs.astral.sh/uv/getting-started/installation/).
+It can download Python 3.13 if required:
 
 ```powershell
-scoop install python
-scoop install curl
-curl https://bootstrap.pypa.io/get-pip.py -o get-pip.py
-python get-pip.py
-python -m pip install -U pip
+uv venv --python 3.13 .venv
+uv pip sync --python .venv --require-hashes requirements.txt
 ```
 
-### Install MkDocs
+Alternatively, with Python 3.13 already installed, use the standard library and pip.
+On Windows:
 
 ```powershell
-pip install mkdocs
-python $env:USERPROFILE\scoop\apps\python\current\Tools\scripts\win_add2path.py
+py -3.13 -m venv .venv
+.\.venv\Scripts\python.exe -m pip install --require-hashes -r requirements.txt
 ```
 
-### Install the Custom Theme
+On Linux or macOS:
 
-Using [Material theme](https://squidfunk.github.io/mkdocs-material/)
+```sh
+python3.13 -m venv .venv
+.venv/bin/python -m pip install --require-hashes -r requirements.txt
+```
+
+Keep `.venv` local and recreate it on each machine; it is ignored by Git.
+Activation is optional when using the environment's Python executable directly.
+
+### Preview and Validate
+
+On Windows:
 
 ```powershell
-pip install mkdocs-material
+.\.venv\Scripts\python.exe -m mkdocs serve
+.\.venv\Scripts\python.exe -m mkdocs build --clean --strict
 ```
 
-### Install MkDocs Extensions
+On Linux or macOS, use `.venv/bin/python` instead. The preview is available at
+<http://127.0.0.1:8000/>. Generated output in `site/` is ignored by Git.
+
+GitHub Actions installs the locked dependencies and runs a strict build on
+Windows and Linux for pushes and pull requests. It does not publish the site.
+New, uncommitted pages have no Git revision date; the date plugin falls back to
+today's date. Clone with full Git history for accurate revision dates.
+
+### Update Dependencies
+
+Edit [requirements.in](requirements.in), then regenerate the cross-platform,
+hashed [requirements.txt](requirements.txt) lockfile with uv:
+
 ```powershell
-pip install -r ./requirements.txt
+uv pip compile requirements.in --python-version 3.13 --universal --generate-hashes --upgrade --output-file requirements.txt
+uv pip sync --python .venv --require-hashes requirements.txt
 ```
 
-It can be previewed by running:
+Run the strict build and check the preview before committing both dependency
+files. When changing Python versions, update `.python-version`, regenerate the
+lockfile for that version, and recreate `.venv`.
+
+### Publish
+
+Use PowerShell (PowerShell 7 on Linux/macOS) and Git credentials with write access
+to the publishing repository. Check the destination without publishing:
 
 ```powershell
-mkdocs serve
+./gh-deploy.ps1 -WhatIf
 ```
 
-It's deployed [like this:](https://www.mkdocs.org/user-guide/deploying-your-docs/#organization-and-user-pages)
+To publish to `rohancragg/rohancragg.github.io`, branch `main`:
+
 ```powershell
- .\gh-deploy.ps1
+./gh-deploy.ps1
 ```
+
+The script runs a clean, strict build from the source checkout, then publishes
+that output using a temporary clone. It stops on failures, restores the caller's
+directory, and never resets the source checkout. No sibling checkout is required.
+The destination repository and branch must already exist and can be overridden
+with `-PublishRepository` and `-PublishBranch`. GitHub Pages must serve that branch.
+
+### Theme Maintenance
+
+Material for MkDocs reaches end of life on 5 May 2027. Assess its successor,
+[Zensical](https://zensical.org/docs/compatibility/mkdocs/migration/), separately,
+including plugin compatibility and the custom template in `theme/`.

@@ -65,7 +65,7 @@ Becomes this!
         B --> D[Server02]
 ```
 
-As I [mention elsewhere](/misc/scoop/#mkdocs), I use MkDocs to generate this website into HTML from a textual format called MarkDown. An extension for Python Markdown called [SuperFences](https://facelessuser.github.io/pymdown-extensions/extensions/superfences/) allows textual representations of diagrams in formats such as the Mermaid format mentioned above to be rendered directly into the page, simply by adding it to the MarkDown document. SuperFences is part of the [PyMdown Extensions](https://facelessuser.github.io/pymdown-extensions/) project which itself is bundled with [Material for Markdown](https://squidfunk.github.io/mkdocs-material/extensions/pymdown/)
+As I [mention elsewhere](../misc/scoop.md#mkdocs), I use MkDocs to generate this website into HTML from a textual format called MarkDown. An extension for Python Markdown called [SuperFences](https://facelessuser.github.io/pymdown-extensions/extensions/superfences/) allows textual representations of diagrams in formats such as the Mermaid format mentioned above to be rendered directly into the page, simply by adding it to the MarkDown document. SuperFences is part of the [PyMdown Extensions](https://facelessuser.github.io/pymdown-extensions/) project which itself is bundled with [Material for Markdown](https://squidfunk.github.io/mkdocs-material/extensions/pymdown/)
 
 > ![](media/pymdown-superfences.png)
 
