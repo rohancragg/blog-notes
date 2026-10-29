@@ -6,6 +6,10 @@ authors:
     - Rohan Cragg
 date: 2026-10-28
 page_path: architecture/
+tags:
+    - Azure
+    - API Management
+    - Windows Authentication
 ---
 
 Modern Azure applications commonly use Microsoft Entra ID to obtain OAuth 2.0 access tokens for calling APIs, while older on-premises applications may expect Kerberos or NTLM.

@@ -90,6 +90,10 @@ graph TD
    D -->|No| F(Send for repair)
 ```
 
+#### Mermaid subgraph direction
+
+Mermaid ignores a subgraph's `direction` when one of its nodes is linked to a node outside the subgraph; it uses the parent graph's direction instead. For a vertical layout within a subgraph, put `direction TB` and the links between its nodes inside the `subgraph ... end` block. See [Mermaid's flowchart direction documentation](https://mermaid.js.org/syntax/flowchart.html#direction-in-subgraphs).
+
 #### Gantt Chart
 
 ```mermaid

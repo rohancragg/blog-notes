@@ -25,6 +25,7 @@ nav:
 - Cloud Solution Architecture:
   - Azure APIs to Windows-Authenticated Services: architecture/bridging-azure-apis-to-windows-authenticated-services.md
   - Private Networking Changes Your AI-Agent Architecture: architecture/private-networking-changes-your-ai-agent-architecture.md
+  - Microsoft's Agent Landscape: architecture/microsofts-agent-landscape.md
 - Tools & Tips:
   - Artificial Intelligence: misc/ai.md
   - A Dev VM in the sky: misc/cloud-dev-vms.md
